@@ -1,0 +1,8 @@
+[
+  {
+    "session_id": "feae44a9-b1b4-4be5-94dd-78894c9a67ca",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/feae44a9-b1b4-4be5-94dd-78894c9a67ca.jsonl",
+    "hook_event_name": "SubagentStop",
+    "stop_hook_active": false
+  }
+]
