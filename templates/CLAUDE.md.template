@@ -1,0 +1,313 @@
+# {{projectName}} - Project Context
+
+## Project Overview
+
+**Project Name:** {{projectName}}
+**Description:** {{projectDescription}}
+**Type:** {{projectType}}
+**Generated:** {{metadata.timestamp}}
+
+### Tech Stack
+- **Frontend:** {{techStack.frontend}}
+{{#if techStack.backend}}
+- **Backend:** {{techStack.backend}}
+{{/if}}
+{{#if techStack.database}}
+- **Database:** {{techStack.database}}
+{{/if}}
+- **Language:** {{techStack.language}}
+- **Package Manager:** {{techStack.packageManager}}
+- **Testing:** {{techStack.testing}}
+- **Styling:** {{techStack.styling}}
+
+### Key Features
+{{#each features}}
+- {{.}}
+{{/each}}
+
+## Technical Requirements
+
+### Frontend Architecture
+{{#if techStack.frontend}}
+- Framework: {{techStack.frontend}}
+- Language: {{techStack.language}}
+- Styling: {{techStack.styling}}
+- Build Tool: {{developmentContext.workflow.buildTool}}
+{{/if}}
+
+### Backend Architecture
+{{#if techStack.backend}}
+- Framework: {{techStack.backend}}
+- Database: {{techStack.database}}
+- Authentication: {{security.authentication}}
+- API Type: RESTful
+{{/if}}
+
+### Development Workflow
+- Package Manager: {{techStack.packageManager}}
+- Testing Framework: {{techStack.testing}}
+- Linting: {{developmentContext.workflow.linting.eslint}}
+- Formatting: {{developmentContext.workflow.formatting}}
+
+## Security Context
+
+### Security Level: {{securityContext.level}}
+
+### Authentication & Authorization
+- Method: {{security.authentication}}
+- Data Protection: {{security.dataProtection}}
+{{#each security.compliance}}
+- Compliance: {{.}}
+{{/each}}
+
+### Security Features
+{{#each securityContext.features}}
+- {{.}}
+{{/each}}
+
+### Security Recommendations
+{{#each securityContext.recommendations}}
+- **{{category}}**: {{message}} (Priority: {{priority}})
+{{/each}}
+
+### Security Best Practices
+- Input validation on all user inputs
+- Parameterized queries for database operations
+- Security headers implementation (helmet.js)
+- Rate limiting on sensitive endpoints
+- HTTPS enforcement in production
+- Regular security audits and dependency updates
+- Secure session management
+- Password hashing with bcrypt (14+ rounds)
+- CORS configuration
+- XSS protection
+- CSRF protection
+
+## Project Structure
+
+```
+{{projectName}}/
+{{#each projectStructure.directories}}
+├── {{.}}/
+{{/each}}
+{{#each projectStructure.files}}
+├── {{.}}
+{{/each}}
+```
+
+### Directory Purpose
+{{#each projectStructure.directories}}
+- **{{.}}/** - {{this.description}}
+{{/each}}
+
+### Key Files
+{{#each projectStructure.files}}
+- **{{.}}** - {{this.description}}
+{{/each}}
+
+## Development Scripts
+
+```json
+{
+  "scripts": {
+{{#each developmentContext.scripts}}
+    "{{@key}}": "{{.}}"{{#unless @last}},{{/unless}}
+{{/each}}
+  }
+}
+```
+
+## Dependencies
+
+### Production Dependencies
+{{#each developmentContext.dependencies}}
+- {{.}}
+{{/each}}
+
+### Development Dependencies
+{{#each developmentContext.devDependencies}}
+- {{.}}
+{{/each}}
+
+## Deployment Configuration
+
+### Target: {{deploymentContext.target}}
+
+### Requirements
+{{#each deploymentContext.requirements}}
+- {{.}}
+{{/each}}
+
+### Configuration Files
+{{#each deploymentContext.configuration.files}}
+- {{.}}
+{{/each}}
+
+### Deployment Recommendations
+{{#each deploymentContext.recommendations}}
+- **{{category}}**: {{message}} (Priority: {{priority}})
+{{/each}}
+
+## Code Quality Standards
+
+### ESLint Configuration
+- Config: {{developmentContext.workflow.linting.config}}
+- Security: eslint-plugin-security
+- TypeScript: @typescript-eslint/eslint-plugin
+
+### Prettier Configuration
+- Single quotes: true
+- Semicolons: true
+- Tab width: 2
+- Trailing commas: es5
+
+### Testing Strategy
+- Unit Tests: {{techStack.testing}}
+- Integration Tests: API endpoint testing
+- E2E Tests: Critical user journeys
+- Security Tests: Authentication and authorization
+
+## Performance Considerations
+
+### Frontend Optimization
+- Code splitting and lazy loading
+- Image optimization
+- Bundle size monitoring
+- React.memo for expensive components
+- Caching strategies
+
+### Backend Optimization
+- Database query optimization
+- Caching layer implementation
+- Rate limiting
+- Compression middleware
+- Health check endpoints
+
+## Monitoring & Logging
+
+### Application Monitoring
+- Error tracking integration
+- Performance monitoring
+- User analytics
+- Security event logging
+
+### Logging Strategy
+- Structured logging (JSON format)
+- Log levels: error, warn, info, debug
+- Audit trails for sensitive operations
+- Log rotation and retention
+
+## Environment Configuration
+
+### Development
+- Hot reloading enabled
+- Debug mode active
+- Source maps enabled
+- Development database
+
+### Production
+- Minification enabled
+- Security headers enforced
+- HTTPS only
+- Production database
+- Error reporting
+- Performance monitoring
+
+## API Documentation
+
+{{#if techStack.backend}}
+### Authentication Endpoints
+- POST /api/auth/login - User authentication
+- POST /api/auth/register - User registration
+- POST /api/auth/logout - User logout
+- GET /api/auth/profile - User profile
+
+### API Standards
+- RESTful design principles
+- JSON request/response format
+- HTTP status codes
+- Error response format
+- Rate limiting headers
+- API versioning (/api/v1/)
+
+### Request/Response Format
+```json
+{
+  "success": true,
+  "data": {...},
+  "message": "Operation successful",
+  "timestamp": "2024-01-01T00:00:00Z"
+}
+```
+
+### Error Response Format
+```json
+{
+  "success": false,
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Invalid input provided",
+    "details": {...}
+  },
+  "timestamp": "2024-01-01T00:00:00Z"
+}
+```
+{{/if}}
+
+## Testing Guidelines
+
+### Unit Testing
+- Test coverage minimum: 80%
+- Mock external dependencies
+- Test both success and error cases
+- Use descriptive test names
+
+### Integration Testing
+- Test API endpoints
+- Database integration
+- Authentication flows
+- Error handling
+
+### Security Testing
+- Input validation testing
+- Authentication bypass attempts
+- Authorization checks
+- SQL injection prevention
+- XSS protection validation
+
+## Contribution Guidelines
+
+### Code Style
+- Follow ESLint configuration
+- Use Prettier for formatting
+- Write descriptive commit messages
+- Keep functions small and focused
+
+### Pull Request Process
+1. Create feature branch
+2. Implement changes with tests
+3. Run linting and tests
+4. Update documentation
+5. Submit pull request
+6. Code review process
+7. Security review for sensitive changes
+
+### Security Considerations
+- Never commit secrets or API keys
+- Review dependencies for vulnerabilities
+- Test security features thoroughly
+- Follow OWASP guidelines
+- Document security decisions
+
+{{#if research.formattedLinks}}
+{{research.formattedLinks}}
+{{/if}}
+
+---
+
+*Document Version: 2.4.0*
+*Generated by EchoContext Factory v2.4.0*
+*Designed by Emmi C. (https://emmi.zone) - Built with Claude Code*
+Generated: {{metadata.timestamp}}
+Security Level: {{securityContext.level}}
+Tech Stack: {{techStack.frontend}}{{#if techStack.backend}} + {{techStack.backend}}{{/if}}{{#if techStack.database}} + {{techStack.database}}{{/if}}

@@ -1,0 +1,283 @@
+# 🔬 Deep Research Report: {{topic}}
+
+*Generated on {{date}} | Research ID: {{research_id}} | Duration: {{duration_minutes}} minutes*
+
+---
+
+## 🎯 Executive Summary
+
+{{#if executive_summary}}
+{{executive_summary}}
+{{else}}
+### 📌 Key Findings
+{{#each key_findings}}
+- **{{title}}**: {{description}}
+{{/each}}
+
+### 📊 Critical Insights
+{{#each critical_insights}}
+- {{insight}}
+{{/each}}
+
+### ⚠️ Important Limitations
+{{#each limitations}}
+- {{limitation}}
+{{/each}}
+
+### ⭐ Confidence Assessment
+**Overall Confidence**: {{confidence_score}}/10  
+**Source Quality**: {{source_quality}}/10  
+**Recency**: {{recency_score}}/10
+{{/if}}
+
+---
+
+## 📈 Detailed Research Analysis
+
+### 🌐 Current Landscape & Recent Developments
+
+{{#if tavily_findings}}
+{{tavily_findings.content}}
+
+**Sources**: {{tavily_findings.source_count}} current sources analyzed  
+**Last Updated**: {{tavily_findings.last_updated}}
+{{else}}
+*No current landscape data available*
+{{/if}}
+
+### 🧠 Expert Perspectives & Academic Insights
+
+{{#if perplexity_findings}}
+{{perplexity_findings.content}}
+
+**Expert Sources**: {{perplexity_findings.expert_count}} authorities consulted  
+**Academic Papers**: {{perplexity_findings.paper_count}} peer-reviewed sources
+{{else}}
+*No expert analysis available*
+{{/if}}
+
+### 📊 Structured Data & Deep Content Analysis
+
+{{#if firecrawl_findings}}
+{{firecrawl_findings.content}}
+
+**Websites Analyzed**: {{firecrawl_findings.site_count}}  
+**Data Points Extracted**: {{firecrawl_findings.data_points}}
+{{else}}
+*No structured data extraction performed*
+{{/if}}
+
+{{#if fact_check_results}}
+### ✅ Fact Verification & Quality Assessment
+
+{{fact_check_results.content}}
+
+**Claims Verified**: {{fact_check_results.claims_checked}}  
+**Accuracy Rate**: {{fact_check_results.accuracy_percentage}}%  
+**Contradictions Found**: {{fact_check_results.contradictions}}
+{{/if}}
+
+{{#if trend_analysis}}
+### 📈 Trend Analysis & Statistical Insights
+
+{{trend_analysis.content}}
+
+**Data Trends Identified**: {{trend_analysis.trend_count}}  
+**Statistical Confidence**: {{trend_analysis.confidence}}%
+{{/if}}
+
+{{#if synthesis_findings}}
+### 🧩 Synthesis & Pattern Recognition
+
+{{synthesis_findings.content}}
+
+**Patterns Identified**: {{synthesis_findings.pattern_count}}  
+**Cross-Source Connections**: {{synthesis_findings.connection_count}}
+{{/if}}
+
+---
+
+## 📊 Data Visualizations
+
+{{#if visualizations}}
+{{#each visualizations}}
+### {{title}}
+
+![{{title}}]({{filename}})
+
+**Description**: {{description}}  
+**Data Source**: {{data_source}}  
+**Confidence**: {{confidence}}/10
+
+{{/each}}
+{{else}}
+*No visualizations generated for this research*
+{{/if}}
+
+---
+
+## 📚 Research Methodology & Sources
+
+### 🔬 Research Approach
+
+**Research Scope**: {{research_scope}}  
+**Audience Level**: {{audience_level}}  
+**Depth Level**: {{depth_level}}  
+{{#if specific_focus}}
+**Specific Focus Areas**: {{#each specific_focus}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}
+{{/if}}
+
+### 🤖 AI Agents Deployed
+
+{{#each agent_results}}
+#### {{agent_type}} Agent
+- **Task**: {{task_description}}
+- **Execution Time**: {{execution_time}} seconds
+- **Sources Found**: {{source_count}}
+- **Confidence**: {{confidence}}/10
+- **Status**: {{status}}
+
+{{/each}}
+
+### 🌐 External APIs Utilized
+
+{{#if apis_used}}
+{{#each apis_used}}
+- **{{name}}**: {{usage_description}} ({{request_count}} requests)
+{{/each}}
+{{else}}
+- Standard web search and analysis tools
+{{/if}}
+
+### 📋 Quality Metrics
+
+- **Total Sources**: {{total_sources}}
+- **Source Types**: {{#each source_types}}{{type}} ({{count}}){{#unless @last}}, {{/unless}}{{/each}}
+- **Average Source Credibility**: {{average_credibility}}/10
+- **Information Recency**: {{recency_assessment}}
+- **Cross-Reference Rate**: {{cross_reference_percentage}}%
+
+---
+
+## 🔍 Complete Source Bibliography
+
+{{#each sources}}
+### {{@index+1}}. {{title}}
+
+**URL**: [{{url}}]({{url}})  
+**Type**: {{source_type}}  
+**Credibility**: {{credibility}}/10  
+**Relevance**: {{relevance}}/10  
+**Date**: {{date_accessed}}  
+**Summary**: {{summary}}
+
+{{/each}}
+
+---
+
+## 🎯 Key Conclusions & Insights
+
+### 💡 Primary Findings
+
+{{#each primary_findings}}
+{{@index+1}}. **{{finding}}**
+   - Evidence: {{evidence}}
+   - Confidence: {{confidence}}/10
+   - Sources: {{source_count}}
+
+{{/each}}
+
+### 🚀 Actionable Recommendations
+
+{{#if recommendations}}
+{{#each recommendations}}
+{{@index+1}}. **{{title}}**
+   - **Action**: {{action}}
+   - **Priority**: {{priority}}
+   - **Timeline**: {{timeline}}
+   - **Expected Impact**: {{impact}}
+
+{{/each}}
+{{else}}
+*No specific recommendations generated based on research scope*
+{{/if}}
+
+### 🔮 Future Research Directions
+
+{{#if future_research}}
+{{#each future_research}}
+- **{{direction}}**: {{description}}
+{{/each}}
+{{else}}
+- Consider expanding research scope for deeper insights
+- Monitor for new developments in this rapidly evolving area
+- Investigate specific implementation approaches
+{{/if}}
+
+---
+
+## ⚠️ Research Limitations & Caveats
+
+### 🎯 Scope Limitations
+{{#each scope_limitations}}
+- {{limitation}}
+{{/each}}
+
+### 📅 Temporal Constraints
+- Research conducted on: {{research_date}}
+- Information currency: Most sources within {{recency_window}}
+- Rapidly evolving topics may have newer developments
+
+### 🔍 Methodological Notes
+- Automated research using AI agents and external APIs
+- Human verification recommended for critical decisions
+- Sources represent available information at time of research
+- Cross-referencing performed where possible
+
+### 🎲 Confidence Intervals
+- **High Confidence (8-10/10)**: {{high_confidence_percentage}}% of findings
+- **Medium Confidence (5-7/10)**: {{medium_confidence_percentage}}% of findings  
+- **Low Confidence (1-4/10)**: {{low_confidence_percentage}}% of findings
+
+---
+
+## 📞 Research Metadata
+
+**Generated By**: Deep Research System v2.1.0  
+**Orchestrator**: {{orchestrator_version}}  
+**Research ID**: {{research_id}}  
+**Timestamp**: {{timestamp}}  
+**Duration**: {{duration_minutes}} minutes ({{duration_seconds}} seconds)  
+**Agent Count**: {{agent_count}} specialized agents  
+**API Calls**: {{total_api_calls}}  
+**Data Processing**: {{data_processing_time}} seconds  
+
+**Voice Notifications**: {{#if voice_enabled}}Enabled{{else}}Disabled{{/if}}  
+**Quality Validation**: {{#if quality_validation}}Passed{{else}}Skipped{{/if}}  
+**User Audience**: {{audience_level}}  
+**Research Depth**: {{depth_level}}
+
+---
+
+**🔬 Deep Research Report v2.1.0**  
+*Designed by Emmi C. (https://emmi.zone) and built with Claude Code*
+
+*This report was generated using advanced AI research techniques with multiple specialized agents, external API integration, and comprehensive quality validation. While every effort has been made to ensure accuracy, please verify critical information independently.*
+
+---
+
+### 📋 Quick Reference Summary
+
+| Metric | Value |
+|--------|--------|
+| Research Topic | {{topic}} |
+| Total Sources | {{total_sources}} |
+| Agent Types | {{agent_count}} |
+| Confidence Score | {{confidence_score}}/10 |
+| Duration | {{duration_minutes}} min |
+| Generated | {{date}} |
+
+**🎯 Top 3 Insights:**
+{{#each top_insights}}
+{{@index+1}}. {{insight}}
+{{/each}}

@@ -1,0 +1,379 @@
+{
+  "prp_questions": {
+    "basic_feature": [
+      {
+        "key": "feature_name",
+        "question": "What is the name of the feature you want to develop?",
+        "type": "text",
+        "required": true,
+        "placeholder": "e.g., User Authentication System, Shopping Cart, Dashboard Widget",
+        "validation": {
+          "minLength": 3,
+          "maxLength": 100,
+          "pattern": "^[a-zA-Z0-9\\s\\-\\_]+$"
+        }
+      },
+      {
+        "key": "feature_purpose",
+        "question": "What problem does this feature solve?",
+        "type": "text",
+        "required": true,
+        "placeholder": "Describe the core problem this feature addresses",
+        "validation": {
+          "minLength": 10,
+          "maxLength": 500
+        }
+      },
+      {
+        "key": "target_users",
+        "question": "Who are the primary users of this feature?",
+        "type": "text",
+        "required": true,
+        "placeholder": "e.g., End users, Administrators, API consumers, Developers",
+        "validation": {
+          "minLength": 5,
+          "maxLength": 200
+        }
+      },
+      {
+        "key": "feature_scope",
+        "question": "What is the scope of this feature?",
+        "type": "choice",
+        "choices": [
+          {
+            "value": "component",
+            "label": "Single Component (UI widget, helper function)",
+            "description": "A focused, reusable component with single responsibility"
+          },
+          {
+            "value": "feature",
+            "label": "Complete Feature (Login system, payment flow)",
+            "description": "A full user-facing feature with multiple components"
+          },
+          {
+            "value": "module",
+            "label": "Module/System (User management, reporting)",
+            "description": "A comprehensive module with multiple features"
+          },
+          {
+            "value": "integration",
+            "label": "Integration/API (Third-party service, external API)",
+            "description": "Integration with external services or APIs"
+          }
+        ],
+        "required": true
+      },
+      {
+        "key": "success_criteria",
+        "question": "How will you measure success for this feature?",
+        "type": "text",
+        "required": true,
+        "placeholder": "Specific, measurable success criteria (e.g., 'Users can login within 3 seconds')",
+        "validation": {
+          "minLength": 10,
+          "maxLength": 300
+        }
+      },
+      {
+        "key": "priority_level",
+        "question": "What is the priority level of this feature?",
+        "type": "choice",
+        "choices": [
+          {
+            "value": "critical",
+            "label": "Critical (Must have)",
+            "description": "Essential for core functionality"
+          },
+          {
+            "value": "high",
+            "label": "High Priority",
+            "description": "Important for user experience"
+          },
+          {
+            "value": "medium",
+            "label": "Medium Priority",
+            "description": "Nice to have, improves functionality"
+          },
+          {
+            "value": "low",
+            "label": "Low Priority",
+            "description": "Enhancement or optimization"
+          }
+        ],
+        "required": true
+      }
+    ],
+    "advanced_feature": [
+      {
+        "key": "integration_points",
+        "question": "What existing systems/components will this integrate with?",
+        "type": "text",
+        "required": false,
+        "placeholder": "List existing components, APIs, databases, or systems",
+        "validation": {
+          "maxLength": 400
+        }
+      },
+      {
+        "key": "technical_constraints",
+        "question": "Are there any technical constraints or requirements?",
+        "type": "text",
+        "required": false,
+        "placeholder": "Performance requirements, compatibility needs, security constraints",
+        "validation": {
+          "maxLength": 400
+        }
+      },
+      {
+        "key": "performance_requirements",
+        "question": "What are the performance requirements?",
+        "type": "text",
+        "required": false,
+        "placeholder": "Response time, throughput, scalability requirements",
+        "validation": {
+          "maxLength": 300
+        }
+      },
+      {
+        "key": "data_requirements",
+        "question": "What data will this feature handle?",
+        "type": "text",
+        "required": false,
+        "placeholder": "Data types, storage requirements, data flow",
+        "validation": {
+          "maxLength": 400
+        }
+      }
+    ],
+    "ui_feature": [
+      {
+        "key": "ui_requirements",
+        "question": "Describe the UI/UX requirements for this feature",
+        "type": "text",
+        "required": true,
+        "placeholder": "Layout, interactions, accessibility, responsive design",
+        "validation": {
+          "minLength": 10,
+          "maxLength": 500
+        }
+      },
+      {
+        "key": "user_interactions",
+        "question": "What user interactions will this feature support?",
+        "type": "text",
+        "required": false,
+        "placeholder": "Click, hover, drag, keyboard shortcuts, touch gestures",
+        "validation": {
+          "maxLength": 300
+        }
+      },
+      {
+        "key": "accessibility_requirements",
+        "question": "Are there specific accessibility requirements?",
+        "type": "choice",
+        "choices": [
+          {
+            "value": "wcag_aa",
+            "label": "WCAG 2.1 AA Compliance",
+            "description": "Standard accessibility compliance"
+          },
+          {
+            "value": "wcag_aaa",
+            "label": "WCAG 2.1 AAA Compliance",
+            "description": "Enhanced accessibility compliance"
+          },
+          {
+            "value": "custom",
+            "label": "Custom Requirements",
+            "description": "Specific accessibility needs"
+          },
+          {
+            "value": "basic",
+            "label": "Basic Accessibility",
+            "description": "Standard semantic HTML and keyboard navigation"
+          }
+        ],
+        "required": false
+      }
+    ],
+    "api_feature": [
+      {
+        "key": "api_requirements",
+        "question": "Describe the API requirements (endpoints, data formats)",
+        "type": "text",
+        "required": true,
+        "placeholder": "REST endpoints, GraphQL queries, request/response formats",
+        "validation": {
+          "minLength": 10,
+          "maxLength": 500
+        }
+      },
+      {
+        "key": "api_authentication",
+        "question": "What authentication method will the API use?",
+        "type": "choice",
+        "choices": [
+          {
+            "value": "jwt",
+            "label": "JWT (JSON Web Tokens)",
+            "description": "Token-based authentication"
+          },
+          {
+            "value": "oauth2",
+            "label": "OAuth 2.0",
+            "description": "OAuth 2.0 authentication flow"
+          },
+          {
+            "value": "api_key",
+            "label": "API Key",
+            "description": "Simple API key authentication"
+          },
+          {
+            "value": "session",
+            "label": "Session-based",
+            "description": "Traditional session authentication"
+          },
+          {
+            "value": "none",
+            "label": "No Authentication",
+            "description": "Public API endpoints"
+          }
+        ],
+        "required": false
+      },
+      {
+        "key": "api_rate_limiting",
+        "question": "Are there rate limiting requirements?",
+        "type": "text",
+        "required": false,
+        "placeholder": "Requests per minute/hour, throttling strategy",
+        "validation": {
+          "maxLength": 200
+        }
+      }
+    ],
+    "security_feature": [
+      {
+        "key": "security_level",
+        "question": "What security level is required?",
+        "type": "choice",
+        "choices": [
+          {
+            "value": "basic",
+            "label": "Basic Security",
+            "description": "Input validation, HTTPS, basic authentication"
+          },
+          {
+            "value": "standard",
+            "label": "Standard Security",
+            "description": "Enhanced authentication, authorization, audit logging"
+          },
+          {
+            "value": "high",
+            "label": "High Security",
+            "description": "Encryption, advanced monitoring, compliance"
+          },
+          {
+            "value": "enterprise",
+            "label": "Enterprise Security",
+            "description": "Full security suite, compliance, threat protection"
+          }
+        ],
+        "required": false
+      },
+      {
+        "key": "compliance_requirements",
+        "question": "Are there specific compliance requirements?",
+        "type": "text",
+        "required": false,
+        "placeholder": "GDPR, HIPAA, SOC 2, PCI DSS, etc.",
+        "validation": {
+          "maxLength": 200
+        }
+      },
+      {
+        "key": "data_sensitivity",
+        "question": "What type of sensitive data will be handled?",
+        "type": "choice",
+        "choices": [
+          {
+            "value": "none",
+            "label": "No Sensitive Data",
+            "description": "Public information only"
+          },
+          {
+            "value": "personal",
+            "label": "Personal Information",
+            "description": "Names, emails, basic user data"
+          },
+          {
+            "value": "financial",
+            "label": "Financial Data",
+            "description": "Payment information, financial records"
+          },
+          {
+            "value": "health",
+            "label": "Health Information",
+            "description": "Medical records, health data"
+          },
+          {
+            "value": "proprietary",
+            "label": "Proprietary Data",
+            "description": "Business secrets, intellectual property"
+          }
+        ],
+        "required": false
+      }
+    ]
+  },
+  "question_flows": {
+    "basic_flow": ["basic_feature"],
+    "ui_flow": ["basic_feature", "ui_feature", "advanced_feature"],
+    "api_flow": ["basic_feature", "api_feature", "security_feature", "advanced_feature"],
+    "full_flow": ["basic_feature", "ui_feature", "api_feature", "security_feature", "advanced_feature"]
+  },
+  "conditional_questions": {
+    "show_ui_questions": {
+      "condition": "feature_scope",
+      "values": ["component", "feature"],
+      "questions": "ui_feature"
+    },
+    "show_api_questions": {
+      "condition": "feature_scope",
+      "values": ["integration", "module"],
+      "questions": "api_feature"
+    },
+    "show_security_questions": {
+      "condition": "priority_level",
+      "values": ["critical", "high"],
+      "questions": "security_feature"
+    }
+  },
+  "validation_rules": {
+    "feature_name": {
+      "required": true,
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "pattern": "^[a-zA-Z0-9\\s\\-\\_]+$"
+    },
+    "feature_purpose": {
+      "required": true,
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 500
+    },
+    "target_users": {
+      "required": true,
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 200
+    },
+    "success_criteria": {
+      "required": true,
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 300
+    }
+  }
+}

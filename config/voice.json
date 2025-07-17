@@ -1,0 +1,64 @@
+{
+  "version": "1.0.0",
+  "voice": {
+    "enabled": true,
+    "defaultProvider": "auto",
+    "fallbackChain": ["elevenlabs", "openai", "pyttsx3"],
+    "enabledEvents": [
+      "welcome",
+      "question",
+      "confirmation",
+      "error",
+      "progress",
+      "completion"
+    ]
+  },
+  "providers": {
+    "elevenlabs": {
+      "enabled": true,
+      "apiKey": "${ELEVENLABS_API_KEY}",
+      "voiceId": "21m00Tcm4TlvDq8ikWAM",
+      "model": "eleven_monolingual_v1",
+      "stability": 0.5,
+      "similarity": 0.8,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "openai": {
+      "enabled": true,
+      "apiKey": "${OPENAI_API_KEY}",
+      "model": "tts-1",
+      "voice": "alloy",
+      "format": "mp3",
+      "speed": 1.0
+    },
+    "pyttsx3": {
+      "enabled": true,
+      "rate": 200,
+      "volume": 0.8,
+      "voice": "system_default"
+    }
+  },
+  "audio": {
+    "format": "mp3",
+    "quality": "high",
+    "caching": true,
+    "cacheExpiry": "24h",
+    "maxCacheSize": "100MB",
+    "playbackDevice": "default"
+  },
+  "messages": {
+    "welcome": "Welcome to Context Engineering Factory! Let's create your project setup.",
+    "questionPrompt": "Please provide your answer:",
+    "confirmation": "Got it! Processing your response...",
+    "error": "I encountered an issue. Please try again.",
+    "progress": "Working on your project setup...",
+    "completion": "Your Context Engineering Factory has successfully created your project setup!"
+  },
+  "sounds": {
+    "notification": "chime",
+    "error": "error",
+    "success": "success",
+    "progress": "tick"
+  }
+}

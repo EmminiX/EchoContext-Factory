@@ -1,0 +1,193 @@
+{
+  "version": "1.0.0",
+  "patterns": {
+    "project_structures": {
+      "webapp_react": {
+        "name": "React Web Application",
+        "description": "Modern React app with TypeScript and best practices",
+        "directories": [
+          "src/components",
+          "src/pages",
+          "src/hooks",
+          "src/lib",
+          "src/types",
+          "src/styles",
+          "public",
+          "docs"
+        ],
+        "files": [
+          "src/App.tsx",
+          "src/main.tsx",
+          "src/index.css",
+          "package.json",
+          "tsconfig.json",
+          "vite.config.ts",
+          "tailwind.config.js"
+        ]
+      },
+      "api_express": {
+        "name": "Express.js API",
+        "description": "RESTful API with Express.js and TypeScript",
+        "directories": [
+          "src/routes",
+          "src/controllers",
+          "src/middleware",
+          "src/models",
+          "src/types",
+          "src/utils",
+          "tests",
+          "docs"
+        ],
+        "files": [
+          "src/app.ts",
+          "src/server.ts",
+          "package.json",
+          "tsconfig.json",
+          "Dockerfile",
+          "docker-compose.yml"
+        ]
+      },
+      "cli_node": {
+        "name": "Node.js CLI Tool",
+        "description": "Command-line tool built with Node.js",
+        "directories": [
+          "src/commands",
+          "src/utils",
+          "src/types",
+          "tests",
+          "docs"
+        ],
+        "files": [
+          "src/cli.ts",
+          "src/index.ts",
+          "package.json",
+          "tsconfig.json",
+          "bin/cli.js"
+        ]
+      }
+    },
+    "security_patterns": {
+      "input_validation": {
+        "name": "Input Validation",
+        "description": "Comprehensive input validation patterns",
+        "techniques": [
+          "joi_validation",
+          "express_validator",
+          "zod_schemas",
+          "custom_validators"
+        ]
+      },
+      "authentication": {
+        "name": "Authentication Patterns",
+        "description": "Secure authentication implementations",
+        "techniques": [
+          "jwt_tokens",
+          "oauth_integration",
+          "session_management",
+          "password_hashing"
+        ]
+      },
+      "authorization": {
+        "name": "Authorization Patterns",
+        "description": "Role-based access control",
+        "techniques": [
+          "rbac",
+          "permissions",
+          "middleware_guards",
+          "resource_protection"
+        ]
+      }
+    },
+    "development_patterns": {
+      "error_handling": {
+        "name": "Error Handling",
+        "description": "Comprehensive error handling strategies",
+        "techniques": [
+          "try_catch_blocks",
+          "error_middleware",
+          "custom_error_classes",
+          "logging_integration"
+        ]
+      },
+      "logging": {
+        "name": "Logging Patterns",
+        "description": "Structured logging and monitoring",
+        "techniques": [
+          "winston_logging",
+          "structured_logs",
+          "log_levels",
+          "audit_trails"
+        ]
+      },
+      "testing": {
+        "name": "Testing Patterns",
+        "description": "Comprehensive testing strategies",
+        "techniques": [
+          "unit_tests",
+          "integration_tests",
+          "e2e_tests",
+          "mocking_strategies"
+        ]
+      }
+    },
+    "deployment_patterns": {
+      "containerization": {
+        "name": "Docker Containerization",
+        "description": "Container-based deployment patterns",
+        "techniques": [
+          "multi_stage_builds",
+          "docker_compose",
+          "health_checks",
+          "security_scanning"
+        ]
+      },
+      "ci_cd": {
+        "name": "CI/CD Pipelines",
+        "description": "Automated deployment workflows",
+        "techniques": [
+          "github_actions",
+          "automated_testing",
+          "security_scanning",
+          "deployment_strategies"
+        ]
+      }
+    }
+  },
+  "common_combinations": {
+    "react_typescript_tailwind": {
+      "name": "React + TypeScript + Tailwind",
+      "description": "Popular modern web app stack",
+      "components": ["react", "typescript", "tailwind", "vite"],
+      "security_level": "standard"
+    },
+    "express_typescript_postgresql": {
+      "name": "Express + TypeScript + PostgreSQL",
+      "description": "Robust API backend stack",
+      "components": ["express", "typescript", "postgresql", "jest"],
+      "security_level": "high"
+    },
+    "nextjs_supabase": {
+      "name": "Next.js + Supabase",
+      "description": "Full-stack React with backend-as-a-service",
+      "components": ["nextjs", "supabase", "typescript", "tailwind"],
+      "security_level": "standard"
+    }
+  },
+  "context_templates": {
+    "project_overview": {
+      "name": "Project Overview Template",
+      "description": "Standard project overview section",
+      "template": "## Project Overview\n\n**Project Name:** {{project_name}}\n**Description:** {{project_description}}\n**Type:** {{project_type}}\n**Tech Stack:** {{tech_stack}}\n\n### Key Features\n{{#features}}\n- {{.}}\n{{/features}}\n\n### Security Requirements\n- Security Level: {{security_level}}\n- Authentication: {{authentication}}\n- Data Protection: {{data_protection}}"
+    },
+    "technical_requirements": {
+      "name": "Technical Requirements Template",
+      "description": "Detailed technical specifications",
+      "template": "## Technical Requirements\n\n### Frontend\n- Framework: {{frontend_framework}}\n- Language: {{language}}\n- Styling: {{styling_approach}}\n- Testing: {{testing_framework}}\n\n### Backend\n- Framework: {{backend_framework}}\n- Database: {{database}}\n- Authentication: {{authentication}}\n- API Type: {{api_type}}\n\n### Development\n- Package Manager: {{package_manager}}\n- Code Style: {{code_style}}\n- Git Workflow: {{git_workflow}}\n- Documentation: {{documentation_level}}"
+    },
+    "security_context": {
+      "name": "Security Context Template",
+      "description": "Security-focused project context",
+      "template": "## Security Context\n\n### Security Level: {{security_level}}\n\n### Authentication & Authorization\n- Method: {{authentication}}\n- Role-Based Access: {{rbac_enabled}}\n- Session Management: {{session_management}}\n\n### Data Protection\n- Encryption: {{encryption_level}}\n- Input Validation: {{input_validation}}\n- Output Sanitization: {{output_sanitization}}\n\n### Compliance Requirements\n{{#compliance}}\n- {{.}}\n{{/compliance}}\n\n### Security Best Practices\n- HTTPS enforcement\n- Security headers (helmet.js)\n- Rate limiting\n- Input sanitization\n- SQL injection prevention\n- XSS protection\n- CSRF protection"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "version": "2.4.0",
+  "scenarios": {
+    "project": {
+      "name": "Full Project Development",
+      "description": "Start building from complete project documentation",
+      "requiredDocs": ["CLAUDE.md"],
+      "optionalDocs": ["PRD.md", "TASKS.md"],
+      "template": "project-development",
+      "voiceMessage": "Ready to build your documented project!",
+      "emoji": "🏗️",
+      "priority": 1
+    },
+    "feature": {
+      "name": "Feature Implementation",
+      "description": "Implement a specific feature from PRP",
+      "requiredDocs": ["PRP"],
+      "optionalDocs": [],
+      "template": "feature-implementation",
+      "voiceMessage": "Let's implement your feature!",
+      "emoji": "⚡",
+      "priority": 2
+    },
+    "fresh": {
+      "name": "Fresh Start",
+      "description": "Start a new project with guided assistance",
+      "requiredDocs": [],
+      "optionalDocs": [],
+      "template": "getting-started",
+      "voiceMessage": "Let's start something new together!",
+      "emoji": "✨",
+      "priority": 3
+    }
+  },
+  "prompts": {
+    "selection": "Select an option: ",
+    "prpSelection": "Select a PRP (number): ",
+    "scanning": "Scanning for available documentation...",
+    "noOptions": "No development options available. Try running /start-project or /generate-prp first!",
+    "invalidChoice": "Invalid choice. Please try again.",
+    "loading": "Loading documentation...",
+    "preparing": "Preparing development prompt..."
+  },
+  "output": {
+    "promptDirectory": ".claude/prompts",
+    "fileNames": {
+      "project": "project-development-prompt.md",
+      "feature": "feature-implementation-prompt.md",
+      "fresh": "getting-started-prompt.md"
+    }
+  },
+  "accessibility": {
+    "clearScreen": false,
+    "showProgress": true,
+    "voiceEnabled": true,
+    "confirmationRequired": false,
+    "simplifiedOutput": true
+  }
+}

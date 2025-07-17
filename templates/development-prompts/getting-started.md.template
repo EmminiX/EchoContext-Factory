@@ -1,0 +1,73 @@
+# ✨ FRESH PROJECT START
+
+Let's start a new project together! I'll help you build something amazing from scratch.
+
+## 🚀 Getting Started
+
+Since we're starting fresh, I'll guide you through creating a new project step by step.
+
+## 💭 Project Discovery
+
+To begin, I need to understand what you'd like to build. Please tell me:
+
+1. **What type of application do you want to create?**
+   - Web application
+   - API/Backend service
+   - Command-line tool
+   - Mobile app
+   - Something else?
+
+2. **What is the main purpose or problem it solves?**
+   - Help me understand the core functionality
+   - Who will use this application?
+   - What value does it provide?
+
+3. **Do you have any technology preferences?**
+   - Programming language
+   - Framework preferences
+   - Database requirements
+   - Any specific tools or libraries?
+
+4. **What's your development priority?**
+   - Quick prototype/MVP
+   - Production-ready application
+   - Learning project
+   - Open source contribution
+
+## 🏗️ How I'll Help
+
+Once you share your vision, I will:
+
+1. **Project Setup**
+   - Create the initial project structure
+   - Set up the development environment
+   - Configure necessary tools and dependencies
+
+2. **Architecture Planning**
+   - Design the application architecture
+   - Plan the component structure
+   - Set up best practices from the start
+
+3. **Implementation Guidance**
+   - Start with core functionality
+   - Build incrementally with working code
+   - Ensure quality and maintainability
+
+4. **Documentation**
+   - Create clear documentation as we go
+   - Add helpful comments in the code
+   - Set up README and other docs
+
+## 🎯 Next Steps
+
+Share your project idea and any preferences you have. Don't worry if you're not sure about all the details - we'll figure them out together as we build!
+
+If you'd like a more structured approach, you can also:
+- Run `/start-project` for a comprehensive project setup with documentation
+- Run `/generate-prp` to create detailed feature requirements
+
+But for now, let's start with your idea and build something great!
+
+---
+*Fresh start prompt generated: {{timestamp}}*
+*Ready to bring your ideas to life!*

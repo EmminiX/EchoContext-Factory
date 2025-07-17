@@ -1,0 +1,203 @@
+{
+  "version": "2.1.0",
+  "factory": {
+    "name": "Context Engineering Factory",
+    "description": "Automated context engineering system with research integration and multi-agent coordination",
+    "enabled": true,
+    "debug": false
+  },
+  "features": {
+    "questionEngine": true,
+    "templateProcessor": true,
+    "voiceIntegration": true,
+    "securityValidation": true,
+    "hookSystem": true,
+    "researchEngine": true,
+    "factoryNotifications": true,
+    "multiAgentCoordination": true,
+    "webResearchIntegration": true
+  },
+  "defaults": {
+    "projectType": "webapp",
+    "framework": "react",
+    "language": "typescript",
+    "testFramework": "jest",
+    "styling": "tailwind"
+  },
+  "paths": {
+    "templates": "~/.claude/templates/",
+    "hooks": "~/.claude/hooks/",
+    "commands": "~/.claude/commands/",
+    "data": "~/.claude/data/",
+    "cache": "~/.claude/data/cache/"
+  },
+  "generation": {
+    "outputDir": ".claude/",
+    "backupExisting": true,
+    "validateAfterGeneration": true,
+    "atomicOperations": true,
+    "includeResearchLinks": true,
+    "enhanceWithBestPractices": true
+  },
+  "research": {
+    "enabled": true,
+    "maxQueries": 15,
+    "cacheEnabled": true,
+    "cacheDuration": 604800000,
+    "qualityThreshold": 5,
+    "includeOfficialDocs": true,
+    "includeCommunityResources": true
+  },
+  "multiAgent": {
+    "enabled": true,
+    "maxConcurrentAgents": 8,
+    "complexityThreshold": 3,
+    "componentThreshold": 3,
+    "timeoutMinutes": 30,
+    "enableParallelExecution": true,
+    "researchCapabilities": {
+      "enabled": true,
+      "mcpTools": {
+        "tavily": true,
+        "perplexity": true,
+        "firecrawl": true,
+        "context7": true
+      },
+      "visualizations": {
+        "enabled": true,
+        "autoGenerate": true,
+        "pythonEngine": true,
+        "outputFormats": [
+          "png",
+          "svg",
+          "html"
+        ]
+      },
+      "researchDepthOptions": [
+        "quick",
+        "standard",
+        "deep"
+      ],
+      "audienceLevels": [
+        "general",
+        "professional",
+        "expert"
+      ]
+    },
+    "agentTypes": {
+      "research": [
+        "tavily_intelligence",
+        "perplexity_analysis",
+        "firecrawl_extraction"
+      ],
+      "visualization": [
+        "python_visualization",
+        "research_dashboard"
+      ],
+      "development": [
+        "analysis",
+        "implementation",
+        "validation"
+      ],
+      "synthesis": [
+        "cross_validation",
+        "result_aggregation"
+      ]
+    }
+  },
+  "deepresearch": {
+    "enabled": true,
+    "maxAgents": 8,
+    "timeoutMinutes": 30,
+    "qualityThreshold": 7,
+    "confidenceThreshold": 0.7,
+    "mcpTools": {
+      "tavily": true,
+      "perplexity": true,
+      "firecrawl": true,
+      "context7": true
+    },
+    "visualizations": {
+      "enabled": true,
+      "autoGenerate": true,
+      "formats": [
+        "png",
+        "svg",
+        "html"
+      ],
+      "engine": "python",
+      "outputDir": "./research_visuals/",
+      "types": [
+        "timeline",
+        "credibility_matrix",
+        "expert_consensus",
+        "trend_analysis",
+        "network_graph",
+        "wordcloud",
+        "metrics_dashboard"
+      ]
+    },
+    "reporting": {
+      "autoSave": true,
+      "includeVisualizations": true,
+      "includeSources": true,
+      "confidenceScoring": true,
+      "outputFormat": "markdown",
+      "embedVisualizations": true,
+      "generateExecutiveSummary": true
+    },
+    "coordination": {
+      "parallelExecution": true,
+      "agentMonitoring": true,
+      "progressTracking": true,
+      "failureRecovery": true,
+      "crossValidation": true
+    }
+  },
+  "quickresearch": {
+    "enabled": true,
+    "maxAgents": 2,
+    "timeoutMinutes": 3,
+    "qualityThreshold": 6,
+    "confidenceThreshold": 0.6,
+    "mcpTools": {
+      "tavily": true,
+      "perplexity": true
+    },
+    "visualizations": {
+      "enabled": true,
+      "autoGenerate": true,
+      "formats": [
+        "png",
+        "html"
+      ],
+      "engine": "python",
+      "outputDir": "./quick_research/",
+      "types": [
+        "metrics_dashboard",
+        "authority_chart",
+        "sentiment_analysis"
+      ]
+    },
+    "reporting": {
+      "autoSave": true,
+      "includeVisualizations": true,
+      "includeSources": true,
+      "quickSummaryOnly": true,
+      "embedVisualizations": true
+    },
+    "coordination": {
+      "parallelExecution": true,
+      "speedOptimized": true,
+      "minimalValidation": true
+    }
+  },
+  "voice": {
+    "factoryNotifications": true,
+    "phaseAnnouncements": true,
+    "progressUpdates": true,
+    "completionCelebration": true,
+    "personalizedMessages": true,
+    "nameUsageRate": 0.7
+  }
+}

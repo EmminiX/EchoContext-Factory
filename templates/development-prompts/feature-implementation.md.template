@@ -1,0 +1,55 @@
+# ⚡ FEATURE IMPLEMENTATION INITIATION
+
+I have a Product Requirements Prompt (PRP) ready and need to implement this feature. Please help me build it according to the specifications.
+
+## 📊 PRP Document
+
+{{prpContent}}
+
+## 🔧 Implementation Request
+
+Please analyze my PRP and help me implement this feature by:
+
+1. **Understanding the Feature**
+   - Review the feature context and purpose
+   - Understand the target users and success criteria
+   - Identify the technical requirements and constraints
+
+2. **Implementation Planning**
+   - Break down the implementation into logical steps
+   - Identify which files need to be created or modified
+   - Plan the implementation order for optimal development
+
+3. **Core Development**
+   - Create the necessary files and directory structure
+   - Implement the core functionality as specified
+   - Follow the technical implementation guidelines exactly
+
+4. **Integration & Testing**
+   - Integrate with existing codebase components
+   - Implement the testing strategy outlined in the PRP
+   - Add proper error handling and validation
+
+5. **Documentation & Polish**
+   - Add inline code documentation
+   - Create any necessary user documentation
+   - Ensure code follows project conventions
+
+## 🎯 Development Approach
+
+Focus on following the specifications exactly as outlined in the PRP. Pay special attention to:
+- Integration points with existing code
+- Security requirements and data protection
+- Performance requirements
+- Testing strategy implementation
+
+## 📋 Feature Details
+
+**PRP File**: {{prpFileName}}
+**Generated**: {{timestamp}}
+
+Let's implement this feature with precision and quality!
+
+---
+*Feature implementation prompt generated from PRP*
+*Ready to transform requirements into working code!*

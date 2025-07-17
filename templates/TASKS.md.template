@@ -1,0 +1,371 @@
+# {{projectName}} - Task Breakdown
+
+## Project Overview
+- **Project:** {{projectName}}
+- **Type:** {{projectType}}
+- **Generated:** {{metadata.timestamp}}
+- **Security Level:** {{securityContext.level}}
+
+## Task Categories
+- 🔴 **Critical** - Core functionality, must be completed
+- 🟡 **High** - Important features, strongly recommended
+- 🟢 **Medium** - Enhanced functionality, nice to have
+- 🔵 **Low** - Future enhancements, optional
+
+---
+
+## Phase 1: Project Setup & Foundation
+
+### 1. Development Environment Setup 🔴
+- [ ] Initialize project repository
+- [ ] Set up {{techStack.packageManager}} package management
+- [ ] Configure {{techStack.language}} development environment
+- [ ] Install and configure {{developmentContext.workflow.linting.eslint}}
+- [ ] Set up {{developmentContext.workflow.formatting}} for code formatting
+- [ ] Configure {{techStack.testing}} testing framework
+- [ ] Set up {{developmentContext.workflow.buildTool}} build system
+- [ ] Create development scripts in package.json
+
+### 2. Project Structure 🔴
+{{#each projectStructure.directories}}
+- [ ] Create {{.}}/ directory
+{{/each}}
+{{#each projectStructure.files}}
+- [ ] Create {{.}} file
+{{/each}}
+
+### 3. Basic Security Setup 🔴
+- [ ] Configure security headers (helmet.js)
+- [ ] Set up input validation middleware
+- [ ] Implement CORS configuration
+- [ ] Configure HTTPS enforcement
+- [ ] Set up environment variable management
+- [ ] Implement basic rate limiting
+- [ ] Configure security scanning tools
+
+---
+
+## Phase 2: Core Application Development
+
+### 4. Frontend Development 🔴
+{{#if techStack.frontend}}
+- [ ] Set up {{techStack.frontend}} application structure
+- [ ] Configure {{techStack.styling}} for styling
+- [ ] Create base components and layout
+- [ ] Implement routing system
+- [ ] Set up state management
+- [ ] Create responsive design components
+- [ ] Implement error boundaries
+- [ ] Add loading states and spinners
+- [ ] Configure build optimization
+- [ ] Set up hot reloading for development
+{{/if}}
+
+### 5. Backend Development 🔴
+{{#if techStack.backend}}
+- [ ] Set up {{techStack.backend}} server
+- [ ] Configure middleware stack
+- [ ] Implement API routing structure
+- [ ] Set up database connection
+- [ ] Create data models and schemas
+- [ ] Implement CRUD operations
+- [ ] Add input validation and sanitization
+- [ ] Configure error handling middleware
+- [ ] Set up logging system
+- [ ] Implement health check endpoints
+{{/if}}
+
+### 6. Database Setup 🔴
+{{#if techStack.database}}
+- [ ] Set up {{techStack.database}} database
+- [ ] Design database schema
+- [ ] Create migration scripts
+- [ ] Set up connection pooling
+- [ ] Configure database indexing
+- [ ] Implement backup strategies
+- [ ] Set up database monitoring
+- [ ] Configure read replicas (if needed)
+- [ ] Implement database seeding
+- [ ] Set up database testing environment
+{{/if}}
+
+---
+
+## Phase 3: Authentication & Security
+
+### 7. Authentication System 🔴
+{{#if security.authentication}}
+- [ ] Implement {{security.authentication}} authentication
+- [ ] Create user registration endpoint
+- [ ] Create user login endpoint
+- [ ] Set up password hashing with bcrypt
+- [ ] Implement JWT token management
+- [ ] Create user session management
+- [ ] Add password reset functionality
+- [ ] Implement account verification
+- [ ] Add multi-factor authentication
+- [ ] Create user profile management
+{{/if}}
+
+### 8. Authorization & Access Control 🔴
+- [ ] Implement role-based access control
+- [ ] Create permission middleware
+- [ ] Set up resource-level authorization
+- [ ] Implement API key authentication
+- [ ] Create admin user management
+- [ ] Add audit logging for access control
+- [ ] Implement session security
+- [ ] Add account lockout protection
+- [ ] Create security event logging
+- [ ] Implement privilege escalation protection
+
+### 9. Security Hardening 🟡
+{{#each securityContext.recommendations}}
+- [ ] **{{category}}**: {{message}}
+{{/each}}
+- [ ] Implement SQL injection protection
+- [ ] Add XSS protection
+- [ ] Configure CSRF protection
+- [ ] Set up security headers
+- [ ] Implement request validation
+- [ ] Add file upload security
+- [ ] Configure secure session management
+- [ ] Implement API rate limiting
+- [ ] Add security monitoring
+- [ ] Create security incident response
+
+---
+
+## Phase 4: Features & Functionality
+
+### 10. Core Features Implementation 🔴
+{{#each features}}
+- [ ] {{.}}
+{{/each}}
+
+### 11. API Development 🔴
+{{#if techStack.backend}}
+- [ ] Design RESTful API structure
+- [ ] Implement API versioning
+- [ ] Create API documentation (OpenAPI/Swagger)
+- [ ] Add API input validation
+- [ ] Implement API error handling
+- [ ] Set up API rate limiting
+- [ ] Add API authentication
+- [ ] Create API response formatting
+- [ ] Implement API caching
+- [ ] Add API monitoring
+{{/if}}
+
+### 12. User Interface Implementation 🔴
+{{#if techStack.frontend}}
+- [ ] Create user authentication UI
+- [ ] Implement main application interface
+- [ ] Add form validation and error handling
+- [ ] Create responsive design components
+- [ ] Implement navigation and routing
+- [ ] Add loading states and feedback
+- [ ] Create error pages and handling
+- [ ] Implement user profile interface
+- [ ] Add search and filtering functionality
+- [ ] Create dashboard and reporting views
+{{/if}}
+
+---
+
+## Phase 5: Testing & Quality Assurance
+
+### 13. Unit Testing 🔴
+- [ ] Set up {{techStack.testing}} testing framework
+- [ ] Write unit tests for utilities
+- [ ] Create unit tests for components
+- [ ] Add unit tests for API endpoints
+- [ ] Test authentication functions
+- [ ] Create unit tests for business logic
+- [ ] Add tests for error handling
+- [ ] Implement test coverage reporting
+- [ ] Set up continuous testing
+- [ ] Create test data fixtures
+
+### 14. Integration Testing 🟡
+- [ ] Set up integration testing environment
+- [ ] Create API integration tests
+- [ ] Test database integration
+- [ ] Add authentication integration tests
+- [ ] Test third-party service integration
+- [ ] Create end-to-end user flow tests
+- [ ] Add performance testing
+- [ ] Test error scenarios
+- [ ] Create automated test suites
+- [ ] Set up test data management
+
+### 15. Security Testing 🔴
+- [ ] Conduct vulnerability scanning
+- [ ] Test authentication security
+- [ ] Validate input sanitization
+- [ ] Test authorization controls
+- [ ] Check for SQL injection vulnerabilities
+- [ ] Test XSS protection
+- [ ] Validate CSRF protection
+- [ ] Test session security
+- [ ] Conduct penetration testing
+- [ ] Review security configurations
+
+---
+
+## Phase 6: Performance & Optimization
+
+### 16. Performance Optimization 🟡
+- [ ] Implement database query optimization
+- [ ] Add caching strategies
+- [ ] Optimize frontend bundle size
+- [ ] Implement image optimization
+- [ ] Add code splitting and lazy loading
+- [ ] Configure CDN integration
+- [ ] Implement service worker caching
+- [ ] Add compression middleware
+- [ ] Optimize API response times
+- [ ] Implement performance monitoring
+
+### 17. Monitoring & Logging 🟡
+- [ ] Set up application monitoring
+- [ ] Configure error tracking
+- [ ] Implement performance monitoring
+- [ ] Add user analytics
+- [ ] Set up security event logging
+- [ ] Configure alerting system
+- [ ] Create health check endpoints
+- [ ] Implement log aggregation
+- [ ] Set up monitoring dashboards
+- [ ] Create incident response procedures
+
+---
+
+## Phase 7: Deployment & DevOps
+
+### 18. Deployment Configuration 🔴
+- [ ] Set up {{deploymentContext.target}} deployment
+{{#each deploymentContext.configuration.files}}
+- [ ] Create {{.}} configuration
+{{/each}}
+- [ ] Configure environment variables
+- [ ] Set up SSL/TLS certificates
+- [ ] Configure load balancing
+- [ ] Set up auto-scaling
+- [ ] Create deployment scripts
+- [ ] Configure backup procedures
+- [ ] Set up monitoring in production
+- [ ] Test deployment process
+
+### 19. CI/CD Pipeline 🟡
+- [ ] Set up version control integration
+- [ ] Create automated testing pipeline
+- [ ] Configure build automation
+- [ ] Set up security scanning
+- [ ] Create deployment automation
+- [ ] Configure rollback procedures
+- [ ] Set up environment promotion
+- [ ] Add deployment notifications
+- [ ] Create release management
+- [ ] Set up feature flags
+
+### 20. Production Hardening 🔴
+- [ ] Configure production security settings
+- [ ] Set up database backups
+- [ ] Configure monitoring and alerting
+- [ ] Implement disaster recovery
+- [ ] Set up log retention policies
+- [ ] Configure firewall rules
+- [ ] Set up intrusion detection
+- [ ] Create incident response plan
+- [ ] Configure compliance monitoring
+- [ ] Set up security auditing
+
+---
+
+## Phase 8: Documentation & Maintenance
+
+### 21. Documentation 🟡
+- [ ] Create API documentation
+- [ ] Write user guides
+- [ ] Create developer documentation
+- [ ] Document deployment procedures
+- [ ] Create troubleshooting guides
+- [ ] Document security procedures
+- [ ] Create maintenance procedures
+- [ ] Write code comments
+- [ ] Create architecture documentation
+- [ ] Document testing procedures
+
+### 22. Maintenance Setup 🟡
+- [ ] Set up dependency monitoring
+- [ ] Configure automated updates
+- [ ] Create backup verification
+- [ ] Set up performance monitoring
+- [ ] Configure security scanning
+- [ ] Create maintenance schedules
+- [ ] Set up health checks
+- [ ] Configure log rotation
+- [ ] Create incident response procedures
+- [ ] Set up compliance reporting
+
+---
+
+## Success Criteria
+
+### Phase 1-2 Complete When:
+- [ ] Development environment fully configured
+- [ ] Basic application structure implemented
+- [ ] Core functionality working
+- [ ] Database connection established
+
+### Phase 3-4 Complete When:
+- [ ] Authentication system operational
+- [ ] Security measures implemented
+- [ ] Core features functional
+- [ ] API endpoints working
+
+### Phase 5-6 Complete When:
+- [ ] Test coverage >80%
+- [ ] Security vulnerabilities addressed
+- [ ] Performance benchmarks met
+- [ ] Monitoring systems operational
+
+### Phase 7-8 Complete When:
+- [ ] Production deployment successful
+- [ ] CI/CD pipeline operational
+- [ ] Documentation complete
+- [ ] Maintenance procedures established
+
+## Risk Mitigation
+
+### Technical Risks
+- [ ] Create prototype for complex features
+- [ ] Set up early integration testing
+- [ ] Implement feature flags for risky changes
+- [ ] Create rollback procedures
+- [ ] Set up monitoring for early problem detection
+
+### Security Risks
+- [ ] Conduct regular security reviews
+- [ ] Implement security scanning in CI/CD
+- [ ] Create security incident response plan
+- [ ] Set up security monitoring
+- [ ] Conduct penetration testing
+
+### Performance Risks
+- [ ] Implement performance monitoring
+- [ ] Set up load testing
+- [ ] Create performance benchmarks
+- [ ] Plan for scaling requirements
+- [ ] Monitor resource utilization
+
+{{#if research.formattedLinks}}
+{{research.formattedLinks}}
+{{/if}}
+
+---
+
+*Document Version: 2.4.0*
+*Generated by EchoContext Factory v2.4.0*
+*Designed by Emmi C. (https://emmi.zone) - Built with Claude Code*

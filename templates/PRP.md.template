@@ -1,0 +1,234 @@
+# Feature PRP: {{answers.feature_name}}
+
+## 🎯 Context & Purpose
+
+**Problem Statement**: {{answers.feature_purpose}}
+
+**Target Users**: {{answers.target_users}}
+
+**Feature Scope**: {{answers.feature_scope}}
+
+**Success Criteria**: {{answers.success_criteria}}
+
+**Priority Level**: {{answers.priority_level}}
+
+## 🏗️ Technical Implementation
+
+### Architecture Context
+{{#if codebaseAnalysis.techStack}}
+- **Frontend Framework**: {{codebaseAnalysis.techStack.frontend}}
+- **Backend Framework**: {{codebaseAnalysis.techStack.backend}}  
+- **Database**: {{codebaseAnalysis.techStack.database}}
+- **Primary Language**: {{codebaseAnalysis.techStack.language}}
+{{else}}
+- **Tech Stack**: To be determined based on project requirements
+{{/if}}
+
+### Integration Points
+{{#if answers.integration_points}}
+**External Systems**: {{answers.integration_points}}
+{{else}}
+**Integration Points**: Standalone feature implementation
+{{/if}}
+
+### Technical Constraints
+{{#if answers.technical_constraints}}
+**Constraints**: {{answers.technical_constraints}}
+{{else}}
+**Constraints**: Follow existing project patterns and conventions
+{{/if}}
+
+### Data Flow Architecture
+```
+Input → Validation → Processing → Storage → Response
+```
+
+### Performance Requirements
+{{#if answers.performance_requirements}}
+{{answers.performance_requirements}}
+{{else}}
+- Response time: < 200ms for API calls
+- Scalability: Handle concurrent users efficiently
+- Resource usage: Optimize for memory and CPU
+{{/if}}
+
+## 🧪 Testing Strategy
+
+### Unit Testing
+- **Component Tests**: Test individual feature components in isolation
+- **Mock Dependencies**: Use mocks for external services and APIs
+- **Edge Cases**: Test boundary conditions and error scenarios
+- **Coverage Target**: Minimum 80% code coverage
+
+### Integration Testing
+- **API Integration**: Test endpoints and data contracts
+- **Database Integration**: Verify data persistence and retrieval
+- **Service Integration**: Test interaction with external services
+- **End-to-End Workflows**: Test complete user journeys
+
+### User Acceptance Testing
+- **Success Criteria Validation**: Verify against defined success metrics
+- **User Experience Testing**: Test usability and accessibility
+- **Performance Testing**: Validate response times and load handling
+- **Security Testing**: Test authentication and authorization
+
+## 🔗 Integration Guidelines
+
+### API Design
+{{#if answers.api_requirements}}
+**API Requirements**: {{answers.api_requirements}}
+{{else}}
+**API Pattern**: RESTful endpoints with consistent response formats
+- `GET /api/feature` - Retrieve feature data
+- `POST /api/feature` - Create new feature instance
+- `PUT /api/feature/:id` - Update existing feature
+- `DELETE /api/feature/:id` - Remove feature instance
+{{/if}}
+
+### Data Schema
+```json
+{
+  "feature_data": {
+    "id": "string",
+    "name": "string",
+    "status": "string",
+    "created_at": "datetime",
+    "updated_at": "datetime"
+  }
+}
+```
+
+### Error Handling
+- **Input Validation**: Validate all incoming data
+- **Error Responses**: Consistent error format with meaningful messages
+- **Logging**: Comprehensive logging for debugging and monitoring
+- **Graceful Degradation**: Handle failures without breaking the system
+
+## 🛡️ Security & Compliance
+
+### Authentication & Authorization
+- **Authentication**: {{#if security.authentication}}{{security.authentication}}{{else}}JWT-based authentication{{/if}}
+- **Authorization**: Role-based access control (RBAC)
+- **Session Management**: Secure session handling with proper timeout
+- **API Security**: Rate limiting and request validation
+
+### Data Protection
+- **Input Sanitization**: Prevent XSS and injection attacks
+- **Data Encryption**: Encrypt sensitive data at rest and in transit
+- **Privacy Compliance**: Follow GDPR/CCPA requirements
+- **Audit Logging**: Track all data access and modifications
+
+### Security Best Practices
+- **OWASP Guidelines**: Follow OWASP Top 10 security recommendations
+- **Secure Headers**: Implement security headers (CSP, HSTS, etc.)
+- **Dependency Security**: Regular security audits of dependencies
+- **Penetration Testing**: Regular security assessments
+
+## 🔍 Implementation Details
+
+### Project Structure
+```
+{{#if codebaseAnalysis.projectStructure}}
+{{codebaseAnalysis.projectStructure.rootDir}}/
+{{#each codebaseAnalysis.projectStructure.directories}}
+├── {{.}}/
+{{/each}}
+└── feature-{{answers.feature_name}}/
+    ├── components/
+    ├── services/
+    ├── types/
+    └── tests/
+```
+{{else}}
+src/
+├── components/
+│   └── {{answers.feature_name}}/
+├── services/
+│   └── {{answers.feature_name}}.service.js
+├── types/
+│   └── {{answers.feature_name}}.types.js
+└── tests/
+    └── {{answers.feature_name}}.test.js
+```
+{{/if}}
+
+### Development Workflow
+1. **Environment Setup**: Configure development environment
+2. **Component Development**: Build feature components incrementally
+3. **Testing Implementation**: Write tests alongside development
+4. **Integration**: Connect with existing systems and APIs
+5. **Code Review**: Peer review and quality assurance
+6. **Deployment**: Deploy through CI/CD pipeline
+
+### Key Implementation Files
+- **Main Component**: `{{answers.feature_name}}.component.js`
+- **Service Layer**: `{{answers.feature_name}}.service.js`
+- **Type Definitions**: `{{answers.feature_name}}.types.js`
+- **Test Suite**: `{{answers.feature_name}}.test.js`
+- **Documentation**: `{{answers.feature_name}}.md`
+
+## 📚 Research & Best Practices
+
+{{#if research.formattedLinks}}
+{{research.formattedLinks}}
+{{else}}
+### 📖 Recommended Research
+
+**Technology-Specific Resources**:
+{{#if codebaseAnalysis.techStack.frontend}}
+- {{codebaseAnalysis.techStack.frontend}} best practices and patterns
+{{/if}}
+{{#if codebaseAnalysis.techStack.backend}}
+- {{codebaseAnalysis.techStack.backend}} API design guidelines
+{{/if}}
+{{#if codebaseAnalysis.techStack.database}}
+- {{codebaseAnalysis.techStack.database}} schema design patterns
+{{/if}}
+
+**General Best Practices**:
+- Feature development lifecycle
+- Testing strategies and frameworks
+- Code review and quality assurance
+- Performance optimization techniques
+{{/if}}
+
+## 🎯 AI Assistant Context
+
+### Codebase Information
+- **Project Type**: {{featureType}}
+- **Tech Stack**: {{#if techStack}}{{techStack.frontend}}{{#if techStack.backend}} + {{techStack.backend}}{{/if}}{{#if techStack.database}} + {{techStack.database}}{{/if}}{{/if}}
+- **Architecture**: {{#if codebaseAnalysis.existingPatterns.hasTests}}Test-driven{{/if}} component-based development
+- **Code Standards**: {{#if codebaseAnalysis.existingPatterns.hasLinting}}ESLint + {{/if}}{{#if codebaseAnalysis.existingPatterns.hasTypeScript}}TypeScript{{else}}JavaScript{{/if}}
+
+### Development Environment
+{{#if codebaseAnalysis.dependencies.scripts}}
+**Available Scripts**:
+{{#each codebaseAnalysis.dependencies.scripts}}
+- `npm run {{.}}` - {{this.description}}
+{{/each}}
+{{/if}}
+
+**Package Manager**: {{#if codebaseAnalysis.dependencies}}npm{{else}}To be determined{{/if}}
+
+### Implementation Guidelines
+- **Code Style**: Follow existing project conventions and patterns
+- **Component Structure**: Use established component architecture
+- **Testing Framework**: {{#if codebaseAnalysis.existingPatterns.hasTests}}Use existing test setup{{else}}Implement Jest + React Testing Library{{/if}}
+- **State Management**: Follow current state management patterns
+- **Error Handling**: Implement consistent error handling strategy
+
+### AI Development Notes
+- **Context Awareness**: This feature integrates with existing codebase
+- **Pattern Consistency**: Maintain consistency with current code patterns
+- **Security Focus**: Implement security best practices throughout
+- **Performance Optimization**: Consider performance implications of implementation choices
+- **Documentation**: Document all implementation decisions and trade-offs
+
+---
+
+**Generated**: {{generatedAt}}
+**Version**: {{version}}
+**PRP Type**: Feature Requirements Prompt
+**Created by**: EchoContext Factory PRP Generator v2.4.0
+
+*This PRP is optimized for AI-assisted development with Claude Code and follows industry best practices for feature development.*

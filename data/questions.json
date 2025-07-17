@@ -1,0 +1,401 @@
+{
+  "version": "2.4.0",
+  "categories": {
+    "project_basics": {
+      "name": "Project Basics",
+      "description": "Fundamental project information",
+      "questions": [
+        {
+          "id": "project_name",
+          "type": "text",
+          "required": true,
+          "question": "What is the name of your project?",
+          "placeholder": "My Awesome Project",
+          "validation": {
+            "minLength": 1,
+            "maxLength": 50,
+            "pattern": "^[a-zA-Z0-9\\s\\-_]+$"
+          }
+        },
+        {
+          "id": "project_description",
+          "type": "text",
+          "required": true,
+          "question": "Please describe your project in one sentence:",
+          "placeholder": "A web application that helps users manage their tasks",
+          "validation": {
+            "minLength": 10,
+            "maxLength": 200
+          }
+        },
+        {
+          "id": "project_type",
+          "type": "select",
+          "required": true,
+          "question": "What type of project are you building?",
+          "options": [
+            {"value": "webapp", "label": "Web Application"},
+            {"value": "api", "label": "API/Backend Service"},
+            {"value": "cli", "label": "Command Line Tool"},
+            {"value": "library", "label": "Library/Package"},
+            {"value": "mobile", "label": "Mobile Application"},
+            {"value": "desktop", "label": "Desktop Application"},
+            {"value": "custom", "label": "Custom/Other"}
+          ],
+          "followUp": {
+            "webapp": ["target_audience", "frontend_framework", "backend_framework", "database"],
+            "api": ["target_audience", "backend_framework", "database", "authentication"],
+            "cli": ["target_audience", "language", "package_manager"],
+            "library": ["target_audience", "language", "package_manager"],
+            "mobile": ["target_audience", "mobile_platform", "framework"],
+            "desktop": ["target_audience", "desktop_framework", "target_os"],
+            "custom": ["target_audience", "custom_details"]
+          }
+        },
+        {
+          "id": "target_audience",
+          "type": "select",
+          "required": true,
+          "question": "Who is your primary target audience?",
+          "options": [
+            {"value": "developers", "label": "Developers/Technical users"},
+            {"value": "business", "label": "Business users/Professionals"},
+            {"value": "consumers", "label": "General consumers/End users"},
+            {"value": "students", "label": "Students/Educational"},
+            {"value": "enterprise", "label": "Enterprise/Corporate"},
+            {"value": "open_source", "label": "Open source community"},
+            {"value": "mixed", "label": "Mixed audience"},
+            {"value": "other", "label": "Other"}
+          ]
+        },
+        {
+          "id": "project_scope",
+          "type": "select",
+          "required": true,
+          "question": "What is the expected scope of your project?",
+          "options": [
+            {"value": "prototype", "label": "Prototype/Proof of concept"},
+            {"value": "mvp", "label": "MVP (Minimum Viable Product)"},
+            {"value": "full_product", "label": "Full-featured product"},
+            {"value": "enterprise", "label": "Enterprise-grade application"},
+            {"value": "personal", "label": "Personal project/Learning"},
+            {"value": "open_source", "label": "Open source project"},
+            {"value": "other", "label": "Other"}
+          ]
+        }
+      ]
+    },
+    "technical_stack": {
+      "name": "Technical Stack",
+      "description": "Technology choices and architecture",
+      "questions": [
+        {
+          "id": "frontend_framework",
+          "type": "select",
+          "required": true,
+          "question": "Which frontend framework would you like to use?",
+          "options": [
+            {"value": "react", "label": "React"},
+            {"value": "vue", "label": "Vue.js"},
+            {"value": "angular", "label": "Angular"},
+            {"value": "svelte", "label": "Svelte"},
+            {"value": "nextjs", "label": "Next.js"},
+            {"value": "nuxt", "label": "Nuxt.js"},
+            {"value": "vanilla", "label": "Vanilla JavaScript"},
+            {"value": "other", "label": "Other"}
+          ]
+        },
+        {
+          "id": "backend_framework",
+          "type": "select",
+          "required": true,
+          "question": "Which backend framework would you like to use?",
+          "options": [
+            {"value": "express", "label": "Express.js"},
+            {"value": "fastify", "label": "Fastify"},
+            {"value": "nestjs", "label": "NestJS"},
+            {"value": "django", "label": "Django"},
+            {"value": "flask", "label": "Flask"},
+            {"value": "rails", "label": "Ruby on Rails"},
+            {"value": "spring", "label": "Spring Boot"},
+            {"value": "other", "label": "Other"}
+          ]
+        },
+        {
+          "id": "language",
+          "type": "select",
+          "required": true,
+          "question": "What programming language will you primarily use?",
+          "options": [
+            {"value": "javascript", "label": "JavaScript"},
+            {"value": "typescript", "label": "TypeScript"},
+            {"value": "python", "label": "Python"},
+            {"value": "java", "label": "Java"},
+            {"value": "csharp", "label": "C#"},
+            {"value": "go", "label": "Go"},
+            {"value": "rust", "label": "Rust"},
+            {"value": "ruby", "label": "Ruby"},
+            {"value": "php", "label": "PHP"},
+            {"value": "other", "label": "Other"}
+          ]
+        },
+        {
+          "id": "database",
+          "type": "select",
+          "required": true,
+          "question": "What database will you use?",
+          "options": [
+            {"value": "postgresql", "label": "PostgreSQL"},
+            {"value": "mysql", "label": "MySQL"},
+            {"value": "mongodb", "label": "MongoDB"},
+            {"value": "redis", "label": "Redis"},
+            {"value": "sqlite", "label": "SQLite"},
+            {"value": "supabase", "label": "Supabase"},
+            {"value": "firebase", "label": "Firebase"},
+            {"value": "none", "label": "No database needed"},
+            {"value": "other", "label": "Other"}
+          ]
+        }
+      ]
+    },
+    "project_structure": {
+      "name": "Project Structure",
+      "description": "Organization and workflow preferences",
+      "questions": [
+        {
+          "id": "package_manager",
+          "type": "select",
+          "required": true,
+          "question": "Which package manager do you prefer?",
+          "options": [
+            {"value": "bun", "label": "Bun (fastest)"},
+            {"value": "npm", "label": "npm"},
+            {"value": "yarn", "label": "Yarn"},
+            {"value": "pnpm", "label": "pnpm"},
+            {"value": "pip", "label": "pip (Python)"},
+            {"value": "other", "label": "Other"}
+          ]
+        },
+        {
+          "id": "testing_framework",
+          "type": "select",
+          "required": false,
+          "question": "What testing framework would you like to use?",
+          "options": [
+            {"value": "jest", "label": "Jest"},
+            {"value": "vitest", "label": "Vitest"},
+            {"value": "mocha", "label": "Mocha"},
+            {"value": "cypress", "label": "Cypress"},
+            {"value": "playwright", "label": "Playwright"},
+            {"value": "pytest", "label": "pytest"},
+            {"value": "none", "label": "No testing framework"},
+            {"value": "other", "label": "Other"}
+          ]
+        },
+        {
+          "id": "styling_approach",
+          "type": "select",
+          "required": false,
+          "question": "How would you like to handle styling?",
+          "options": [
+            {"value": "tailwind", "label": "Tailwind CSS"},
+            {"value": "css_modules", "label": "CSS Modules"},
+            {"value": "styled_components", "label": "Styled Components"},
+            {"value": "sass", "label": "Sass/SCSS"},
+            {"value": "vanilla_css", "label": "Vanilla CSS"},
+            {"value": "other", "label": "Other"}
+          ]
+        },
+        {
+          "id": "deployment_target",
+          "type": "select",
+          "required": false,
+          "question": "Where do you plan to deploy your project?",
+          "options": [
+            {"value": "vercel", "label": "Vercel"},
+            {"value": "netlify", "label": "Netlify"},
+            {"value": "aws", "label": "AWS"},
+            {"value": "docker", "label": "Docker/Container"},
+            {"value": "heroku", "label": "Heroku"},
+            {"value": "railway", "label": "Railway"},
+            {"value": "local", "label": "Local development only"},
+            {"value": "other", "label": "Other"}
+          ]
+        }
+      ]
+    },
+    "security_features": {
+      "name": "Security Features",
+      "description": "Security requirements and features",
+      "questions": [
+        {
+          "id": "authentication",
+          "type": "select",
+          "required": false,
+          "question": "What authentication method will you use?",
+          "options": [
+            {"value": "jwt", "label": "JWT Tokens"},
+            {"value": "oauth", "label": "OAuth (Google, GitHub, etc.)"},
+            {"value": "session", "label": "Session-based"},
+            {"value": "supabase_auth", "label": "Supabase Auth"},
+            {"value": "firebase_auth", "label": "Firebase Auth"},
+            {"value": "none", "label": "No authentication needed"},
+            {"value": "other", "label": "Other"}
+          ]
+        },
+        {
+          "id": "security_level",
+          "type": "select",
+          "required": true,
+          "question": "What security level does your project require?",
+          "options": [
+            {"value": "basic", "label": "Basic (input validation, HTTPS)"},
+            {"value": "standard", "label": "Standard (authentication, authorization)"},
+            {"value": "high", "label": "High (encryption, audit logs, compliance)"},
+            {"value": "enterprise", "label": "Enterprise (advanced threat protection)"}
+          ]
+        }
+      ]
+    },
+    "development_preferences": {
+      "name": "Development Preferences",
+      "description": "Development workflow and tooling",
+      "questions": [
+        {
+          "id": "code_style",
+          "type": "select",
+          "required": false,
+          "question": "What code formatting/linting setup do you prefer?",
+          "options": [
+            {"value": "eslint_prettier", "label": "ESLint + Prettier"},
+            {"value": "standard", "label": "Standard.js"},
+            {"value": "airbnb", "label": "Airbnb Style Guide"},
+            {"value": "custom", "label": "Custom configuration"},
+            {"value": "none", "label": "No specific preference"}
+          ]
+        },
+        {
+          "id": "git_workflow",
+          "type": "select",
+          "required": false,
+          "question": "What Git workflow do you prefer?",
+          "options": [
+            {"value": "gitflow", "label": "Git Flow"},
+            {"value": "github_flow", "label": "GitHub Flow"},
+            {"value": "simple", "label": "Simple branching"},
+            {"value": "trunk", "label": "Trunk-based development"},
+            {"value": "other", "label": "Other"}
+          ]
+        },
+        {
+          "id": "documentation_level",
+          "type": "select",
+          "required": false,
+          "question": "How much documentation do you want generated?",
+          "options": [
+            {"value": "minimal", "label": "Minimal (README only)"},
+            {"value": "standard", "label": "Standard (README + API docs)"},
+            {"value": "comprehensive", "label": "Comprehensive (full project docs)"},
+            {"value": "custom", "label": "Custom requirements"}
+          ]
+        },
+        {
+          "id": "ai_integration",
+          "type": "select",
+          "required": false,
+          "question": "Do you plan to integrate AI/ML features?",
+          "options": [
+            {"value": "none", "label": "No AI integration"},
+            {"value": "openai", "label": "OpenAI API (GPT, DALL-E)"},
+            {"value": "anthropic", "label": "Anthropic Claude"},
+            {"value": "custom_ml", "label": "Custom ML models"},
+            {"value": "tensorflow", "label": "TensorFlow"},
+            {"value": "pytorch", "label": "PyTorch"},
+            {"value": "other", "label": "Other AI/ML"}
+          ]
+        },
+        {
+          "id": "performance_requirements",
+          "type": "select",
+          "required": false,
+          "question": "What are your performance requirements?",
+          "options": [
+            {"value": "basic", "label": "Basic (standard web performance)"},
+            {"value": "high", "label": "High (fast load times, optimized)"},
+            {"value": "realtime", "label": "Real-time (WebSocket, live updates)"},
+            {"value": "enterprise", "label": "Enterprise (high availability, scaling)"},
+            {"value": "mobile", "label": "Mobile-optimized"},
+            {"value": "other", "label": "Other requirements"}
+          ]
+        }
+      ]
+    }
+  },
+  "flows": {
+    "webapp": [
+      "project_name",
+      "project_description",
+      "project_type",
+      "target_audience",
+      "project_scope",
+      "frontend_framework",
+      "backend_framework",
+      "database",
+      "package_manager",
+      "testing_framework",
+      "styling_approach",
+      "authentication",
+      "security_level",
+      "deployment_target",
+      "code_style",
+      "documentation_level",
+      "ai_integration",
+      "performance_requirements"
+    ],
+    "api": [
+      "project_name",
+      "project_description",
+      "project_type",
+      "target_audience",
+      "project_scope",
+      "backend_framework",
+      "database",
+      "package_manager",
+      "testing_framework",
+      "authentication",
+      "security_level",
+      "deployment_target",
+      "code_style",
+      "documentation_level",
+      "ai_integration",
+      "performance_requirements"
+    ],
+    "cli": [
+      "project_name",
+      "project_description",
+      "project_type",
+      "target_audience",
+      "project_scope",
+      "language",
+      "package_manager",
+      "testing_framework",
+      "deployment_target",
+      "code_style",
+      "documentation_level",
+      "ai_integration"
+    ],
+    "library": [
+      "project_name",
+      "project_description",
+      "project_type",
+      "target_audience",
+      "project_scope",
+      "language",
+      "package_manager",
+      "testing_framework",
+      "code_style",
+      "documentation_level",
+      "ai_integration"
+    ]
+  }
+}
