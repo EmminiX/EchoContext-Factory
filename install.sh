@@ -1,7 +1,8 @@
 #!/bin/bash
 
-echo "🎵 EchoContext Factory Installation Script"
-echo "=========================================="
+echo "🎵 EchoContext Factory Installation Script v2.4.0"
+echo "=================================================="
+echo "🚀 Voice-enabled context engineering with live search only"
 echo ""
 
 # Check if we're in the right directory
@@ -29,7 +30,12 @@ cp -r ./data "$HOME/.claude/"
 cp -r ./hooks "$HOME/.claude/"
 cp -r ./lib "$HOME/.claude/"
 cp -r ./templates "$HOME/.claude/"
-cp -r ./scripts "$HOME/.claude/"
+
+# Create scripts directory (even if empty)
+mkdir -p "$HOME/.claude/scripts"
+if [ -d "./scripts" ] && [ "$(ls -A ./scripts)" ]; then
+    cp -r ./scripts/* "$HOME/.claude/scripts/"
+fi
 
 # Copy configuration files
 cp ./.env.sample "$HOME/.claude/"
@@ -38,7 +44,9 @@ cp ./settings.json "$HOME/.claude/"
 # Make scripts executable
 echo "⚙️ Setting permissions..."
 chmod +x "$HOME/.claude/hooks"/*.py
-chmod +x "$HOME/.claude/scripts"/*
+if [ -d "$HOME/.claude/scripts" ] && [ "$(ls -A $HOME/.claude/scripts)" ]; then
+    chmod +x "$HOME/.claude/scripts"/*
+fi
 
 # Create .env file if it doesn't exist
 if [ ! -f "$HOME/.claude/.env" ]; then
@@ -56,6 +64,8 @@ echo "📝 Next Steps:"
 echo "1. Edit ~/.claude/.env and add your API keys"
 echo "2. Test voice system: /voice-status"
 echo "3. Start your first project: /start-project"
+echo "4. Try multi-agent coordination: /multiagent"
 echo ""
-echo "🎵 EchoContext Factory is ready to use!"
-echo "✨ Enjoy voice-enabled context engineering!"
+echo "🎵 EchoContext Factory v2.4.0 is ready to use!"
+echo "✨ Enjoy voice-enabled context engineering with live search!"
+echo "🔍 All commands now use live data only - no mock fallbacks"
