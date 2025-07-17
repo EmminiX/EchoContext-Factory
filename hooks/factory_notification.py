@@ -55,20 +55,22 @@ def detect_factory_phase(todo_content):
     if not todo_content:
         return None
     
-    # Phase detection patterns (updated for standardized factory todos with emojis)
+    # More specific phase detection patterns to prevent false positives
     phase_patterns = {
-        1: ["welcome", "system verification", "voice greeting", "phase 1", "🏁"],
-        2: ["question engine", "project discovery", "interactive", "interview", "question-by-question", "phase 2", "🤔"],
-        3: ["context assembly", "automated research", "tech stack analysis", "phase 3", "🧠"],
-        4: ["generate", "project files", "enhanced", "claude.md", "prd.md", "tasks.md", "phase 4", "📝"],
-        5: ["voice celebration", "next steps", "completion", "phase 5", "🎉"]
+        1: ["🏁 phase 1", "system verification", "voice greeting", "welcome message"],
+        2: ["🤔 phase 2", "question engine", "project discovery", "interactive interview"],
+        3: ["🧠 phase 3", "context assembly", "automated research", "tech stack analysis"],
+        4: ["📝 phase 4", "generate project files", "claude.md", "prd.md", "tasks.md"],
+        5: ["🎉 phase 5", "voice celebration", "project completion", "final success"]
     }
     
     content_lower = todo_content.lower()
     
+    # Check for specific phase patterns, prioritizing exact matches
     for phase, patterns in phase_patterns.items():
-        if any(pattern in content_lower for pattern in patterns):
-            return phase
+        for pattern in patterns:
+            if pattern in content_lower:
+                return phase
     
     return None
 
@@ -199,18 +201,18 @@ def should_announce_factory_progress(input_data):
     if not todos:
         return False, None, None
     
-    # Look for factory-related todos
+    # Look for factory-related todos with more specific patterns
     factory_keywords = [
-        'factory', 'context engineering', 'welcome', 'question engine', 
-        'tech stack', 'generate project files', 'voice feedback', 
-        'phase', 'claude.md', 'prd.md', 'tasks.md'
+        'phase 1', 'phase 2', 'phase 3', 'phase 4', 'phase 5',
+        'context engineering factory', 'project discovery', 'automated research',
+        'generate project files', 'voice celebration', '🏁', '🤔', '🧠', '📝', '🎉'
     ]
     
     for todo in todos:
         content = todo.get('content', '').lower()
         status = todo.get('status', '')
         
-        # Check if this is a factory todo
+        # Check if this is a factory todo with specific patterns
         is_factory_todo = any(keyword in content for keyword in factory_keywords)
         
         if is_factory_todo:
@@ -218,7 +220,12 @@ def should_announce_factory_progress(input_data):
             if phase:
                 # Check if todo was just completed
                 is_completed = status == 'completed'
-                return True, phase, is_completed
+                # Only announce completion for phase 5 (final phase)
+                if is_completed and phase == 5:
+                    return True, phase, is_completed
+                # For other phases, only announce when starting (in_progress)
+                elif status == 'in_progress' and phase < 5:
+                    return True, phase, False
     
     return False, None, None
 
