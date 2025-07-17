@@ -78,15 +78,34 @@ Presents clear options based on your situation:
 1. **Document Detection** - Scans for all available documentation
 2. **Scenario Matching** - Determines best development approach
 3. **Choice Presentation** - Shows relevant options clearly
-4. **Prompt Generation** - Creates optimized instructions
-5. **Context Loading** - Includes all relevant documentation
-6. **Development Start** - Claude Code begins with full context
+4. **Live Research** - Gathers current best practices (if enabled)
+5. **Prompt Generation** - Creates optimized instructions with live context
+6. **Context Loading** - Includes all relevant documentation
+7. **Development Start** - Claude Code begins with full context
+
+## ⚙️ Configuration
+
+### Live Research
+By default, the command performs live web research to gather current best practices. This provides the most up-to-date guidance but takes longer to execute.
+
+**To disable live research** (for faster execution):
+```bash
+export ECHO_LIVE_RESEARCH=false
+/start-development
+```
+
+**To enable live research** (default):
+```bash
+export ECHO_LIVE_RESEARCH=true
+/start-development
+```
 
 ## 🎉 Success Indicators
 
 You'll know it's working when:
 - Voice announces "Development initiator ready!"
 - Clear choices appear based on your documentation
+- Live research results appear (if enabled)
 - Selected prompt loads with all context included
 - Claude Code starts development immediately
 - Voice celebrates "Let's build, [YourName]!"

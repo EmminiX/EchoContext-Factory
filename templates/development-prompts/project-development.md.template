@@ -47,8 +47,13 @@ Please analyze my documentation and:
 
 Start with the highest priority tasks and guide me through each step. Use the technology stack and patterns specified in the documentation. Ensure all implementations follow the security and quality standards outlined.
 
+{{#if liveResearch}}
+{{liveResearch}}
+{{/if}}
+
 Let's begin building **{{projectName}}** together!
 
 ---
 *Development prompt generated: {{timestamp}}*
+{{#if researchTimestamp}}*Research conducted: {{researchTimestamp}}*{{/if}}
 *Ready to transform documentation into working code!*

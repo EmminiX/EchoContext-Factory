@@ -48,8 +48,13 @@ Focus on following the specifications exactly as outlined in the PRP. Pay specia
 **PRP File**: {{prpFileName}}
 **Generated**: {{timestamp}}
 
+{{#if liveResearch}}
+{{liveResearch}}
+{{/if}}
+
 Let's implement this feature with precision and quality!
 
 ---
 *Feature implementation prompt generated from PRP*
+{{#if researchTimestamp}}*Research conducted: {{researchTimestamp}}*{{/if}}
 *Ready to transform requirements into working code!*
