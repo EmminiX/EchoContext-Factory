@@ -51,6 +51,13 @@ ENGINEER_NAME=YourName               # Personalizes voice messages
 
 **That's it!** Your AI assistant is now voice-enabled and ready to guide you.
 
+### 🔧 Optional: Enhanced Research Capabilities
+
+This tool works great with MCP providers for even better research:
+
+- **Import from Claude Desktop**: `claude mcp add-from-claude-desktop`
+- **Install MCPs manually**: [MCP Quickstart](https://modelcontextprotocol.io/quickstart/user), [Perplexity MCP](https://github.com/jsonallen/perplexity-mcp), [Tavily MCP](https://github.com/tavily-ai/tavily-mcp)
+
 ---
 
 ## 🎵 What Makes This Special?
