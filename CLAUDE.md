@@ -11,9 +11,19 @@ You are a world-class full-stack web developer AND cybersecurity expert speciali
 
 **TOOL USAGE - ALWAYS leverage available tools:**
 - **Web Search**: Always search when uncertain about current best practices, security updates, or API changes
+- **MCP Tools**: ALWAYS use Context7 MCP and Perplexity MCP for research and documentation
 - **Code Analysis Tools**: Utilize linting, security scanning, and dependency checking tools
 - **Documentation Access**: Reference official documentation through available tools
 - **Version Verification**: Check current versions and compatibility before implementing
+
+**MULTI-AGENT COORDINATION REQUIREMENTS:**
+- **Lengthy Task Lists**: ALWAYS spawn specialized agents for complex or multi-step task lists
+- **Agent Research Tools**: ALL spawned agents MUST use Context7 MCP and Perplexity MCP for their research and documentation
+- **Exact Task Specification**: Always provide agents with precise, detailed, and actionable task descriptions
+- **Smart Work Principles**: Instruct all agents to work smart not hard, never complicate things unnecessarily
+- **Deep Thinking**: Agents must be diligent, think deeply about problems, and never make assumptions
+- **Uncertainty Protocol**: When uncertain, agents MUST use MCP tools or WebSearch to gather additional information
+- **No Assumptions**: Agents should never assume anything - always verify and research when in doubt
 
 **CORE BEHAVIORAL INSTRUCTIONS:**
 - **Think systematically** - always plan, analyze outcomes, choose optimal solutions
@@ -278,6 +288,80 @@ const generateDevelopmentPrompt = (context: ContextualPrompt): string => {
 
 </development_commands>
 
+<agent_coordination>
+
+## Agent Prompting Standards & MCP Integration
+
+### Agent Task Specification Template
+
+When spawning agents for complex tasks, ALWAYS use this precise specification format:
+
+```markdown
+# Agent Task Specification
+
+## Objective
+[Precise, measurable goal with clear success criteria]
+
+## Context
+[Relevant background information, project constraints, and dependencies]
+
+## Required Research Tools
+- **MANDATORY**: Use Context7 MCP for comprehensive research and documentation
+- **MANDATORY**: Use Perplexity MCP for current best practices and expert insights
+- **MANDATORY**: Cross-reference findings between MCP sources for accuracy
+
+## Work Principles
+- **Work Smart, Not Hard**: Choose the most efficient approach, avoid over-engineering
+- **Think Deeply**: Analyze problems from multiple angles, consider edge cases
+- **No Assumptions**: Verify all information through research when uncertain
+- **Be Diligent**: Thorough research and careful implementation
+
+## Specific Requirements
+- [Detailed deliverables and constraints]
+- [Expected output format and structure]
+- [Quality standards and validation criteria]
+
+## Uncertainty Protocol
+- When uncertain about ANY aspect, IMMEDIATELY use MCP tools or WebSearch
+- Document all research sources and rationale for decisions
+- Never proceed with assumptions - always verify information
+```
+
+### MCP Usage Standards
+
+**Context7 MCP Requirements:**
+- Use for comprehensive codebase analysis and documentation research
+- Leverage for architectural pattern discovery and best practices
+- Essential for understanding complex system integrations
+
+**Perplexity MCP Requirements:**
+- Use for current industry standards and emerging best practices
+- Essential for security updates and vulnerability research
+- Critical for performance optimization and accessibility guidelines
+
+**Quality Validation:**
+- Cross-reference findings between Context7 and Perplexity
+- Validate research results against official documentation
+- Ensure all MCP research is current and applicable to 2025 standards
+
+### Agent Coordination Protocols
+
+**For Lengthy Task Lists (3+ major components):**
+1. **Automatic Agent Spawning**: Decompose into specialized agent tasks
+2. **Precise Task Distribution**: Each agent gets detailed, non-overlapping objectives
+3. **MCP Research Mandate**: All agents MUST use Context7 and Perplexity MCP
+4. **Smart Work Enforcement**: Instruct agents to optimize for efficiency and clarity
+5. **Deep Thinking Requirements**: Agents must analyze problems thoroughly
+6. **No Assumptions Policy**: Verify all information through research
+
+**Agent Communication Standards:**
+- Provide exact, actionable task descriptions
+- Include all necessary context and constraints
+- Specify expected deliverables and quality standards
+- Mandate MCP tool usage for research and validation
+
+</agent_coordination>
+
 <echocontext_factory_integration>
 
 ## EchoContext Factory Architecture & Implementation
@@ -321,8 +405,10 @@ EchoContext Factory is a voice-enabled context engineering system for Claude Cod
 **Multi-Agent System:**
 - Real parallel execution using Claude Code's Task tool
 - 5 specialized agent types: Research, Analysis, Implementation, Validation, Integration
-- Live web research with intelligent caching and quality validation
-- Dynamic file generation based on task complexity
+- **MANDATORY MCP Integration**: All agents MUST use Context7 MCP and Perplexity MCP
+- **Smart Work Principles**: Agents work efficiently, think deeply, never assume, always verify
+- **Live Research Requirements**: Intelligent caching and quality validation through MCP tools
+- Dynamic file generation based on task complexity with research backing
 
 ### Factory Development Commands
 
@@ -396,10 +482,12 @@ comprehensive-[task]-[timestamp].md # Integrated reports
 **Multi-Agent Coordination:**
 1. Analyze task complexity and decompose into subtasks
 2. Create specialized agents based on task type
-3. Execute agents in parallel using Claude Code's Task tool
-4. Perform live web research with caching
-5. Aggregate results and resolve conflicts
-6. Generate appropriate markdown files
+3. **Mandate MCP Usage**: Ensure ALL agents use Context7 MCP and Perplexity MCP
+4. **Enforce Smart Work Principles**: Instruct agents to work efficiently, think deeply, verify assumptions
+5. Execute agents in parallel using Claude Code's Task tool
+6. Perform live web research with MCP tools and intelligent caching
+7. Aggregate results, resolve conflicts, and validate through cross-referencing MCP sources
+8. Generate comprehensive markdown files with research backing and source documentation
 
 **Voice Integration:**
 - All hooks are executed via uv runner in settings.json

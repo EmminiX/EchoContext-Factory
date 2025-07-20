@@ -51,12 +51,14 @@ ENGINEER_NAME=YourName               # Personalizes voice messages
 
 **That's it!** Your AI assistant is now voice-enabled and ready to guide you.
 
-### 🔧 Optional: Enhanced Research Capabilities
+### 🔧 Recommended: Enhanced Research Capabilities
 
-This tool works great with MCP providers for even better research:
+For the best experience with multi-agent coordination and research, install these MCP providers:
 
-- **Import from Claude Desktop**: `claude mcp add-from-claude-desktop`
-- **Install MCPs manually**: [MCP Quickstart](https://modelcontextprotocol.io/quickstart/user), [Perplexity MCP](https://github.com/jsonallen/perplexity-mcp), [Tavily MCP](https://github.com/tavily-ai/tavily-mcp)
+- **Import from Claude Desktop**: `claude mcp add-from-claude-desktop`  
+- **Essential MCPs**: [Context7 MCP](https://modelcontextprotocol.io/quickstart/user), [Perplexity MCP](https://github.com/jsonallen/perplexity-mcp), [Tavily MCP](https://github.com/tavily-ai/tavily-mcp)
+
+*Note: Context7 and Perplexity MCPs enable agents to work smarter with deeper research capabilities*
 
 ---
 
