@@ -278,6 +278,164 @@ const generateDevelopmentPrompt = (context: ContextualPrompt): string => {
 
 </development_commands>
 
+<echocontext_factory_integration>
+
+## EchoContext Factory Architecture & Implementation
+
+### Project Overview
+
+EchoContext Factory is a voice-enabled context engineering system for Claude Code that enhances development with:
+
+- Voice announcements using TTS providers (ElevenLabs, OpenAI, system voice)
+- Interactive project setup through guided questions 
+- Automated documentation generation (CLAUDE.md, PRD.md, TASKS.md)
+- Multi-agent coordination for complex tasks
+- Live web research integration
+- Security-focused development practices
+
+### Core Components
+
+**JavaScript Libraries (`lib/`):**
+- `question-engine.js` - Handles dynamic question flows and answer validation
+- `multiagent-coordinator.js` - Manages parallel agent execution for complex tasks
+- `research-engine.js` - Real-time web research using Claude Code's WebSearch tool
+- `template-processor.js` - Processes and generates documentation templates
+- `context-assembler.js` - Builds comprehensive project context from user input
+- `prp-generator.js` - Generates Product Requirements Prompts with research integration
+- `codebase-analyzer.js` - Analyzes tech stack and project architecture
+
+**Python Hooks (`hooks/`):**
+- `factory_notification.py` - Voice announcements for factory events
+- `notification.py` - General TTS notifications
+- `post_tool_use.py` - Cleanup and logging after tool usage
+- `stop.py` - End-of-session voice notifications
+- TTS engines in `utils/tts/` (ElevenLabs, OpenAI, system voice)
+
+### Key Factory Features
+
+**Voice System:**
+- 3-tier TTS fallback: ElevenLabs → OpenAI → system voice
+- 70% personalization rate when ENGINEER_NAME is set
+- Voice announcements for all phases and progress updates
+
+**Multi-Agent System:**
+- Real parallel execution using Claude Code's Task tool
+- 5 specialized agent types: Research, Analysis, Implementation, Validation, Integration
+- Live web research with intelligent caching and quality validation
+- Dynamic file generation based on task complexity
+
+### Factory Development Commands
+
+**Standard Development Workflow:**
+```bash
+# No package.json - this is a plugin system for Claude Code
+# JavaScript files are executed directly via node
+# Python hooks use uv for package management
+
+# Test individual components
+node lib/question-engine.js
+node lib/template-processor.js
+
+# Test voice system
+python hooks/notification.py "Test message"
+
+# Test security validation
+python hooks/utils/validation.py
+```
+
+**Available Slash Commands:**
+- `/start-project` - Interactive 5-phase project setup with live research
+- `/multiagent` - Parallel task execution with specialized agents
+- `/generate-prp` - AI-optimized feature requirements generation
+- `/start-development` - Documentation-to-development bridge
+- `/voice-status` - Check voice system configuration
+- `/voice-toggle` - Toggle personalized voice announcements
+
+### Configuration Files
+
+**Core Configuration (`config/`):**
+- `factory.json` - Main factory settings, research parameters, multi-agent config
+- `voice.json` - TTS settings and personalization options
+- `security.json` - Security validation rules
+
+**Data Files (`data/`):**
+- `questions.json` - 18 comprehensive project discovery questions
+- `patterns.json` - Project type patterns and recommendations
+- `prp-questions.json` - Feature-specific question flows
+- `development-scenarios.json` - Development initiation scenarios
+
+### File Structure Patterns
+
+**Generated Output Structure:**
+```
+.claude/
+├── CLAUDE.md           # Complete project context with research links
+├── PRD.md             # Product requirements with industry standards  
+├── TASKS.md           # Research-backed implementation tasks
+└── generated-prps/    # Feature-specific requirements
+```
+
+**Multi-Agent Output:**
+```
+research-[task]-[timestamp].md      # Research findings
+analysis-[task]-[timestamp].md      # Analysis results
+implementation-[task]-[timestamp].md # Code solutions
+validation-[task]-[timestamp].md    # Testing strategies
+comprehensive-[task]-[timestamp].md # Integrated reports
+```
+
+### Important Implementation Details
+
+**Question Engine Flow:**
+1. Load questions from `data/questions.json`
+2. Start flow based on project type
+3. Process answers with validation
+4. Add follow-up questions dynamically
+5. Build comprehensive context with tech stack, features, security requirements
+
+**Multi-Agent Coordination:**
+1. Analyze task complexity and decompose into subtasks
+2. Create specialized agents based on task type
+3. Execute agents in parallel using Claude Code's Task tool
+4. Perform live web research with caching
+5. Aggregate results and resolve conflicts
+6. Generate appropriate markdown files
+
+**Voice Integration:**
+- All hooks are executed via uv runner in settings.json
+- TTS providers tried in order: ElevenLabs → OpenAI → pyttsx3
+- Personalized messages use ENGINEER_NAME from environment
+- Factory notifications triggered on TodoWrite and other events
+
+### Factory Security Considerations
+
+- Input validation on all user inputs
+- Path protection to prevent unauthorized file access
+- Command filtering to block dangerous operations
+- OWASP Top 10 2024 compliance built-in
+- Audit logging for all security events
+
+### Environment Variables
+
+Required for enhanced functionality:
+```bash
+ELEVENLABS_API_KEY=your_key_here    # Best voice quality
+OPENAI_API_KEY=your_key_here        # Good voice quality  
+ENGINEER_NAME=YourName              # Personalization
+```
+
+### Hook System
+
+Configured in `settings.json` with these triggers:
+- PostToolUse: Cleanup and factory notifications
+- Notification: General voice announcements
+- Stop: End-of-session voice feedback
+- SubagentStop: Multi-agent completion notifications
+
+All hooks use `uv run` for Python execution with proper dependency management.
+
+</echocontext_factory_integration>
+
 <security_configurations>
 
 <accessibility_security>
