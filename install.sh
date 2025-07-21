@@ -5,6 +5,19 @@ echo "=================================================="
 echo "🚀 Voice-enabled context engineering with live search only"
 echo ""
 
+# Detect platform
+PLATFORM="unknown"
+case "$(uname -s)" in
+    Linux*)     PLATFORM="linux";;
+    Darwin*)    PLATFORM="macos";;
+    CYGWIN*)    PLATFORM="windows";;
+    MINGW*)     PLATFORM="windows";;
+    MSYS*)      PLATFORM="windows";;
+esac
+
+echo "🖥️  Detected platform: $PLATFORM"
+echo ""
+
 # Check if we're in the right directory
 if [ ! -f "README.md" ] || [ ! -d "commands" ]; then
     echo "❌ Error: Please run this script from the EchoContext-Factory directory"
@@ -12,46 +25,76 @@ if [ ! -f "README.md" ] || [ ! -d "commands" ]; then
     exit 1
 fi
 
+# Determine home directory path
+if [ "$PLATFORM" = "windows" ]; then
+    CLAUDE_DIR="${USERPROFILE}/.claude"
+else
+    CLAUDE_DIR="$HOME/.claude"
+fi
+
+echo "📁 Installing to: $CLAUDE_DIR"
+
 # Create backup of existing .claude directory
-if [ -d "$HOME/.claude" ]; then
+if [ -d "$CLAUDE_DIR" ]; then
     echo "📁 Backing up existing .claude directory..."
-    cp -r "$HOME/.claude" "$HOME/.claude.backup.$(date +%Y%m%d_%H%M%S)"
-    echo "✅ Backup created at ~/.claude.backup.$(date +%Y%m%d_%H%M%S)"
+    cp -r "$CLAUDE_DIR" "${CLAUDE_DIR}.backup.$(date +%Y%m%d_%H%M%S)"
+    echo "✅ Backup created at ${CLAUDE_DIR}.backup.$(date +%Y%m%d_%H%M%S)"
 fi
 
 # Create .claude directory if it doesn't exist
-mkdir -p "$HOME/.claude"
+mkdir -p "$CLAUDE_DIR"
 
 # Copy all files
 echo "📋 Copying EchoContext Factory files..."
-cp -r ./commands "$HOME/.claude/"
-cp -r ./config "$HOME/.claude/"
-cp -r ./data "$HOME/.claude/"
-cp -r ./hooks "$HOME/.claude/"
-cp -r ./lib "$HOME/.claude/"
-cp -r ./templates "$HOME/.claude/"
+for dir in commands config data hooks lib templates; do
+    if [ -d "./$dir" ]; then
+        cp -r "./$dir" "$CLAUDE_DIR/" || {
+            echo "❌ Error: Failed to copy $dir directory"
+            exit 1
+        }
+        echo "✅ Copied $dir"
+    else
+        echo "⚠️  Warning: $dir directory not found, skipping"
+    fi
+done
 
-# Create scripts directory (even if empty)
-mkdir -p "$HOME/.claude/scripts"
-if [ -d "./scripts" ] && [ "$(ls -A ./scripts)" ]; then
-    cp -r ./scripts/* "$HOME/.claude/scripts/"
+# Create scripts directory and copy contents if they exist
+mkdir -p "$CLAUDE_DIR/scripts"
+if [ -d "./scripts" ]; then
+    # Only copy if directory has contents
+    if [ "$(ls -A ./scripts 2>/dev/null)" ]; then
+        cp -r ./scripts/* "$CLAUDE_DIR/scripts/"
+    fi
 fi
 
 # Copy configuration files
-cp ./.env.sample "$HOME/.claude/"
-cp ./settings.json "$HOME/.claude/"
+echo "📋 Copying configuration files..."
+for file in .env.sample settings.json; do
+    if [ -f "./$file" ]; then
+        cp "./$file" "$CLAUDE_DIR/" || {
+            echo "❌ Error: Failed to copy $file"
+            exit 1
+        }
+        echo "✅ Copied $file"
+    else
+        echo "❌ Error: Required file $file not found"
+        exit 1
+    fi
+done
 
-# Make scripts executable
-echo "⚙️ Setting permissions..."
-chmod +x "$HOME/.claude/hooks"/*.py
-if [ -d "$HOME/.claude/scripts" ] && [ "$(ls -A $HOME/.claude/scripts)" ]; then
-    chmod +x "$HOME/.claude/scripts"/*
+# Make scripts executable (skip on Windows)
+if [ "$PLATFORM" != "windows" ]; then
+    echo "⚙️ Setting permissions..."
+    chmod +x "$CLAUDE_DIR/hooks"/*.py
+    if [ -d "$CLAUDE_DIR/scripts" ] && [ "$(ls -A $CLAUDE_DIR/scripts)" ]; then
+        chmod +x "$CLAUDE_DIR/scripts"/*
+    fi
 fi
 
 # Create .env file if it doesn't exist
-if [ ! -f "$HOME/.claude/.env" ]; then
+if [ ! -f "$CLAUDE_DIR/.env" ]; then
     echo "🔑 Creating .env file..."
-    cp "$HOME/.claude/.env.sample" "$HOME/.claude/.env"
+    cp "$CLAUDE_DIR/.env.sample" "$CLAUDE_DIR/.env"
     echo "✅ Created .env file from sample"
     echo "💡 Don't forget to add your API keys!"
 fi
@@ -61,7 +104,11 @@ echo "🎉 Installation Complete!"
 echo "======================="
 echo ""
 echo "📝 Next Steps:"
-echo "1. Edit ~/.claude/.env and add your API keys"
+if [ "$PLATFORM" = "windows" ]; then
+    echo "1. Edit $CLAUDE_DIR/.env and add your API keys"
+else
+    echo "1. Edit ~/.claude/.env and add your API keys"
+fi
 echo "2. Test voice system: /voice-status"
 echo "3. Start your first project: /start-project"
 echo "4. Try multi-agent coordination: /multiagent"
@@ -69,3 +116,20 @@ echo ""
 echo "🎵 EchoContext Factory v2.4.0 is ready to use!"
 echo "✨ Enjoy voice-enabled context engineering with live search!"
 echo "🔍 All commands now use live data only - no mock fallbacks"
+echo ""
+echo "Platform-specific notes:"
+case "$PLATFORM" in
+    "linux")
+        echo "• Linux: All features fully supported"
+        echo "• Voice: Install espeak for better TTS fallback: sudo apt-get install espeak"
+        ;;
+    "macos")
+        echo "• macOS: All features fully supported"
+        echo "• Voice: Built-in 'say' command provides excellent TTS fallback"
+        ;;
+    "windows")
+        echo "• Windows: Core features supported"
+        echo "• Voice: pyttsx3 provides TTS fallback"
+        echo "• Note: Some Python hooks may require Windows Subsystem for Linux (WSL)"
+        ;;
+esac

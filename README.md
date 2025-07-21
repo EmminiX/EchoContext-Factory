@@ -1,5 +1,9 @@
 # 🎵 EchoContext Factory
 
+<div align="center">
+  <img src="assets/EMMI.png" alt="EMMI - Engaging Minds, Merging Ideas" width="300">
+</div>
+
 **Turn Claude Code into your personal AI assistant with voice guidance and zero prompt engineering**
 
 ---
@@ -21,18 +25,23 @@ Transform your development workflow with:
 ## 🚀 Quick Installation (3 Steps)
 
 ### Step 1: Download and Install
+
+**All Platforms (Linux, macOS, Windows):**
 ```bash
 # Clone or download this repository
+git clone https://github.com/EmminiX/EchoContext-Factory.git
 cd EchoContext-Factory
 
-# Make the installer executable and run it
+# Run the cross-platform installer
 chmod +x install.sh
 ./install.sh
 ```
 
+The installer automatically detects your platform and configures everything appropriately!
+
 ### Step 2: Add Your API Keys (Optional but Recommended)
 ```bash
-# Edit the environment file
+# Edit the environment file (path shown by installer)
 nano ~/.claude/.env
 
 # Add your keys for enhanced voice features:
@@ -40,7 +49,11 @@ ELEVENLABS_API_KEY=your_key_here     # Best voice quality
 OPENAI_API_KEY=your_key_here         # Good voice quality  
 ENGINEER_NAME=YourName               # Personalizes voice messages
 ```
-*Note: Works without API keys using your computer's built-in voice*
+
+**Platform-specific notes:**
+- **Linux**: Excellent support, install `espeak` for better fallback TTS
+- **macOS**: Full support with built-in `say` command for great TTS fallback  
+- **Windows**: Core features work, may need WSL for advanced Python hooks
 
 ### Step 3: Start Building!
 ```bash
