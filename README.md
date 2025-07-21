@@ -180,6 +180,27 @@ Every project automatically generates:
 **Problem**: Commands don't work in Claude Code  
 **Solution**: Restart Claude Code after installation
 
+**Problem**: Installation script fails or doesn't work properly  
+**Solution**: Manual installation (always works):
+```bash
+# 1. Backup your existing .claude folder first!
+cp -r ~/.claude ~/.claude.backup.$(date +%Y%m%d_%H%M%S)
+
+# 2. Copy all files manually from the downloaded repo to ~/.claude/
+cp -r EchoContext-Factory/commands ~/.claude/
+cp -r EchoContext-Factory/config ~/.claude/
+cp -r EchoContext-Factory/data ~/.claude/
+cp -r EchoContext-Factory/hooks ~/.claude/
+cp -r EchoContext-Factory/lib ~/.claude/
+cp -r EchoContext-Factory/templates ~/.claude/
+cp EchoContext-Factory/CLAUDE.md ~/.claude/
+cp EchoContext-Factory/settings.json ~/.claude/
+cp EchoContext-Factory/.env.sample ~/.claude/
+
+# 3. Create .env file if needed
+cp ~/.claude/.env.sample ~/.claude/.env
+```
+
 ---
 
 ## 🎉 That's It!

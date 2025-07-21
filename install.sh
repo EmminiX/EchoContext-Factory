@@ -69,7 +69,7 @@ fi
 
 # Copy configuration files
 echo "📋 Copying configuration files..."
-for file in .env.sample settings.json; do
+for file in .env.sample settings.json CLAUDE.md; do
     if [ -f "./$file" ]; then
         cp "./$file" "$CLAUDE_DIR/" || {
             echo "❌ Error: Failed to copy $file"
