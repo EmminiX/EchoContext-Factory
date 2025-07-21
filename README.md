@@ -195,10 +195,22 @@ cp -r EchoContext-Factory/lib ~/.claude/
 cp -r EchoContext-Factory/templates ~/.claude/
 cp EchoContext-Factory/CLAUDE.md ~/.claude/
 cp EchoContext-Factory/settings.json ~/.claude/
+cp EchoContext-Factory/settings.fallback.json ~/.claude/
 cp EchoContext-Factory/.env.sample ~/.claude/
 
 # 3. Create .env file if needed
 cp ~/.claude/.env.sample ~/.claude/.env
+```
+
+**Problem**: Error "uv: not found" when hooks run  
+**Solution**: Either install uv or use fallback settings:
+```bash
+# Option 1: Install uv (recommended)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Option 2: Use system python fallback
+cd ~/.claude
+cp settings.fallback.json settings.json
 ```
 
 ---

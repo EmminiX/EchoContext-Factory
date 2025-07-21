@@ -82,6 +82,12 @@ for file in .env.sample settings.json CLAUDE.md; do
     fi
 done
 
+# Copy fallback settings for systems without uv
+if [ -f "./settings.fallback.json" ]; then
+    cp "./settings.fallback.json" "$CLAUDE_DIR/"
+    echo "✅ Copied settings.fallback.json (for systems without uv)"
+fi
+
 # Make scripts executable (skip on Windows)
 if [ "$PLATFORM" != "windows" ]; then
     echo "⚙️ Setting permissions..."
@@ -122,14 +128,18 @@ case "$PLATFORM" in
     "linux")
         echo "• Linux: All features fully supported"
         echo "• Voice: Install espeak for better TTS fallback: sudo apt-get install espeak"
+        echo "• Python hooks: Install uv for best performance: curl -LsSf https://astral.sh/uv/install.sh | sh"
+        echo "• Alternative: If uv not available, replace settings.json with settings.fallback.json"
         ;;
     "macos")
         echo "• macOS: All features fully supported"
         echo "• Voice: Built-in 'say' command provides excellent TTS fallback"
+        echo "• Python hooks: uv recommended for best performance: curl -LsSf https://astral.sh/uv/install.sh | sh"
         ;;
     "windows")
         echo "• Windows: Core features supported"
         echo "• Voice: pyttsx3 provides TTS fallback"
         echo "• Note: Some Python hooks may require Windows Subsystem for Linux (WSL)"
+        echo "• Python hooks: Install uv via pip: pip install uv"
         ;;
 esac
