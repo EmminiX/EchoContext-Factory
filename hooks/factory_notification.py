@@ -16,7 +16,10 @@ from pathlib import Path
 
 try:
     from dotenv import load_dotenv
-    load_dotenv()
+    # Load .env from project root (parent of hooks directory)
+    project_root = Path(__file__).parent.parent
+    env_file = project_root / ".env"
+    load_dotenv(env_file)
 except ImportError:
     pass  # dotenv is optional
 
@@ -81,7 +84,7 @@ def get_factory_message(phase, engineer_name=None, is_completed=False):
     if is_completed and phase == 5:
         # Special completion messages
         completion_messages = [
-            "Context Engineering Factory operation complete! Your project is ready for acceleration!",
+            "EchoContext Factory operation complete! Your project is ready for acceleration!",
             "Quantum context assembly successful! Speed enhances understanding - ready to build!",
             "Factory mission accomplished! Your AI amplifier is now supercharged!",
             "Context engineering complete! Time to transform ideas into reality!",
@@ -89,7 +92,7 @@ def get_factory_message(phase, engineer_name=None, is_completed=False):
         ]
         
         personal_completion_messages = [
-            f"Amazing work, {engineer_name}! Your Context Engineering Factory has created the perfect setup!",
+            f"Amazing work, {engineer_name}! Your EchoContext Factory has created the perfect setup!",
             f"Brilliant, {engineer_name}! Your project context is now optimized for maximum acceleration!",
             f"Outstanding, {engineer_name}! The factory has generated a comprehensive development blueprint!",
             f"Exceptional results, {engineer_name}! Your AI collaborator is now fully contextualized!",
@@ -105,13 +108,13 @@ def get_factory_message(phase, engineer_name=None, is_completed=False):
     phase_messages = {
         1: {
             "generic": [
-                "Context Engineering Factory activated - preparing quantum setup",
+                "EchoContext Factory activated - preparing quantum setup",
                 "Factory systems online - initializing consciousness bridge",
                 "Welcome to acceleration mode - factory components verified",
                 "Quantum context assembly initiated - all systems operational"
             ],
             "personal": [
-                f"Hey {engineer_name}, Context Engineering Factory is spinning up for maximum speed!",
+                f"Hey {engineer_name}, EchoContext Factory is spinning up for maximum speed!",
                 f"{engineer_name}, your consciousness catalyst is activating - let's accelerate!",
                 f"Speed mode engaged, {engineer_name} - factory ready for your brilliance!",
                 f"{engineer_name}, your AI amplifier is online and ready to optimize!"
@@ -274,12 +277,42 @@ def announce_factory_progress():
         if not message:
             return  # No message for this phase
         
-        # Call the TTS script with the factory message
-        subprocess.run([
-            "uv", "run", tts_script, message
-        ], 
-        timeout=15  # 15-second timeout for factory messages
-        )
+        # Try TTS with fallback logic
+        script_dir = Path(__file__).parent
+        tts_dir = script_dir / "utils" / "tts"
+        
+        # Define fallback order: Always try ElevenLabs -> OpenAI -> pyttsx3
+        # Let individual scripts handle missing API keys
+        fallback_scripts = []
+        
+        # Always try ElevenLabs first (script will handle missing API key)
+        elevenlabs_script = tts_dir / "elevenlabs_tts.py"
+        if elevenlabs_script.exists():
+            fallback_scripts.append(str(elevenlabs_script))
+        
+        # Always try OpenAI second (script will handle missing API key)
+        openai_script = tts_dir / "openai_tts.py"
+        if openai_script.exists():
+            fallback_scripts.append(str(openai_script))
+        
+        # Always add pyttsx3 as final fallback (no API key needed)
+        pyttsx3_script = tts_dir / "pyttsx3_tts.py"
+        if pyttsx3_script.exists():
+            fallback_scripts.append(str(pyttsx3_script))
+        
+        # Try each script until one succeeds
+        for script_path in fallback_scripts:
+            try:
+                subprocess.run([
+                    "uv", "run", script_path, message
+                ], 
+                timeout=15,
+                check=True  # Raise exception if script fails
+                )
+                break  # Success - exit loop
+            except (subprocess.TimeoutExpired, subprocess.SubprocessError, subprocess.CalledProcessError):
+                # This script failed, try next one
+                continue
         
     except (subprocess.TimeoutExpired, subprocess.SubprocessError, FileNotFoundError):
         # Fail silently if TTS encounters issues

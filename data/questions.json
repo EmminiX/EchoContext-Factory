@@ -1,5 +1,5 @@
 {
-  "version": "2.4.0",
+  "version": "2.5.0",
   "categories": {
     "project_basics": {
       "name": "Project Basics",
@@ -9,7 +9,7 @@
           "id": "project_name",
           "type": "text",
           "required": true,
-          "question": "What is the name of your project?",
+          "question": "📝 What is the name of your project?",
           "placeholder": "My Awesome Project",
           "validation": {
             "minLength": 1,
@@ -19,20 +19,20 @@
         },
         {
           "id": "project_description",
-          "type": "text",
+          "type": "textarea",
           "required": true,
-          "question": "Please describe your project in one sentence:",
-          "placeholder": "A web application that helps users manage their tasks",
+          "question": "💡 Tell me about your project! Describe your idea, what problem it solves, who will use it, and what makes it special:",
+          "placeholder": "I want to build a web application that helps small business owners manage their inventory. It will allow them to track products, get low-stock alerts, and generate reports. The main users will be shop owners who need something simple but powerful...",
           "validation": {
-            "minLength": 10,
-            "maxLength": 200
+            "minLength": 50,
+            "maxLength": 500
           }
         },
         {
           "id": "project_type",
           "type": "select",
           "required": true,
-          "question": "What type of project are you building?",
+          "question": "🛠️ What type of project are you building?",
           "options": [
             {"value": "webapp", "label": "Web Application"},
             {"value": "api", "label": "API/Backend Service"},
@@ -41,22 +41,13 @@
             {"value": "mobile", "label": "Mobile Application"},
             {"value": "desktop", "label": "Desktop Application"},
             {"value": "custom", "label": "Custom/Other"}
-          ],
-          "followUp": {
-            "webapp": ["target_audience", "frontend_framework", "backend_framework", "database"],
-            "api": ["target_audience", "backend_framework", "database", "authentication"],
-            "cli": ["target_audience", "language", "package_manager"],
-            "library": ["target_audience", "language", "package_manager"],
-            "mobile": ["target_audience", "mobile_platform", "framework"],
-            "desktop": ["target_audience", "desktop_framework", "target_os"],
-            "custom": ["target_audience", "custom_details"]
-          }
+          ]
         },
         {
           "id": "target_audience",
           "type": "select",
           "required": true,
-          "question": "Who is your primary target audience?",
+          "question": "👥 Who is your primary target audience?",
           "options": [
             {"value": "developers", "label": "Developers/Technical users"},
             {"value": "business", "label": "Business users/Professionals"},
@@ -72,7 +63,7 @@
           "id": "project_scope",
           "type": "select",
           "required": true,
-          "question": "What is the expected scope of your project?",
+          "question": "🎯 What is the expected scope of your project?",
           "options": [
             {"value": "prototype", "label": "Prototype/Proof of concept"},
             {"value": "mvp", "label": "MVP (Minimum Viable Product)"},
@@ -93,7 +84,7 @@
           "id": "frontend_framework",
           "type": "select",
           "required": true,
-          "question": "Which frontend framework would you like to use?",
+          "question": "🎨 Which frontend framework would you like to use?",
           "options": [
             {"value": "react", "label": "React"},
             {"value": "vue", "label": "Vue.js"},
@@ -109,7 +100,7 @@
           "id": "backend_framework",
           "type": "select",
           "required": true,
-          "question": "Which backend framework would you like to use?",
+          "question": "⚙️ Which backend framework would you like to use?",
           "options": [
             {"value": "express", "label": "Express.js"},
             {"value": "fastify", "label": "Fastify"},
@@ -125,7 +116,7 @@
           "id": "language",
           "type": "select",
           "required": true,
-          "question": "What programming language will you primarily use?",
+          "question": "💻 What programming language will you primarily use?",
           "options": [
             {"value": "javascript", "label": "JavaScript"},
             {"value": "typescript", "label": "TypeScript"},
@@ -143,7 +134,7 @@
           "id": "database",
           "type": "select",
           "required": true,
-          "question": "What database will you use?",
+          "question": "🗄️ What database will you use?",
           "options": [
             {"value": "postgresql", "label": "PostgreSQL"},
             {"value": "mysql", "label": "MySQL"},
@@ -166,7 +157,7 @@
           "id": "package_manager",
           "type": "select",
           "required": true,
-          "question": "Which package manager do you prefer?",
+          "question": "📦 Which package manager do you prefer?",
           "options": [
             {"value": "bun", "label": "Bun (fastest)"},
             {"value": "npm", "label": "npm"},
@@ -180,7 +171,7 @@
           "id": "testing_framework",
           "type": "select",
           "required": false,
-          "question": "What testing framework would you like to use?",
+          "question": "🧪 What testing framework would you like to use?",
           "options": [
             {"value": "jest", "label": "Jest"},
             {"value": "vitest", "label": "Vitest"},
@@ -196,7 +187,7 @@
           "id": "styling_approach",
           "type": "select",
           "required": false,
-          "question": "How would you like to handle styling?",
+          "question": "🎨 How would you like to handle styling?",
           "options": [
             {"value": "tailwind", "label": "Tailwind CSS"},
             {"value": "css_modules", "label": "CSS Modules"},
@@ -210,7 +201,7 @@
           "id": "deployment_target",
           "type": "select",
           "required": false,
-          "question": "Where do you plan to deploy your project?",
+          "question": "🚀 Where do you plan to deploy your project?",
           "options": [
             {"value": "vercel", "label": "Vercel"},
             {"value": "netlify", "label": "Netlify"},
@@ -232,7 +223,7 @@
           "id": "authentication",
           "type": "select",
           "required": false,
-          "question": "What authentication method will you use?",
+          "question": "🔐 What authentication method will you use?",
           "options": [
             {"value": "jwt", "label": "JWT Tokens"},
             {"value": "oauth", "label": "OAuth (Google, GitHub, etc.)"},
@@ -247,7 +238,7 @@
           "id": "security_level",
           "type": "select",
           "required": true,
-          "question": "What security level does your project require?",
+          "question": "🔒 What security level does your project require?",
           "options": [
             {"value": "basic", "label": "Basic (input validation, HTTPS)"},
             {"value": "standard", "label": "Standard (authentication, authorization)"},
@@ -265,7 +256,7 @@
           "id": "code_style",
           "type": "select",
           "required": false,
-          "question": "What code formatting/linting setup do you prefer?",
+          "question": "✨ What code formatting/linting setup do you prefer?",
           "options": [
             {"value": "eslint_prettier", "label": "ESLint + Prettier"},
             {"value": "standard", "label": "Standard.js"},
@@ -278,7 +269,7 @@
           "id": "git_workflow",
           "type": "select",
           "required": false,
-          "question": "What Git workflow do you prefer?",
+          "question": "🌿 What Git workflow do you prefer?",
           "options": [
             {"value": "gitflow", "label": "Git Flow"},
             {"value": "github_flow", "label": "GitHub Flow"},
@@ -291,7 +282,7 @@
           "id": "documentation_level",
           "type": "select",
           "required": false,
-          "question": "How much documentation do you want generated?",
+          "question": "📚 How much documentation do you want generated?",
           "options": [
             {"value": "minimal", "label": "Minimal (README only)"},
             {"value": "standard", "label": "Standard (README + API docs)"},
@@ -303,7 +294,7 @@
           "id": "ai_integration",
           "type": "select",
           "required": false,
-          "question": "Do you plan to integrate AI/ML features?",
+          "question": "🤖 Do you plan to integrate AI/ML features?",
           "options": [
             {"value": "none", "label": "No AI integration"},
             {"value": "openai", "label": "OpenAI API (GPT, DALL-E)"},
@@ -318,7 +309,7 @@
           "id": "performance_requirements",
           "type": "select",
           "required": false,
-          "question": "What are your performance requirements?",
+          "question": "⚡ What are your performance requirements?",
           "options": [
             {"value": "basic", "label": "Basic (standard web performance)"},
             {"value": "high", "label": "High (fast load times, optimized)"},
@@ -329,73 +320,96 @@
           ]
         }
       ]
+    },
+    "project_vision": {
+      "name": "Project Vision",
+      "description": "Final comprehensive project description",
+      "questions": [
+        {
+          "id": "project_vision_description",
+          "type": "textarea",
+          "required": true,
+          "question": "🌟 Finally, please describe your project idea in your own words. Share your vision, goals, and any specific details that will help me understand what you're trying to build:",
+          "placeholder": "Describe your project idea, the problems it solves, who will use it, what makes it unique, and any other important details about your vision...",
+          "validation": {
+            "minLength": 50,
+            "maxLength": 1000
+          },
+          "followUpPrompts": [
+            "What specific problem does your project solve?",
+            "Who are the main users you're targeting?",
+            "What makes your solution unique or different?",
+            "What are your main goals for this project?",
+            "Are there any specific features or functionality that are crucial?",
+            "What inspired you to build this project?"
+          ]
+        }
+      ]
     }
   },
   "flows": {
-    "webapp": [
+    "base": [
       "project_name",
       "project_description",
-      "project_type",
+      "project_type"
+    ]
+  },
+  "adaptive_questions": {
+    "webapp": [
       "target_audience",
       "project_scope",
       "frontend_framework",
       "backend_framework",
       "database",
-      "package_manager",
-      "testing_framework",
-      "styling_approach",
-      "authentication",
-      "security_level",
-      "deployment_target",
-      "code_style",
-      "documentation_level",
-      "ai_integration",
-      "performance_requirements"
+      "authentication"
     ],
     "api": [
-      "project_name",
-      "project_description",
-      "project_type",
       "target_audience",
       "project_scope",
       "backend_framework",
       "database",
-      "package_manager",
-      "testing_framework",
       "authentication",
-      "security_level",
-      "deployment_target",
-      "code_style",
-      "documentation_level",
-      "ai_integration",
-      "performance_requirements"
+      "security_level"
     ],
     "cli": [
-      "project_name",
-      "project_description",
-      "project_type",
       "target_audience",
       "project_scope",
       "language",
       "package_manager",
-      "testing_framework",
       "deployment_target",
-      "code_style",
-      "documentation_level",
-      "ai_integration"
+      "testing_framework"
     ],
     "library": [
-      "project_name",
-      "project_description",
-      "project_type",
       "target_audience",
       "project_scope",
       "language",
       "package_manager",
       "testing_framework",
-      "code_style",
-      "documentation_level",
-      "ai_integration"
+      "documentation_level"
+    ],
+    "mobile": [
+      "target_audience",
+      "project_scope",
+      "mobile_platform",
+      "framework",
+      "backend_framework",
+      "authentication"
+    ],
+    "desktop": [
+      "target_audience",
+      "project_scope",
+      "desktop_framework",
+      "target_os",
+      "database",
+      "deployment_target"
+    ],
+    "custom": [
+      "target_audience",
+      "project_scope",
+      "language",
+      "framework",
+      "deployment_target",
+      "testing_framework"
     ]
   }
 }
