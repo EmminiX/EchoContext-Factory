@@ -1,6 +1,19 @@
 ---
 description: "EchoContext Factory v2.5.0 - Interactive 9-question project setup with MCP research"
 allowed-tools: ["Read", "Write", "Bash", "TodoWrite"]
+
+# Internal System Instructions (not visible to user)
+critical_formatting:
+  line_breaks: "Each multiple choice option MUST be on its own line for accessibility"
+  progress_tracking: "Show 11%, 22%, 33%... up to 100% completion"
+  max_questions: 9
+  adaptive_selection: "Use keyword matching to select relevant questions"
+
+question_flow:
+  phase1: "Base questions (project_name, project_description, project_type)"
+  phase2: "Adaptive questions based on project description analysis"
+  phase3: "Tech stack and implementation questions"
+  validation: "Ensure all questions display properly formatted with line breaks"
 ---
 
 # EchoContext Factory v2.5.0 - Start Project
@@ -8,30 +21,6 @@ allowed-tools: ["Read", "Write", "Bash", "TodoWrite"]
 You are now activating the **EchoContext Factory v2.5.0** system! ✨
 
 I'll guide you through our adaptive 9-question interview process with comprehensive MCP research integration.
-
-## 📋 CRITICAL FORMATTING REQUIREMENTS
-
-**🚨 MANDATORY LINE BREAK FORMATTING:**
-
-When displaying multiple choice questions, you **MUST** format each option on its own line with proper spacing. This is critical for neurodivergent accessibility.
-
-✅ **CORRECT FORMAT:**
-```
-Please choose the option that best matches your vision:
-
-A) Web Application - Browser-based, responsive design
-B) Progressive Web App (PWA) - Web app with offline capabilities
-C) Native Mobile App - iOS/Android native applications
-D) Hybrid Mobile App - Cross-platform using React Native
-
-```
-
-❌ **WRONG FORMAT (causes accessibility issues):**
-```
-A) Web Application - Browser-based, responsive designB) Progressive Web App (PWA) - Web app with offline capabilitiesC) Native Mobile App - iOS/Android native applications
-```
-
-## 🎯 Question Flow Process
 
 !cat data/questions.json | head -20
 
