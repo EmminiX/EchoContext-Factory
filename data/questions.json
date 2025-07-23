@@ -212,6 +212,50 @@
             {"value": "local", "label": "Local development only"},
             {"value": "other", "label": "Other"}
           ]
+        },
+        {
+          "id": "mobile_platform",
+          "type": "select",
+          "required": false,
+          "question": "📱 Which mobile platform will you target?",
+          "options": [
+            {"value": "ios", "label": "iOS"},
+            {"value": "android", "label": "Android"},
+            {"value": "both", "label": "Both iOS and Android"},
+            {"value": "pwa", "label": "Progressive Web App"},
+            {"value": "react_native", "label": "React Native"},
+            {"value": "flutter", "label": "Flutter"},
+            {"value": "other", "label": "Other"}
+          ]
+        },
+        {
+          "id": "desktop_framework",
+          "type": "select",
+          "required": false,
+          "question": "🖥️ Which desktop framework will you use?",
+          "options": [
+            {"value": "electron", "label": "Electron"},
+            {"value": "tauri", "label": "Tauri"},
+            {"value": "qt", "label": "Qt"},
+            {"value": "tkinter", "label": "Tkinter"},
+            {"value": "javafx", "label": "JavaFX"},
+            {"value": "native", "label": "Native (C++/C#/Swift)"},
+            {"value": "other", "label": "Other"}
+          ]
+        },
+        {
+          "id": "target_os",
+          "type": "select",
+          "required": false,
+          "question": "💻 Which operating systems will you target?",
+          "options": [
+            {"value": "windows", "label": "Windows"},
+            {"value": "macos", "label": "macOS"},
+            {"value": "linux", "label": "Linux"},
+            {"value": "cross_platform", "label": "Cross-platform (all)"},
+            {"value": "web_based", "label": "Web-based (browser)"},
+            {"value": "other", "label": "Other"}
+          ]
         }
       ]
     },

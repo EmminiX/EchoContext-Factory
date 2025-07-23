@@ -1,7 +1,7 @@
 {
-  "version": "2.1.0",
+  "version": "2.5.0",
   "factory": {
-    "name": "Context Engineering Factory",
+    "name": "EchoContext Factory",
     "description": "Automated context engineering system with research integration and multi-agent coordination",
     "enabled": true,
     "debug": false
@@ -128,7 +128,6 @@
       "engine": "python",
       "outputDir": "./research_visuals/",
       "types": [
-        "timeline",
         "credibility_matrix",
         "expert_consensus",
         "trend_analysis",
