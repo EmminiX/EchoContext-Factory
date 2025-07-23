@@ -229,6 +229,6 @@ src/
 **Generated**: {{generatedAt}}
 **Version**: {{version}}
 **PRP Type**: Feature Requirements Prompt
-**Created by**: EchoContext Factory PRP Generator v2.4.0
+**Created by**: EchoContext Factory PRP Generator v2.5.0
 
 *This PRP is optimized for AI-assisted development with Claude Code and follows industry best practices for feature development.*

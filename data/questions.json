@@ -21,11 +21,11 @@
           "id": "project_description",
           "type": "textarea",
           "required": true,
-          "question": "💡 Tell me about your project! Describe your idea, what problem it solves, who will use it, and what makes it special:",
-          "placeholder": "I want to build a web application that helps small business owners manage their inventory. It will allow them to track products, get low-stock alerts, and generate reports. The main users will be shop owners who need something simple but powerful...",
+          "question": "💡 Please provide a detailed description of what you are looking to build. Include the problem it solves, target users, key features, and any specific technologies or requirements you have in mind:",
+          "placeholder": "I want to build a web application that helps small business owners manage their inventory. It will allow them to track products, get low-stock alerts, and generate reports. The main users will be shop owners who need something simple but powerful. I'd like to use React for the frontend and Node.js for the backend, with real-time updates and mobile responsiveness...",
           "validation": {
-            "minLength": 50,
-            "maxLength": 500
+            "minLength": 100,
+            "maxLength": 1000
           }
         },
         {

@@ -71,7 +71,7 @@ For the best experience with multi-agent coordination and research, install thes
 - **Import from Claude Desktop**: `claude mcp add-from-claude-desktop`  
 - **Essential MCPs**: [Context7 MCP](https://modelcontextprotocol.io/quickstart/user), [Perplexity MCP](https://github.com/jsonallen/perplexity-mcp), [Tavily MCP](https://github.com/tavily-ai/tavily-mcp)
 
-*Note: Context7 and Perplexity MCPs enable agents to work smarter with deeper research capabilities*
+*Note: Context7 and Perplexity MCPs are MANDATORY for all specialized agents, enabling comprehensive codebase analysis, current best practices research, and cross-validated findings for accuracy*
 
 ---
 
@@ -93,8 +93,9 @@ Never feel alone while coding! Your assistant provides:
 **Before**: Spend hours crafting the perfect prompt  
 **After**: Just answer simple questions like "What's your project about?"
 
-- One question at a time (never overwhelming)
-- Smart follow-ups based on your answers
+- **Adaptive flow**: Starts with your project description, then asks smart follow-ups
+- **Maximum 9 questions**: Never overwhelming, usually fewer based on your needs  
+- **Context-aware**: Each question builds on your previous answers
 - No prompt engineering needed
 
 ### 📋 What You Get
@@ -109,7 +110,7 @@ Every project automatically generates:
 └── 🔗 Live web research # Current best practices included
 ```
 
-**Real example**: Answer 8 simple questions → Get 3 comprehensive documents with current industry standards
+**Real example**: Answer up to 9 adaptive questions → Get 3 comprehensive documents with current industry standards
 
 ---
 
@@ -119,24 +120,26 @@ Every project automatically generates:
 ```bash
 /start-project
 ```
-**What happens**: Your assistant asks 8 simple questions about your project, then creates complete documentation with live web research.
+**What happens**: Your assistant asks up to 9 adaptive questions about your project, then creates complete documentation with live web research.
 
 **Example flow**:
 1. 🗣️ "Hi! What's your project called?"
 2. 📝 You: "My Recipe App" 
-3. 🗣️ "What type of project is this?"
-4. 📝 You: "Web Application"
-5. *...continues for 6 more questions...*
-6. 🔍 *Live web research happens automatically*
-7. ✅ Three complete documents created!
+3. 🗣️ "Tell me about your project - what does it do?"
+4. 📝 You: "A web app where users can save and share their favorite recipes"
+5. 🧠 *AI adapts remaining questions based on your description*
+6. 🗣️ "What type of users will use this app?"
+7. *...continues with smart, adaptive questions...*
+8. 🔍 *Live web research happens automatically*
+9. ✅ Three complete documents created!
 
 ### 🤖 Complex Task Help
 ```bash
 /multiagent
 ```
-**What happens**: Specialized AI agents work in parallel to research, analyze, and solve complex development challenges.
+**What happens**: Specialized AI agents work in parallel to research, analyze, and solve complex development challenges using Context7 and Perplexity MCP for comprehensive research.
 
-**Example**: "Help me implement user authentication" → Gets research report, security analysis, code examples, and testing strategy.
+**Example**: "Help me implement user authentication" → Gets research report with current security standards, architecture analysis, code examples with best practices, and comprehensive testing strategy.
 
 ### 📋 Feature Requirements
 ```bash
@@ -263,4 +266,13 @@ We welcome contributions! Whether you want to:
 
 ---
 
-**Version**: 2.4.0 | **Created by**: [Emmi C.](https://emmi.zone) | **License**: MIT
+**Version**: 2.5.0 | **Created by**: [Emmi C.](https://emmi.zone) | **License**: MIT
+
+### 🆕 What's New in v2.5.0?
+
+- **🧠 Smarter Question Flow**: New adaptive 9-question flow that starts with your project description and intelligently selects follow-up questions
+- **🔍 Enhanced MCP Integration**: All multi-agent tasks now mandate Context7 and Perplexity MCP usage for comprehensive research and validation
+- **⚡ Reduced Cognitive Load**: Fewer, smarter questions that adapt to your project type (maximum 9, often fewer)
+- **🎯 Better Context Building**: First question captures your project vision, remaining questions build context intelligently
+
+*Accessibility improvement: Less overwhelming question flow perfect for neurodivergent developers*

@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "2.5.0",
   "voice": {
     "enabled": true,
     "defaultProvider": "auto",
@@ -48,12 +48,12 @@
     "playbackDevice": "default"
   },
   "messages": {
-    "welcome": "Welcome to Context Engineering Factory! Let's create your project setup.",
+    "welcome": "Welcome to EchoContext Factory! Let's create your project setup.",
     "questionPrompt": "Please provide your answer:",
     "confirmation": "Got it! Processing your response...",
     "error": "I encountered an issue. Please try again.",
     "progress": "Working on your project setup...",
-    "completion": "Your Context Engineering Factory has successfully created your project setup!"
+    "completion": "Your EchoContext Factory has successfully created your project setup!"
   },
   "sounds": {
     "notification": "chime",

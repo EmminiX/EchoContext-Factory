@@ -279,11 +279,11 @@ const generateDevelopmentPrompt = (context: ContextualPrompt): string => {
 };
 ```
 
-**Available EchoContext Factory Commands:**
-- `/start-project` - Interactive project setup with accessibility planning
+**Available EchoContext Factory Commands (v2.5.0):**
+- `/start-project` - **ENHANCED!** Adaptive 9-question project setup with smart question selection
 - `/generate-prp` - Feature requirements with accessibility considerations
-- `/start-development` - **NEW!** Bridge from documentation to coding with predefined prompts
-- `/multiagent` - Parallel task execution with accessibility validation
+- `/start-development` - Bridge from documentation to coding with predefined prompts
+- `/multiagent` - Parallel task execution with mandatory MCP research validation
 </context_engineering>
 
 </development_commands>
@@ -364,25 +364,46 @@ When spawning agents for complex tasks, ALWAYS use this precise specification fo
 
 <echocontext_factory_integration>
 
-## EchoContext Factory Architecture & Implementation
+## EchoContext Factory Architecture & Implementation (v2.5.0)
 
 ### Project Overview
 
 EchoContext Factory is a voice-enabled context engineering system for Claude Code that enhances development with:
 
 - Voice announcements using TTS providers (ElevenLabs, OpenAI, system voice)
-- Interactive project setup through guided questions 
-- Automated documentation generation (CLAUDE.md, PRD.md, TASKS.md)
-- Multi-agent coordination for complex tasks
-- Live web research integration
-- Security-focused development practices
+- **NEW v2.5.0:** Adaptive 9-question interview system with intelligent question selection
+- **ENHANCED v2.5.0:** Comprehensive MCP integration (Context7, Perplexity, Tavily) with 15+ research queries per project
+- Automated documentation generation (CLAUDE.md, PRD.md, TASKS.md) with research source attribution
+- Multi-agent coordination for complex tasks with mandatory MCP research validation
+- **IMPROVED v2.5.0:** Neurodivergent-friendly design with reduced cognitive load (max 9 questions vs. previous 18)
+- Security-focused development practices with OWASP 2024 compliance
+
+### 🆕 What's New in v2.5.0
+
+**🧠 Smarter Question Flow:**
+- Maximum 9 questions (down from 18) for better accessibility
+- Starts with comprehensive project description to drive intelligent question selection
+- Keyword-based adaptive question selection based on project description
+- Consistent progress tracking (11%, 22%, 33%... to 100%)
+
+**🔍 Enhanced MCP Integration:**
+- Mandatory Context7 MCP and Perplexity MCP usage for all research tasks
+- 15+ intelligent research queries generated per project based on tech stack
+- Cross-validation between MCP tools for higher research confidence
+- Research source attribution in all generated documentation
+
+**♿ Improved Accessibility:**
+- Reduced cognitive load through fewer, smarter questions
+- One question at a time with clear progress indicators
+- Neurodivergent-friendly interface with predictable flow
+- Voice announcements for all phase transitions
 
 ### Core Components
 
 **JavaScript Libraries (`lib/`):**
 - `question-engine.js` - Handles dynamic question flows and answer validation
 - `multiagent-coordinator.js` - Manages parallel agent execution for complex tasks
-- `research-engine.js` - Real-time web research using Claude Code's WebSearch tool
+- `research-engine.js` - **ENHANCED!** Real-time MCP research using Context7, Perplexity, and Tavily MCP tools
 - `template-processor.js` - Processes and generates documentation templates
 - `context-assembler.js` - Builds comprehensive project context from user input
 - `prp-generator.js` - Generates Product Requirements Prompts with research integration
@@ -402,12 +423,13 @@ EchoContext Factory is a voice-enabled context engineering system for Claude Cod
 - 70% personalization rate when ENGINEER_NAME is set
 - Voice announcements for all phases and progress updates
 
-**Multi-Agent System:**
+**Multi-Agent System (v2.5.0):**
 - Real parallel execution using Claude Code's Task tool
 - 5 specialized agent types: Research, Analysis, Implementation, Validation, Integration
 - **MANDATORY MCP Integration**: All agents MUST use Context7 MCP and Perplexity MCP
-- **Smart Work Principles**: Agents work efficiently, think deeply, never assume, always verify
-- **Live Research Requirements**: Intelligent caching and quality validation through MCP tools
+- **Smart Work Principles**: Agents work smart not hard, think deeply, never assume, always verify
+- **Live Research Requirements**: Comprehensive MCP research with 15+ intelligent queries per project
+- **Cross-Validation**: MCP tools cross-reference findings for accuracy and confidence scoring
 - Dynamic file generation based on task complexity with research backing
 
 ### Factory Development Commands
@@ -429,9 +451,9 @@ python hooks/notification.py "Test message"
 python hooks/utils/validation.py
 ```
 
-**Available Slash Commands:**
-- `/start-project` - Interactive 5-phase project setup with live research
-- `/multiagent` - Parallel task execution with specialized agents
+**Available Slash Commands (v2.5.0):**
+- `/start-project` - **ENHANCED!** 5-phase setup with adaptive 9-question flow and comprehensive MCP research
+- `/multiagent` - Parallel task execution with mandatory Context7 & Perplexity MCP integration
 - `/generate-prp` - AI-optimized feature requirements generation
 - `/start-development` - Documentation-to-development bridge
 - `/voice-status` - Check voice system configuration
@@ -444,8 +466,8 @@ python hooks/utils/validation.py
 - `voice.json` - TTS settings and personalization options
 - `security.json` - Security validation rules
 
-**Data Files (`data/`):**
-- `questions.json` - 18 comprehensive project discovery questions
+**Data Files (`data/`) - v2.5.0:**
+- `questions.json` - **NEW!** Adaptive question system with 9-question maximum flows
 - `patterns.json` - Project type patterns and recommendations
 - `prp-questions.json` - Feature-specific question flows
 - `development-scenarios.json` - Development initiation scenarios
@@ -472,12 +494,13 @@ comprehensive-[task]-[timestamp].md # Integrated reports
 
 ### Important Implementation Details
 
-**Question Engine Flow:**
-1. Load questions from `data/questions.json`
-2. Start flow based on project type
-3. Process answers with validation
-4. Add follow-up questions dynamically
-5. Build comprehensive context with tech stack, features, security requirements
+**Question Engine Flow (v2.5.0 - Adaptive System):**
+1. Load base questions (project_name, project_description, project_type) from `data/questions.json`
+2. Start with 3 base questions for all project types
+3. **NEW!** Analyze project description using keyword matching
+4. **NEW!** Intelligently select 6 adaptive questions based on project type and description
+5. **NEW!** Maximum 9 questions total with consistent progress tracking
+6. Build comprehensive context with tech stack, features, security requirements
 
 **Multi-Agent Coordination:**
 1. Analyze task complexity and decompose into subtasks
@@ -635,3 +658,4 @@ const handleAccessibleError = (error: Error, req: Request): AccessibleErrorRespo
 </developer_assistant>
 
 *Engineered for accessibility, security, and inclusive development - emmi.zone*
+*Updated for EchoContext Factory v2.5.0 - Enhanced with adaptive questioning and comprehensive MCP integration*

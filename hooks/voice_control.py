@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Voice Control Script for Context Engineering Factory
+Voice Control Script for EchoContext Factory
 Handles enabling, disabling, and toggling voice announcements
 """
 
@@ -142,7 +142,7 @@ def get_voice_status():
 
 def main():
     """Main entry point."""
-    parser = argparse.ArgumentParser(description='Control Context Engineering Factory voice announcements')
+    parser = argparse.ArgumentParser(description='Control EchoContext Factory voice announcements')
     parser.add_argument('--enable', action='store_true', help='Enable voice announcements')
     parser.add_argument('--disable', action='store_true', help='Disable voice announcements')
     parser.add_argument('--toggle', action='store_true', help='Toggle voice announcements')

@@ -348,6 +348,9 @@ Database ({{techStack.database}})
 {{#if research}}
 ## 🔬 Research-Backed Analysis
 
+{{#if research.formattedLinks}}
+{{research.formattedLinks}}
+{{else}}
 {{#if research.mcpResults}}
 ### Industry Standards & Best Practices
 
@@ -360,6 +363,7 @@ Database ({{techStack.database}})
 {{/if}}
 
 {{/each}}
+{{/if}}
 {{/if}}
 
 {{#if researchMetadata.confidence}}

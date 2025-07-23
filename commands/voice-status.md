@@ -1,4 +1,4 @@
-Check the current status of ALL voice announcements (Claude Code + Context Engineering Factory) without making any changes.
+Check the current status of ALL voice announcements (Claude Code + EchoContext Factory) without making any changes.
 
 ```bash
 python3 ~/.claude/hooks/voice_control.py --status

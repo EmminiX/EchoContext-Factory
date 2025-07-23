@@ -368,6 +368,9 @@
 {{#if research}}
 ## 🔬 Research-Backed Implementation Guidance
 
+{{#if research.formattedLinks}}
+{{research.formattedLinks}}
+{{else}}
 {{#if research.mcpResults}}
 ### Technical Resources & Best Practices
 
@@ -380,6 +383,7 @@
 {{/if}}
 
 {{/each}}
+{{/if}}
 {{/if}}
 
 {{#if researchMetadata.confidence}}

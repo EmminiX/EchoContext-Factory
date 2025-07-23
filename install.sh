@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🎵 EchoContext Factory Installation Script v2.4.0"
+echo "🎵 EchoContext Factory Installation Script v2.5.0"
 echo "=================================================="
 echo "🚀 Voice-enabled context engineering with live search only"
 echo ""
@@ -119,7 +119,7 @@ echo "2. Test voice system: /voice-status"
 echo "3. Start your first project: /start-project"
 echo "4. Try multi-agent coordination: /multiagent"
 echo ""
-echo "🎵 EchoContext Factory v2.4.0 is ready to use!"
+echo "🎵 EchoContext Factory v2.5.0 is ready to use!"
 echo "✨ Enjoy voice-enabled context engineering with live search!"
 echo "🔍 All commands now use live data only - no mock fallbacks"
 echo ""

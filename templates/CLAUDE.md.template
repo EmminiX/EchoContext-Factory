@@ -308,6 +308,9 @@
 {{#if research}}
 ## 🔬 Research Insights & Best Practices
 
+{{#if research.formattedLinks}}
+{{research.formattedLinks}}
+{{else}}
 {{#if research.mcpResults}}
 ### MCP Research Findings
 
@@ -320,6 +323,7 @@
 {{/if}}
 
 {{/each}}
+{{/if}}
 {{/if}}
 
 {{#if researchMetadata.confidence}}

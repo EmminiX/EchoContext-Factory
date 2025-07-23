@@ -1,4 +1,4 @@
-Toggle ALL voice announcements on/off for Claude Code and Context Engineering Factory.
+Toggle ALL voice announcements on/off for Claude Code and EchoContext Factory.
 
 The command automatically detects the current voice setting and switches to the opposite state:
 - 🔊 **Voice ON** → 🔇 **Voice OFF** 
@@ -182,4 +182,4 @@ Voice announcements can be:
 *Designed by Emmi C. (https://emmi.zone) - Built with Claude Code*
 
 **🔊 Voice Toggle Command v2.1.0**
-Simple, instant control over your Context Engineering Factory voice experience! 🎯
+Simple, instant control over your EchoContext Factory voice experience! 🎯
