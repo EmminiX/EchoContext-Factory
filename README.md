@@ -120,18 +120,42 @@ Every project automatically generates:
 ```bash
 /start-project
 ```
-**What happens**: Your assistant asks up to 9 adaptive questions about your project, then creates complete documentation with live web research.
+**What happens**: Your assistant asks up to 9 adaptive questions about your project, then creates complete documentation with live web research using Context7, Perplexity, and Tavily MCP tools.
 
 **Example flow**:
 1. 🗣️ "Hi! What's your project called?"
 2. 📝 You: "My Recipe App" 
-3. 🗣️ "Tell me about your project - what does it do?"
-4. 📝 You: "A web app where users can save and share their favorite recipes"
+3. 🗣️ "Please provide a detailed description of what you are looking to build..."
+4. 📝 You: "A web app where users can save and share their favorite recipes..."
 5. 🧠 *AI adapts remaining questions based on your description*
 6. 🗣️ "What type of users will use this app?"
 7. *...continues with smart, adaptive questions...*
-8. 🔍 *Live web research happens automatically*
-9. ✅ Three complete documents created!
+8. 🔍 *MCP research happens automatically (Context7 + Perplexity + Tavily)*
+9. ✅ Three complete documents created in `.claude/` folder!
+
+### 🧠 Generate or Improve Prompts
+```bash
+/promptsage
+```
+**What happens**: Create new system prompts or improve existing prompts with model-specific XML layering for optimal AI performance.
+
+**Supported models**:
+- **Claude**: 3+ nested XML layers for maximum control
+- **GPT-4.1/Gemini/Grok**: 2 XML layers for optimal parsing
+- **Mistral/Llama**: 1 XML layer for compatibility
+
+**Example**: Need a Python tutor? → Get a perfectly structured system prompt for your chosen AI model.
+
+### 🚀 Start Development
+```bash
+/start-development
+```
+**What happens**: Reads your documentation from `.claude/` folder (CLAUDE.md, PRD.md, TASKS.md) and provides optimized prompts to start coding immediately.
+
+**Smart detection**:
+- Finds existing project docs → "Start building your documented project"
+- Finds PRP files → "Implement your feature from PRP"
+- No docs → "Start fresh with guided assistance"
 
 ### 🤖 Complex Task Help
 ```bash
@@ -139,20 +163,34 @@ Every project automatically generates:
 ```
 **What happens**: Specialized AI agents work in parallel to research, analyze, and solve complex development challenges using Context7 and Perplexity MCP for comprehensive research.
 
+**Agent types**:
+- **Research Specialist**: Gathers information using MCP tools
+- **Analysis Specialist**: Reviews and optimizes solutions
+- **Implementation Specialist**: Generates code and configurations
+- **Validation Specialist**: Tests and quality assurance
+- **Integration Specialist**: Coordinates and merges results
+
 **Example**: "Help me implement user authentication" → Gets research report with current security standards, architecture analysis, code examples with best practices, and comprehensive testing strategy.
 
 ### 📋 Feature Requirements
 ```bash
 /generate-prp
 ```
-**What happens**: Creates detailed feature specifications with current best practices and security considerations.
+**What happens**: Creates detailed feature specifications (Product Requirements Prompts) with current best practices and security considerations using MCP research.
 
-**Example**: Describe a login feature → Get comprehensive requirements document with implementation details.
+**Process**:
+1. Interactive feature discovery questions
+2. Automated codebase analysis
+3. MCP research for best practices (Context7 + Perplexity + Tavily)
+4. Professional PRP document generation
+5. Saves to `generated-prps/` directory
 
-### 🔧 Quick Checks
+**Example**: Describe a login feature → Get comprehensive requirements document with implementation details and research-backed recommendations.
+
+### 🔧 Utility Commands
 ```bash
-/voice-status      # Test if voice is working
-/voice-toggle      # Turn voice on/off
+/voice-status      # Test if voice is working and check configuration
+/voice-toggle      # Turn voice announcements on/off
 ```
 
 ---

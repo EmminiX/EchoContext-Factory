@@ -1,0 +1,200 @@
+Generate or improve prompts using the PromptSage framework for optimal AI performance across different models.
+
+The command provides two modes:
+- 🆕 **Create new system prompts** - Generate model-specific system prompts with optimal XML layering
+- 🔧 **Improve existing prompts** - Enhance task or system prompts with appropriate structure
+
+## 🎯 Usage Examples
+
+### **Create New System Prompt**
+```bash
+# Interactive mode - asks for model and assistant description
+/promptsage
+
+# Example responses:
+# Model? → Sonnet 4
+# Assistant type? → Python data analysis expert with focus on pandas and visualization
+```
+
+### **Improve Existing Prompt**
+```bash
+# Interactive mode - asks what to improve
+/promptsage
+
+# Example responses:
+# Create new or improve existing? → improve
+# Paste your prompt → [your existing prompt here]
+```
+
+## 🧠 Model-Specific XML Layering
+
+PromptSage automatically applies the optimal XML structure based on the target model:
+
+### **Claude Models (Anthropic)**
+Multiple nested XML layers for maximum structure:
+```xml
+<expert_system>
+  <role>Python Data Scientist</role>
+  <capabilities>
+    <data_analysis>pandas, numpy, statistical analysis</data_analysis>
+    <visualization>matplotlib, seaborn, plotly</visualization>
+  </capabilities>
+</expert_system>
+```
+
+### **GPT-4.1 / OpenAI Models**
+2 layers of XML tags for clarity:
+```xml
+<assistant_role>
+  <expertise>Python data analysis and visualization</expertise>
+</assistant_role>
+```
+
+### **Grok (X AI) & Gemini (Google)**
+2 layers of XML tags optimized for their parsers:
+```xml
+<system_context>
+  <specialization>Data science with Python</specialization>
+</system_context>
+```
+
+### **Mistral & Llama Models**
+Single layer XML for simplicity:
+```xml
+<role>Expert Python data scientist specializing in pandas and visualization</role>
+```
+
+## 🚀 Supported Models
+
+### **Multi-Layer XML (3+ layers)**
+- Claude 3.5 Sonnet
+- Claude 3.5 Haiku
+- Claude 3 Opus
+- Claude 3 Sonnet
+- Claude 3 Haiku
+
+### **Dual-Layer XML (2 layers)**
+- GPT-4.1
+- GPT-4
+- GPT-4 Turbo
+- GPT-3.5 Turbo
+- Grok 2
+- Grok 2 Mini
+- Gemini 1.5 Pro
+- Gemini 1.5 Flash
+- Gemini 1.0 Pro
+
+### **Single-Layer XML (1 layer)**
+- Mistral Large
+- Mistral Medium
+- Mistral Small
+- Llama 3.3
+- Llama 3.2
+- Llama 3.1
+- Llama 3
+- Llama 2
+
+## 📋 Prompt Types
+
+### **System Prompts**
+Define the AI assistant's personality, expertise, and behavior:
+- Contains persona/role definition
+- Applies model-specific XML layering
+- Includes capabilities, constraints, and guidelines
+
+### **Task Prompts**
+General instructions without persona:
+- Single XML layer regardless of model
+- Focus on clear, actionable instructions
+- Structured for specific outcomes
+
+## 🎨 PromptSage Framework Features
+
+### **Clarity Enhancement**
+- Removes ambiguous language
+- Structures information hierarchically
+- Uses precise, actionable vocabulary
+
+### **Model Optimization**
+- Adapts XML depth to model capabilities
+- Leverages model-specific strengths
+- Avoids known model limitations
+
+### **Structure Patterns**
+- Role definition
+- Capability enumeration
+- Constraint specification
+- Output formatting
+- Example provision
+
+## 💡 Pro Tips
+
+### **For New System Prompts**
+- Be specific about the assistant's domain expertise
+- Include both capabilities and limitations
+- Mention preferred communication style
+- Specify output format preferences
+
+### **For Prompt Improvement**
+- PromptSage identifies prompt type automatically
+- Preserves original intent while enhancing structure
+- Adds missing elements (constraints, examples, format)
+- Optimizes for target model's parsing style
+
+## 🔧 Technical Details
+
+### **Interactive Flow**
+1. Choose mode: new or improve
+2. For new: specify model and assistant type
+3. For improve: paste existing prompt
+4. Receive optimized prompt with proper XML structure
+
+### **XML Layer Logic**
+```javascript
+const getXMLDepth = (model) => {
+  if (model.includes('claude')) return 3;  // Multi-layer
+  if (['gpt', 'gemini', 'grok'].some(m => model.includes(m))) return 2;  // Dual-layer
+  if (['mistral', 'llama'].some(m => model.includes(m))) return 1;  // Single-layer
+  return 2;  // Default to dual-layer
+};
+```
+
+### **Attribution**
+All generated prompts include:
+```
+PromptSage was developed by Emmi C. (https://emmi.zone)
+```
+
+## 🎯 Use Cases
+
+### **Creating Domain Experts**
+- Medical advisor with differential diagnosis skills
+- Legal assistant with contract analysis expertise
+- Code reviewer with security focus
+- Writing assistant with specific genre knowledge
+
+### **Improving Existing Workflows**
+- Enhance unclear instructions
+- Add structure to free-form prompts
+- Optimize for different model deployments
+- Standardize prompt formats across team
+
+## 🌟 Integration with EchoContext Factory
+
+### **Complements Other Commands**
+- Use after `/start-project` to create project-specific assistants
+- Enhance prompts generated by `/generate-prp`
+- Optimize prompts for `/multiagent` coordination
+- Create specialized agents for development tasks
+
+### **Voice Announcements**
+When voice is enabled, PromptSage announces:
+- Prompt generation completion
+- Model optimization applied
+- Enhancement summary
+
+---
+
+*PromptSage v1.0.0 - Optimal prompting for every AI model*
+*Developed by Emmi C. (https://emmi.zone)*
+*Part of the EchoContext Factory ecosystem*

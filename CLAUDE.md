@@ -280,10 +280,13 @@ const generateDevelopmentPrompt = (context: ContextualPrompt): string => {
 ```
 
 **Available EchoContext Factory Commands (v2.5.0):**
-- `/start-project` - **ENHANCED!** Adaptive 9-question project setup with smart question selection
-- `/generate-prp` - Feature requirements with accessibility considerations
-- `/start-development` - Bridge from documentation to coding with predefined prompts
-- `/multiagent` - Parallel task execution with mandatory MCP research validation
+- `/start-project` - **ENHANCED!** Adaptive 9-question project setup with comprehensive MCP research (Context7, Perplexity, Tavily)
+- `/promptsage` - **NEW!** Generate or improve prompts with model-specific XML layering (Claude: 3+ layers, GPT/Gemini/Grok: 2 layers, Mistral/Llama: 1 layer)
+- `/generate-prp` - Feature requirements (PRP) with codebase analysis and MCP research for best practices
+- `/start-development` - Bridge from documentation to coding - reads CLAUDE.md, PRD.md, TASKS.md from .claude/ folder
+- `/multiagent` - Parallel task execution with mandatory Context7 & Perplexity MCP research validation
+- `/voice-status` - Check voice system configuration and test TTS functionality
+- `/voice-toggle` - Toggle personalized voice announcements on/off
 </context_engineering>
 
 </development_commands>
@@ -457,6 +460,7 @@ python hooks/utils/validation.py
 - `/generate-prp` - AI-optimized feature requirements generation
 - `/start-development` - Documentation-to-development bridge
 - `/voice-status` - Check voice system configuration
+- `/promptsage` - **NEW!** Generate or improve prompts with model-specific XML layering
 - `/voice-toggle` - Toggle personalized voice announcements
 
 ### Configuration Files
