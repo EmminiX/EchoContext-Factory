@@ -223,11 +223,23 @@ Now uses Claude Code's Task tool for true parallel execution:
 ```bash
 /voice-status      # Test if voice is working and check configuration
 /voice-toggle      # Turn voice announcements on/off
+/agent-status      # Check Claude Code agent availability and configuration
 ```
 
 ---
 
 ## 🤔 Need Help?
+
+### 🤖 Agents Not Working?
+
+**IMPORTANT**: Agents ONLY work inside Claude Code (claude.ai/code), not in terminal/VS Code.
+
+**Quick diagnosis:**
+1. Run `/agent-status` to check availability
+2. Look for "Claude Code agent system detected" message
+3. If you see "Agent system not available", you're in fallback mode
+
+**Solution**: Open this project in Claude Code at claude.ai/code to use agents.
 
 ### 🔊 Voice Not Working?
 

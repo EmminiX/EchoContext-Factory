@@ -1,5 +1,9 @@
 # 🤖 Claude Code Agent Integration Guide
 
+## ⚠️ IMPORTANT: Agents Only Work Inside Claude Code
+
+**Agents are a Claude Code exclusive feature** - they will NOT work when running commands from terminal, VS Code, or other environments. The system automatically falls back to standard execution when agents aren't available.
+
 ## Overview
 
 EchoContext Factory v2.5.0 now fully integrates with Claude Code's powerful sub-agent system, enabling 10-20x speed improvements through parallel execution and specialized expertise.
@@ -290,6 +294,39 @@ agentResults.forEach(result => {
 5. **Validate Results**
    - Cross-check agent outputs
    - Use synthesis agent for integration
+
+## 🔧 Troubleshooting
+
+### "Why aren't agents spawning?"
+
+1. **Check your environment**: Agents ONLY work inside Claude Code (claude.ai/code)
+2. **Run diagnostic**: Use `/agent-status` to check agent availability
+3. **Look for console messages**:
+   - ✅ "Claude Code agent system detected" = Agents available
+   - ⚠️ "Agent system not available" = Fallback mode
+
+### Common Issues
+
+**Issue**: No agents spawning when running /start-project  
+**Solution**: You're likely running from terminal. Open the project in Claude Code.
+
+**Issue**: "Task is not defined" errors  
+**Solution**: This is expected outside Claude Code. The system uses fallback mode.
+
+**Issue**: Commands work but seem slower  
+**Solution**: Without agents, commands run sequentially. This is normal fallback behavior.
+
+### Testing Agent Availability
+
+Run this diagnostic command:
+```bash
+node lib/agent-status.js
+```
+
+Or inside Claude Code:
+```
+/agent-status
+```
 
 ## 📈 Future Enhancements
 
