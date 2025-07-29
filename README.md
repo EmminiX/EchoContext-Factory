@@ -163,24 +163,24 @@ When Claude Code agents are available, /start-project spawns 4 specialized resea
 
 **Example**: Need a Python tutor? → Get a perfectly structured system prompt for your chosen AI model.
 
-### 🚀 Start Development
+### 🚀 Development with Agents
 ```bash
-/start-development
+/dev-agents
 ```
-**What happens**: Reads your documentation from `.claude/` folder (CLAUDE.md, PRD.md, TASKS.md) and provides optimized prompts to start coding immediately.
+**What happens**: Launches specialized development agents to build your project in parallel (only works in Claude Code).
 
-**NEW: Development Agent Teams**
-When Claude Code agents are available, you can choose to use a specialized development team:
-- **Frontend Agent**: Implements UI components with accessibility standards
-- **Backend Agent**: Creates API endpoints and business logic
-- **Database Agent**: Designs schemas and optimizations
-- **Testing Agent**: Develops comprehensive test suites
-- **Documentation Agent**: Writes technical docs and guides
+**Development Agent Team**:
+- **Frontend Agent**: Implements UI components with React/Vue/Angular
+- **Backend Agent**: Creates APIs and server logic  
+- **Database Agent**: Designs schemas and data models
+- **Testing Agent**: Writes comprehensive test suites
+- **Documentation Agent**: Creates technical documentation
 
-**Smart detection**:
-- Finds existing project docs → "Start building your documented project"
-- Finds PRP files → "Implement your feature from PRP"
-- No docs → "Start fresh with guided assistance"
+**Benefits**:
+- 10-20x faster than sequential development
+- Each agent focuses on their specialty
+- Parallel execution with smart coordination
+- High-quality, production-ready code
 
 ### 🤖 Complex Task Help
 ```bash
@@ -344,6 +344,6 @@ We welcome contributions!
 - **🎯 Better Context Building**: First question captures your project vision, remaining questions build context intelligently
 - **🤖 Claude Code Agents**: Full integration with Claude Code's sub-agent system for parallel execution and 10-20x speed improvements
 - **📁 Pre-configured Agents**: 10 specialized agent definitions ready to use in `.claude/agents/`
-- **🚀 Agent Teams**: Development teams for /start-development and research teams for /start-project
+- **🚀 Agent Teams**: Development teams for /dev-agents and research teams for /start-project
 
 *Accessibility improvement: Less overwhelming question flow perfect for neurodivergent developers*
