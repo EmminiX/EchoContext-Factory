@@ -364,6 +364,45 @@ When Claude Code agents are available, `/start-project` spawns **4 specialized r
 
 ---
 
+## 🧠 Understanding CLAUDE.md
+
+The `CLAUDE.md` file in your project contains a **comprehensive system prompt** that transforms Claude into a world-class development assistant with:
+
+### 🎯 What's Inside CLAUDE.md
+- **Core Identity**: Full-stack developer AND cybersecurity expert specializing in secure, accessible software
+- **Behavioral Directives**: Mandatory MCP tool usage (Context7, Perplexity) for all research tasks
+- **Security Framework**: OWASP Top 10 2024 integration and defense-in-depth principles
+- **Tech Stack 2025**: Modern frameworks, security tools, and accessibility standards
+- **Multi-Agent Coordination**: Smart work principles and specialized agent spawning requirements
+- **Accessibility-First**: Neurodivergent-friendly design patterns and WCAG 2.2 AA compliance
+
+### 💡 Pro Tip: Getting Unstuck
+
+When Claude seems stuck on complex issues, **add these instructions** along with your task:
+
+```
+- Take a step back and analyze the situation.
+- Don't complicate things.
+- Spawn specialized agents to help you gather information about the issue or do research.
+- Never assume anything, always document yourself using the MCP tools you have at your disposal.
+- Think deep and hard, be diligent, don't work hard work smart.
+- Look for patterns.
+- Create a good action plan.
+```
+
+**Why this works**: These instructions activate Claude's analytical mode and leverage the multi-agent system for complex problem-solving, exactly as defined in CLAUDE.md.
+
+### 🔄 How It All Connects
+
+1. **CLAUDE.md** = Your AI assistant's "personality" and capabilities
+2. **EchoContext Factory** = The workflow system that uses CLAUDE.md
+3. **MCP Tools** = Research capabilities (Context7, Perplexity, Tavily)
+4. **Specialized Agents** = Expert assistants spawned based on CLAUDE.md specifications
+
+**Result**: A sophisticated AI development environment that thinks systematically, works securely, and builds accessibly.
+
+---
+
 ## 🤔 Need Help?
 
 ### 🤖 Agents Not Working?
