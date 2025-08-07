@@ -359,7 +359,7 @@ When Claude Code agents are available, `/start-project` spawns **4 specialized r
 ```bash
 /voice-status      # Test if voice is working and check configuration
 /voice-toggle      # Turn voice announcements on/off
-/agent-status      # Check Claude Code agent availability and configuration
+/agent-status      # Check Claude Code agent system status and availability
 ```
 
 ---
