@@ -123,101 +123,230 @@ Every project automatically generates:
 
 ---
 
+## 🎵 Voice Hooks System
+
+### 🔊 How Voice Works
+
+EchoContext Factory includes a sophisticated **3-tier voice fallback system** that ensures you always get voice announcements, regardless of your API key setup:
+
+#### **Tier 1: Premium Voice (ElevenLabs)**
+- **Requires**: `ELEVENLABS_API_KEY` in your `.env` file
+- **Quality**: Professional-grade, natural-sounding voice
+- **Best for**: Daily development work where voice quality matters
+
+#### **Tier 2: Good Voice (OpenAI)**
+- **Requires**: `OPENAI_API_KEY` in your `.env` file  
+- **Quality**: Clear, pleasant AI-generated voice
+- **Best for**: Regular use when ElevenLabs isn't available
+
+#### **Tier 3: System Voice (Always Works)**
+- **Requires**: Nothing! Works out of the box
+- **Quality**: Your computer's built-in text-to-speech
+- **Uses**: `pyttsx3` on all platforms, `say` command on macOS
+- **Best for**: Immediate functionality without any setup
+
+### 🔧 Voice Hooks Architecture
+
+The voice system uses **Python hooks** that automatically trigger during key moments:
+
+```python
+# Voice hooks trigger on:
+📝 TodoWrite events      # "Creating your task list..."
+🎯 Project completion    # "Your project documentation is ready!"
+🤖 Agent coordination   # "Spawning research agents..."
+⚠️ Input needed         # "Your cognitive enhancement system needs direction"
+✅ Task completion      # "Mission accomplished!"
+```
+
+### 🎯 Personalized Announcements
+
+When you set `ENGINEER_NAME=YourName` in your `.env` file:
+- **70% of messages** become personalized: *"Hey Sarah, time to sync minds"*
+- **30% stay generic** for variety: *"Your AI collaborator seeks your wisdom"*
+- **Smart context**: Messages adapt to your workflow and progress
+
+### 🎚️ Voice Control
+
+```bash
+/voice-status      # Test voice system and check configuration
+/voice-toggle      # Turn voice announcements on/off instantly
+```
+
+**No API Keys? No Problem!** The system voice (Tier 3) ensures you get announcements even without any API keys configured.
+
+### 🎚️ Voice Customization
+
+#### **🏷️ Personal Name Integration**
+
+Add your name for personalized announcements:
+```bash
+# In ~/.claude/.env
+ENGINEER_NAME=Sarah
+```
+
+**Name Usage Frequency:**
+- **70% of messages** include your name: *"Hey Sarah, time to sync minds"*
+- **30% stay generic** for variety: *"Your AI collaborator seeks your wisdom"*
+- **Smart context**: Name usage adapts to workflow phases and progress
+
+#### **🔊 Voice Quality Tiers**
+
+**ElevenLabs (Premium):**
+```bash
+# In ~/.claude/.env  
+ELEVENLABS_API_KEY=your_key_here
+```
+- Professional voice actors, natural speech patterns
+- Multiple voice options, emotion and pace control
+
+**OpenAI (Good):**
+```bash
+# In ~/.claude/.env
+OPENAI_API_KEY=your_key_here
+```
+- Clear AI-generated voice, reliable quality
+- Multiple voice models available
+
+**System Voice (Always Works):**
+- No configuration needed
+- Uses your computer's built-in TTS (macOS `say`, Windows Speech API, Linux `espeak`)
+- Immediate functionality without any setup
+
+#### **🎛️ Voice Controls**
+
+```bash
+/voice-status      # Test current voice setup and check all tiers
+/voice-toggle      # Instantly turn voice announcements on/off
+```
+
+**Voice automatically cascades**: ElevenLabs → OpenAI → System Voice if keys aren't available.
+
+---
+
 ## 🚀 Main Commands
 
-### 🎯 Start a New Project
+### 🎯 Start a New Project (Context Factory)
 ```bash
 /start-project
 ```
-**What happens**: Your assistant asks up to 9 adaptive questions about your project, then creates complete documentation with live web research using Context7, Perplexity, and Tavily MCP tools.
 
-**NEW: Multi-Agent Research**
-When Claude Code agents are available, /start-project spawns 4 specialized research agents in parallel:
-- **Tech Stack Agent**: Researches best practices for your chosen technologies
-- **Architecture Agent**: Analyzes optimal patterns for your project type
+**What happens**: The **Context Factory** engine conducts an intelligent interview using an adaptive 9-question system, then generates comprehensive project documentation with live MCP research.
+
+#### **🧠 Adaptive Question System**
+
+**Smart Flow Design:**
+- **Question 1-3**: Core project foundation (name, detailed description, type)
+- **Question 2 is KEY**: Your detailed project description drives all subsequent question selection
+- **Questions 4-9**: Intelligently selected based on keywords in your description
+- **Maximum 9 questions**: Reduced from 18 for better neurodivergent accessibility
+- **Progress tracking**: Clear 11%, 22%, 33%... progression to 100%
+
+**Keyword-Based Adaptation:**
+```javascript
+// Example: If your description contains "mobile app", "social features", "user authentication"
+// The system automatically selects relevant questions about:
+- Mobile platform preferences (iOS/Android)
+- Social interaction features 
+- Authentication & security requirements
+- Performance & scalability needs
+```
+
+#### **🔍 Comprehensive MCP Research (v2.5.0)**
+
+**Mandatory Research Integration:**
+- **15+ intelligent queries** generated per project based on your tech stack
+- **Context7 MCP**: Comprehensive codebase analysis and documentation research
+- **Perplexity MCP**: Current industry standards and expert best practices  
+- **Tavily MCP**: Real-time web research for latest trends and techniques
+- **Cross-validation**: All MCP sources verify findings for accuracy confidence scoring
+
+#### **🤖 Multi-Agent Research Teams**
+
+When Claude Code agents are available, `/start-project` spawns **4 specialized research agents** working in parallel:
+
+**Research Agent Team:**
+- **Tech Stack Agent**: Deep-dives into best practices for your chosen technologies
+- **Architecture Agent**: Analyzes optimal design patterns for your project type
 - **Security Agent**: Investigates OWASP 2024/2025 compliance requirements
-- **Deployment Agent**: Explores modern infrastructure strategies
+- **Deployment Agent**: Explores modern infrastructure and DevOps strategies
 
-**Example flow**:
-1. 🗣️ "Hi! What's your project called?"
-2. 📝 You: "My Recipe App" 
-3. 🗣️ "Please provide a detailed description of what you are looking to build..."
-4. 📝 You: "A web app where users can save and share their favorite recipes..."
-5. 🧠 *AI adapts remaining questions based on your description*
-6. 🗣️ "What type of users will use this app?"
-7. *...continues with smart, adaptive questions...*
-8. 🤖 *4 research agents work in parallel (if available)*
-9. 🔍 *MCP research happens automatically (Context7 + Perplexity + Tavily)*
-10. ✅ Three complete documents created in `.claude/` folder!
+**Benefits:**
+- **10-20x faster research** through parallel execution
+- **Cross-validated findings** between agents and MCP tools
+- **Comprehensive coverage** of all project aspects simultaneously
+- **Research source attribution** in all generated documentation
+
+#### **📋 Generated Documentation**
+
+**Complete Project Context:**
+```
+📁 .claude/
+├── 📄 CLAUDE.md         # Complete AI assistant context with research links
+├── 📋 PRD.md           # Professional requirements doc with industry standards
+├── ✅ TASKS.md         # Step-by-step implementation guide with best practices
+└── 🔗 Research sources # All MCP research properly attributed
+```
+
+#### **🎵 Voice-Guided Experience**
+
+**Example Interactive Flow:**
+1. 🗣️ *"Hi! What's your project called?"*
+2. 📝 **You**: "My Recipe App" 
+3. 🗣️ *"Please provide a detailed description of what you are looking to build..."*
+4. 📝 **You**: "A web app where users can save, organize, and share their favorite recipes with social features..."
+5. 🧠 *AI analyzes keywords: "web app", "social features", "organize"*
+6. 🗣️ *"What type of users will primarily use this app?"*
+7. 📝 **You**: "Home cooks and food enthusiasts"
+8. 🗣️ *"What's your preferred tech stack for the frontend?"*
+9. *...continues with 4 more adaptive questions based on your answers...*
+10. 🎯 **Progress**: *"Great! 100% complete. Launching research agents..."*
+11. 🤖 *4 research agents work in parallel using MCP tools*
+12. 🔍 *15+ research queries execute across Context7, Perplexity, and Tavily*
+13. ✅ *"Your comprehensive project documentation is ready!"*
 
 ### 🧠 Generate or Improve Prompts
 ```bash
 /promptsage
 ```
-**What happens**: Create new system prompts or improve existing prompts with model-specific XML layering for optimal AI performance.
+**What happens**: Uses the PromptSage framework to create new system prompts or improve existing ones with model-specific XML layering.
 
-**Supported models**:
-- **Claude**: 3+ nested XML layers for maximum control
-- **GPT-4.1/Gemini/Grok**: 2 XML layers for optimal parsing
-- **Mistral/Llama**: 1 XML layer for compatibility
+**Two modes**: Create new expert assistant prompts or enhance your existing prompts. Supports 20+ AI models with optimized structure for each.
 
-**Example**: Need a Python tutor? → Get a perfectly structured system prompt for your chosen AI model.
+**Example**: "Create a Python tutor prompt for Claude" → Get a perfectly structured system prompt for your chosen AI model.
 
 ### 🚀 Development with Agents
 ```bash
 /dev-agents
 ```
-**What happens**: Launches specialized development agents to build your project in parallel (only works in Claude Code).
+**What happens**: Spawns 5 specialized development agents to build your project in parallel using Claude Code's agent system.
 
-**Development Agent Team**:
-- **Frontend Agent**: Implements UI components with React/Vue/Angular
-- **Backend Agent**: Creates APIs and server logic  
-- **Database Agent**: Designs schemas and data models
-- **Testing Agent**: Writes comprehensive test suites
-- **Documentation Agent**: Creates technical documentation
+**Agent Team**: Frontend, Backend, Database, Testing, and Documentation agents work simultaneously on different aspects of your project.
 
-**Benefits**:
-- 10-20x faster than sequential development
-- Each agent focuses on their specialty
-- Parallel execution with smart coordination
-- High-quality, production-ready code
+**Benefits**: 10-20x faster development through parallel execution with smart coordination between agents.
+
+**Note**: Only works in Claude Code (claude.ai/code), not in terminal/VS Code.
 
 ### 🤖 Complex Task Help
 ```bash
 /multiagent
 ```
-**What happens**: Specialized AI agents work in parallel to research, analyze, and solve complex development challenges using Context7 and Perplexity MCP for comprehensive research.
+**What happens**: Spawns specialized agents that work in parallel to research, analyze, and solve complex development challenges using MCP tools.
 
-**NEW: Real Agent Execution**
-Now uses Claude Code's Task tool for true parallel execution:
-- Agents run simultaneously, not sequentially
-- Each agent has its own context window
-- Smart dependency management between agents
-- 10-20x speed improvement for complex tasks
+**Real Parallel Execution**: Uses Claude Code's Task tool for true simultaneous agent execution (10-20x faster than sequential).
 
-**Agent types**:
-- **Research Specialist**: Gathers information using MCP tools
-- **Analysis Specialist**: Reviews and optimizes solutions
-- **Implementation Specialist**: Generates code and configurations
-- **Validation Specialist**: Tests and quality assurance
-- **Integration Specialist**: Coordinates and merges results
+**Agent Types**: Research, Analysis, Implementation, Validation, and Integration specialists - each with their own context window.
 
-**Example**: "Help me implement user authentication" → Gets research report with current security standards, architecture analysis, code examples with best practices, and comprehensive testing strategy.
+**Example**: "Help me implement user authentication" → Multiple agents research security standards, analyze architecture, generate code, and create testing strategies simultaneously.
 
 ### 📋 Feature Requirements
 ```bash
 /generate-prp
 ```
-**What happens**: Creates detailed feature specifications (Product Requirements Prompts) with current best practices and security considerations using MCP research.
+**What happens**: Creates detailed Product Requirements Prompts (PRPs) for specific features with current best practices and security considerations.
 
-**Process**:
-1. Interactive feature discovery questions
-2. Automated codebase analysis
-3. MCP research for best practices (Context7 + Perplexity + Tavily)
-4. Professional PRP document generation
-5. Saves to `generated-prps/` directory
+**Process**: Interactive questions → Codebase analysis → MCP research → Professional requirements document saved to `generated-prps/` directory.
 
-**Example**: Describe a login feature → Get comprehensive requirements document with implementation details and research-backed recommendations.
+**Example**: "I need a login system" → Get comprehensive requirements document with implementation details, security standards, and research-backed recommendations.
 
 ### 🔧 Utility Commands
 ```bash
