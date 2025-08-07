@@ -392,6 +392,17 @@ When Claude seems stuck on complex issues, **add these instructions** along with
 
 **Why this works**: These instructions activate Claude's analytical mode and leverage the multi-agent system for complex problem-solving, exactly as defined in CLAUDE.md.
 
+### 🤖 Pro Tip: Automatic Agent Spawning
+
+For complex tasks, simply tell Claude to **"spawn multiple agents"** and it will:
+
+- **Automatically decide** what specialist agents are needed
+- **Spawn the appropriate experts** (research, architecture, security, implementation, etc.)
+- **Assign detailed tasks** to each agent based on the problem
+- **Coordinate the work** and aggregate results
+
+**Example**: "Help me build a secure user authentication system - spawn multiple agents" → Claude spawns Security, Backend, Database, and Testing agents automatically.
+
 ### 🔄 How It All Connects
 
 1. **CLAUDE.md** = Your AI assistant's "personality" and capabilities
