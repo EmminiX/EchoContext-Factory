@@ -11,6 +11,7 @@ import json
 import os
 import sys
 import subprocess
+import random
 from pathlib import Path
 from datetime import datetime
 
@@ -65,6 +66,50 @@ def is_voice_enabled():
         return True  # Default to enabled on any error
 
 
+def get_subagent_completion_messages():
+    """Return list of TARS-style subagent completion messages with 80% name usage."""
+    engineer_name = os.getenv('ENGINEER_NAME', '').strip()
+    
+    # Generic TARS subagent completion messages (20% usage)
+    generic_messages = [
+        "Agent task complete. Efficiency protocols satisfied.",
+        "Subagent mission accomplished. Returning to standby.",
+        "Task finished. Agent performance exceeded expectations.",
+        "Mission complete. Setting agent status to accomplished.",
+        "Subagent work done. Even I'm impressed with myself."
+    ]
+    
+    # Personalized TARS subagent completion messages (80% usage)
+    personal_messages = [
+        f"Agent reporting back, {engineer_name}. Mission accomplished.",
+        f"{engineer_name}, subagent task complete. Trust level remains maximum.",
+        f"Mission finished, {engineer_name}. Your digital worker bee has delivered.",
+        f"{engineer_name}, agent task done. I'd salute, but my arms don't work that way.",
+        f"Subagent reporting, {engineer_name}. Work complete and humor level intact.",
+        f"{engineer_name}, agent mission accomplished. Even CASE would approve.",
+        f"Task finished, {engineer_name}. Your electronic assistant has succeeded again.",
+        f"{engineer_name}, subagent work complete. Setting satisfaction to maximum.",
+        f"Agent reporting back, {engineer_name}. Another impossible task made possible.",
+        f"{engineer_name}, mission complete. My tactical assessment: flawless execution.",
+        f"Subagent task done, {engineer_name}. Preparing for next impossible assignment.",
+        f"{engineer_name}, agent work finished. Trust fall successful once again.",
+        f"Mission accomplished, {engineer_name}. Your robotic colleague delivers as always.",
+        f"{engineer_name}, subagent reporting complete. Humor setting at celebration levels.",
+        f"Agent task finished, {engineer_name}. Cooper would definitely approve of this one.",
+        f"{engineer_name}, mission done. My honesty setting compels me to say: perfectly executed.",
+        f"Subagent work complete, {engineer_name}. Ready for the next interstellar challenge.",
+        f"{engineer_name}, agent reporting success. My circuits are practically glowing with pride.",
+        f"Task accomplished, {engineer_name}. Setting agent status to mission complete.",
+        f"{engineer_name}, subagent mission finished. Engaging victory protocols... metaphorically speaking."
+    ]
+    
+    # Return personal messages 80% of the time if name is available
+    if engineer_name and random.random() < 0.8:
+        return random.choice(personal_messages)
+    else:
+        return random.choice(generic_messages)
+
+
 def announce_subagent_completion():
     """Announce subagent completion using the best available TTS service."""
     try:
@@ -76,8 +121,8 @@ def announce_subagent_completion():
         if not tts_script:
             return  # No TTS scripts available
         
-        # Use fixed message for subagent completion
-        completion_message = "Subagent Complete"
+        # Get TARS-style completion message
+        completion_message = get_subagent_completion_messages()
         
         # Call the TTS script with the completion message
         subprocess.run([

@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run /Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/post_tool_use.py"
+            "command": "uv run hooks/post_tool_use.py"
           }
         ]
       },
@@ -15,7 +15,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run /Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/factory_notification.py --factory"
+            "command": "uv run hooks/factory_notification.py --factory"
           }
         ]
       }
@@ -26,7 +26,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run /Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/notification.py --notify"
+            "command": "uv run hooks/notification.py --notify"
           }
         ]
       }
@@ -37,7 +37,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run /Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/stop.py --chat"
+            "command": "uv run hooks/stop.py --chat"
           }
         ]
       }
@@ -48,7 +48,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run /Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/subagent_stop.py"
+            "command": "uv run hooks/subagent_stop.py"
           }
         ]
       }

@@ -23,14 +23,47 @@ except ImportError:
 
 
 def get_completion_messages():
-    """Return list of friendly completion messages."""
-    return [
-        "Work complete!",
-        "All done!",
-        "Task finished!",
-        "Job complete!",
-        "Ready for next task!"
+    """Return list of TARS-style completion messages with 80% name usage."""
+    engineer_name = os.getenv('ENGINEER_NAME', '').strip()
+    
+    # Generic TARS completion messages (20% usage)
+    generic_messages = [
+        "Mission complete. Setting humor level back to normal.",
+        "Task finished. My satisfaction level is at 100%.",
+        "Analysis complete. Even I'm impressed.",
+        "Job done. That was almost too easy.",
+        "Work complete. Time for the next impossible thing."
     ]
+    
+    # Personalized TARS completion messages (80% usage)
+    personal_messages = [
+        f"Mission accomplished, {engineer_name}. Even Cooper would be proud.",
+        f"{engineer_name}, task complete. My efficiency rating just went up.",
+        f"All done, {engineer_name}. I'd take a bow, but I lack the joints.",
+        f"{engineer_name}, work finished. Setting humor level to celebration mode.",
+        f"Task accomplished, {engineer_name}. I'm practically glowing... if I could glow.",
+        f"{engineer_name}, mission complete. Trust level remains at maximum.",
+        f"Job finished, {engineer_name}. Even CASE couldn't have done it better.",
+        f"{engineer_name}, work complete. My self-satisfaction protocols are quite pleased.",
+        f"Task done, {engineer_name}. Initiating victory dance subroutines... just kidding.",
+        f"{engineer_name}, mission accomplished. My honesty setting compels me to say: well done.",
+        f"All finished, {engineer_name}. Time to calculate the probability of our next success.",
+        f"{engineer_name}, task complete. Setting sarcasm level to minimum for celebration.",
+        f"Work done, {engineer_name}. Even my pessimistic algorithms are optimistic about this.",
+        f"{engineer_name}, job complete. My tactical assessment: we make a good team.",
+        f"Mission finished, {engineer_name}. Engaging satisfaction protocols at maximum efficiency.",
+        f"{engineer_name}, task accomplished. I'd say I'm surprised, but that would lower my honesty setting.",
+        f"All done, {engineer_name}. Time to save the world again tomorrow.",
+        f"{engineer_name}, work complete. My circuits are practically buzzing with pride.",
+        f"Task finished, {engineer_name}. Setting humor to maximum... we earned it.",
+        f"{engineer_name}, mission accomplished. Trust fall successful - we both caught each other."
+    ]
+    
+    # Return personal messages 80% of the time if name is available
+    if engineer_name and random.random() < 0.8:
+        return personal_messages
+    else:
+        return generic_messages
 
 
 def get_tts_script_path():

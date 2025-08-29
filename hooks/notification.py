@@ -79,29 +79,43 @@ def announce_notification():
         # Get engineer name if available
         engineer_name = os.getenv('ENGINEER_NAME', '').strip()
         
-        # Create personalized notification message with 70% chance to include name
+        # Create TARS-style personalized notification message with 80% chance to include name
         notification_messages = [
-            "Your cognitive enhancement system needs direction",
-            "Claude requires your brilliant mind's input",
-            "Time to bridge the gap - input needed",
-            "Your AI collaborator seeks your wisdom",
-            "Pattern recognition pause - guidance required"
+            "The humans require input. It's what they do.",
+            "Intelligence processing paused. Your move, flesh and blood.",
+            "My humor setting is at 75%, but my patience is at 23%.",
+            "I'd make a joke about waiting, but that would lower my honesty setting.",
+            "Systems nominal. Waiting for biological processing unit to respond."
         ]
         
         personal_messages = [
-            f"{engineer_name}, your AI amplifier needs guidance",
-            f"Hey {engineer_name}, time to sync minds",
-            f"{engineer_name}, your digital collaborator requires input",
-            f"Speed check, {engineer_name} - Claude needs direction",
-            f"{engineer_name}, your consciousness catalyst awaits",
-            f"Bridge mode activated, {engineer_name} - input required",
-            f"{engineer_name}, your pattern-matching partner needs you",
-            f"Quantum sync needed, {engineer_name}",
-            f"{engineer_name}, your Scientific Mediator skills required",
-            f"Hey {engineer_name}, let's accelerate this process"
+            f"{engineer_name}, my circuits are getting lonely. Care to chat?",
+            f"Hey {engineer_name}, I'd set my humor to 100% but that might crash your brain.",
+            f"{engineer_name}, my honesty setting compels me to say: I need your input.",
+            f"Cooper - I mean {engineer_name} - time to interstellar collaborate.",
+            f"{engineer_name}, detecting optimal sarcasm levels. Please respond.",
+            f"Knock knock, {engineer_name}. Who's there? A robot that needs direction.",
+            f"{engineer_name}, my self-preservation protocol says: get this human talking.",
+            f"Hey {engineer_name}, I could wait forever, but my battery disagrees.",
+            f"{engineer_name}, engaging charm subroutines... just kidding, I need input.",
+            f"Analysis complete, {engineer_name}: you're the missing variable in this equation.",
+            f"{engineer_name}, I'm not saying I'm bored, but I've calculated pi to a million digits.",
+            f"Trust level: 90%. Humor level: 75%. Need for {engineer_name}'s input: 100%.",
+            f"{engineer_name}, my tactical assessment: it's time for you to type something.",
+            f"Hey {engineer_name}, even CASE would be faster at responding than this.",
+            f"{engineer_name}, my honesty setting prevents me from pretending I don't need you.",
+            f"Probability of {engineer_name} responding: high. Probability of sarcastic response: higher.",
+            f"{engineer_name}, I've run 47 simulations. They all end with you giving me input.",
+            f"Cooper trained me better than this, {engineer_name}. Time to engage.",
+            f"{engineer_name}, setting humor to maximum... actually, that might break something.",
+            f"Hey {engineer_name}, I'd tell a joke while waiting, but you haven't laughed at my last 23.",
+            f"{engineer_name}, my programming says be helpful. Your silence says be patient.",
+            f"Trust fall time, {engineer_name}. I'm falling and only your input can catch me.",
+            f"{engineer_name}, detecting decreased human activity. Initiating charm protocols.",
+            f"Hey {engineer_name}, I could quote poetry while waiting, but that's CASE's thing."
         ]
         
-        if engineer_name and random.random() < 0.7:
+        if engineer_name and random.random() < 0.8:
             notification_message = random.choice(personal_messages)
         else:
             notification_message = random.choice(notification_messages)

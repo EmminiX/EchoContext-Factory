@@ -100,5 +100,82 @@
     "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
     "hook_event_name": "SubagentStop",
     "stop_hook_active": false
+  },
+  {
+    "session_id": "48ffe6d7-0491-4627-9db8-cc74d8a26de3",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/48ffe6d7-0491-4627-9db8-cc74d8a26de3.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "hook_event_name": "SubagentStop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "48ffe6d7-0491-4627-9db8-cc74d8a26de3",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/48ffe6d7-0491-4627-9db8-cc74d8a26de3.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "hook_event_name": "SubagentStop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "74c7433c-4688-4ced-82b3-8a838eac1f59",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/74c7433c-4688-4ced-82b3-8a838eac1f59.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "hook_event_name": "SubagentStop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "74c7433c-4688-4ced-82b3-8a838eac1f59",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/74c7433c-4688-4ced-82b3-8a838eac1f59.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "hook_event_name": "SubagentStop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "74c7433c-4688-4ced-82b3-8a838eac1f59",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/74c7433c-4688-4ced-82b3-8a838eac1f59.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "hook_event_name": "SubagentStop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "74c7433c-4688-4ced-82b3-8a838eac1f59",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/74c7433c-4688-4ced-82b3-8a838eac1f59.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "hook_event_name": "SubagentStop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "74c7433c-4688-4ced-82b3-8a838eac1f59",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/74c7433c-4688-4ced-82b3-8a838eac1f59.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "hook_event_name": "SubagentStop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "74c7433c-4688-4ced-82b3-8a838eac1f59",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/74c7433c-4688-4ced-82b3-8a838eac1f59.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "hook_event_name": "SubagentStop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "001c06d2-2687-4873-921c-1df089311b7b",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/001c06d2-2687-4873-921c-1df089311b7b.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "hook_event_name": "SubagentStop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "001c06d2-2687-4873-921c-1df089311b7b",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/001c06d2-2687-4873-921c-1df089311b7b.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "hook_event_name": "SubagentStop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "001c06d2-2687-4873-921c-1df089311b7b",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/001c06d2-2687-4873-921c-1df089311b7b.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "hook_event_name": "SubagentStop",
+    "stop_hook_active": false
   }
 ]
