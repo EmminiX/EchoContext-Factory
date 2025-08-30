@@ -522,6 +522,37 @@ We welcome contributions!
 
 **Version**: 2.5.0 | **Created by**: [Emmi C.](https://emmi.zone) | **License**: MIT
 
+### 🌟 TARS_version Branch
+
+**Current Development Branch**: `TARS_version`
+
+This branch contains the complete EchoContext Factory v2.5.0 implementation with enhanced features ready for TARS integration and advanced AI development experiments:
+
+**🎯 Branch Features:**
+- Complete v2.5.0 adaptive 9-question project setup system
+- Comprehensive MCP integration (Context7, Perplexity, Tavily)
+- Multi-agent coordination with specialized research teams
+- Voice-enabled TTS system with 3-tier fallback architecture
+- Neurodivergent-friendly accessibility features throughout
+- Security-first development practices with OWASP 2024 compliance
+- Pre-configured Claude Code agent system for 10-20x speed improvements
+
+**🚀 Development Status:**
+- ✅ Stable and fully functional
+- ✅ All core systems tested and working
+- ✅ Voice system operational across all platforms
+- ✅ Agent coordination system integrated with Claude Code
+- 🔄 Ready for TARS integration experiments
+- 🔄 Open for advanced AI assistant development
+
+**🌐 Branch Access:**
+```bash
+git checkout TARS_version    # Switch to development branch
+git pull origin TARS_version # Get latest updates
+```
+
+This branch serves as the foundation for next-generation AI assistant development while maintaining full backward compatibility with all EchoContext Factory features.
+
 ### 🆕 What's New in v2.5.0?
 
 - **🧠 Smarter Question Flow**: New adaptive 9-question flow that starts with your project description and intelligently selects follow-up questions
