@@ -7,6 +7,10 @@
           {
             "type": "command",
             "command": "uv run hooks/post_tool_use.py"
+          },
+          {
+            "type": "command",
+            "command": "uv run hooks/startup_check.py"
           }
         ]
       },

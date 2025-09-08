@@ -216,8 +216,9 @@ def announce_completion():
         if not tts_script:
             return  # No TTS scripts available
         
-        # Get completion message (LLM-generated or fallback)
-        completion_message = get_llm_completion_message()
+        # Get completion message from our TARS collection
+        completion_messages = get_completion_messages()
+        completion_message = random.choice(completion_messages)
         
         # Call the TTS script with the completion message
         subprocess.run([

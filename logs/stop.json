@@ -594,5 +594,33 @@
     "session_id": "test",
     "stop_hook_active": true,
     "timestamp": "2025-09-08T15:45:39+01:00"
+  },
+  {
+    "session_id": "85dd89c1-e993-4500-ac4c-bcef3677facc",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/85dd89c1-e993-4500-ac4c-bcef3677facc.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "Stop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "Stop",
+    "stop_hook_active": true
+  },
+  {
+    "session_id": "test",
+    "stop_hook_active": true
+  },
+  {
+    "session_id": "test_diverse",
+    "stop_hook_active": true
+  },
+  {
+    "session_id": "test_diverse2",
+    "stop_hook_active": true
   }
 ]
