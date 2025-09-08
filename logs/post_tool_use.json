@@ -5886,5 +5886,756 @@
         }
       ]
     }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "git add .",
+      "description": "Stage all automatic startup and completion message fixes"
+    },
+    "tool_response": {
+      "stdout": "",
+      "stderr": "",
+      "interrupted": false,
+      "isImage": false
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "git commit -m \"$(cat <<'EOF'\nfeat: Implement automatic startup announcements and fix completion diversity\n\nAUTOMATIC STARTUP SYSTEM:\n- Created startup_check.py hook that triggers on first tool use per session\n- 36+ diverse TARS-style startup messages with 80% personalization\n- Session tracking prevents duplicate announcements\n- Automatic welcome message when Claude Code TUI loads\n- Removed manual /startup-announce command (now fully automatic)\n\nCOMPLETION MESSAGE FIXES:\n- Fixed stop.py to use only TARS collection instead of LLM generation\n- Eliminated generic \"All set and ready for your next step\" messages\n- Now shows 69+ diverse TARS-style completion messages\n- Enhanced personality variety with witty, engaging completions\n\nSYSTEM IMPROVEMENTS:\n- Updated settings.json to include startup_check.py hook\n- Session-based startup detection (resets after 4 hours)\n- Smart TTS fallback system (ElevenLabs \u2192 OpenAI \u2192 System)\n- Updated README with automatic behavior documentation\n\nNow Claude Code automatically welcomes users with TARS personality\nand celebrates task completion with diverse, entertaining messages.\nNo manual commands needed - fully automatic AI companion experience.\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.ai/code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\"",
+      "description": "Commit automatic startup and completion message improvements"
+    },
+    "tool_response": {
+      "stdout": "[TARS_version b3ac149] feat: Implement automatic startup announcements and fix completion diversity\n 12 files changed, 6958 insertions(+), 394 deletions(-)\n delete mode 100644 commands/startup-announce.md\n create mode 100755 hooks/startup_check.py\n delete mode 100755 lib/startup-announcement.js\n create mode 100644 logs/.session_started",
+      "stderr": "",
+      "interrupted": false,
+      "isImage": false
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "git push origin TARS_version",
+      "description": "Push automatic startup and completion fixes to TARS_version branch"
+    },
+    "tool_response": {
+      "stdout": "To https://github.com/EmminiX/EchoContext-Factory.git\n   45ebf3c..b3ac149  TARS_version -> TARS_version",
+      "stderr": "",
+      "interrupted": false,
+      "isImage": false
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "TodoWrite",
+    "tool_input": {
+      "todos": [
+        {
+          "content": "Debug why automatic startup message isn't triggering on Claude Code start",
+          "status": "pending",
+          "activeForm": "Debugging why automatic startup message isn't triggering on Claude Code start"
+        },
+        {
+          "content": "Fix ElevenLabs voice not working - defaulting to Siri instead",
+          "status": "pending",
+          "activeForm": "Fixing ElevenLabs voice not working - defaulting to Siri instead"
+        },
+        {
+          "content": "Test both startup trigger and ElevenLabs voice functionality",
+          "status": "pending",
+          "activeForm": "Testing both startup trigger and ElevenLabs voice functionality"
+        }
+      ]
+    },
+    "tool_response": {
+      "oldTodos": [],
+      "newTodos": [
+        {
+          "content": "Debug why automatic startup message isn't triggering on Claude Code start",
+          "status": "pending",
+          "activeForm": "Debugging why automatic startup message isn't triggering on Claude Code start"
+        },
+        {
+          "content": "Fix ElevenLabs voice not working - defaulting to Siri instead",
+          "status": "pending",
+          "activeForm": "Fixing ElevenLabs voice not working - defaulting to Siri instead"
+        },
+        {
+          "content": "Test both startup trigger and ElevenLabs voice functionality",
+          "status": "pending",
+          "activeForm": "Testing both startup trigger and ElevenLabs voice functionality"
+        }
+      ]
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "TodoWrite",
+    "tool_input": {
+      "todos": [
+        {
+          "content": "Debug why automatic startup message isn't triggering on Claude Code start",
+          "status": "in_progress",
+          "activeForm": "Debugging why automatic startup message isn't triggering on Claude Code start"
+        },
+        {
+          "content": "Fix ElevenLabs voice not working - defaulting to Siri instead",
+          "status": "pending",
+          "activeForm": "Fixing ElevenLabs voice not working - defaulting to Siri instead"
+        },
+        {
+          "content": "Test both startup trigger and ElevenLabs voice functionality",
+          "status": "pending",
+          "activeForm": "Testing both startup trigger and ElevenLabs voice functionality"
+        }
+      ]
+    },
+    "tool_response": {
+      "oldTodos": [],
+      "newTodos": [
+        {
+          "content": "Debug why automatic startup message isn't triggering on Claude Code start",
+          "status": "in_progress",
+          "activeForm": "Debugging why automatic startup message isn't triggering on Claude Code start"
+        },
+        {
+          "content": "Fix ElevenLabs voice not working - defaulting to Siri instead",
+          "status": "pending",
+          "activeForm": "Fixing ElevenLabs voice not working - defaulting to Siri instead"
+        },
+        {
+          "content": "Test both startup trigger and ElevenLabs voice functionality",
+          "status": "pending",
+          "activeForm": "Testing both startup trigger and ElevenLabs voice functionality"
+        }
+      ]
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "rm -f logs/.session_started",
+      "description": "Remove session marker to allow startup message to trigger again"
+    },
+    "tool_response": {
+      "stdout": "",
+      "stderr": "",
+      "interrupted": false,
+      "isImage": false
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "echo '{\"tool\": \"test_startup\", \"timestamp\": \"'$(date -Iseconds)'\"}' | uv run hooks/startup_check.py",
+      "description": "Test startup check manually to see if it triggers"
+    },
+    "tool_response": {
+      "stdout": "\u26a1 Siri Voice Amplifier\n=========================\n\ud83c\udfaf Text: System startup successful. My tactical assessment: today will be productive.\n\ud83d\udd0a Speaking...\n\u2705 Playback complete!",
+      "stderr": "",
+      "interrupted": false,
+      "isImage": false
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "echo \"ELEVENLABS_API_KEY is: ${ELEVENLABS_API_KEY:+SET}\" && echo \"OPENAI_API_KEY is: ${OPENAI_API_KEY:+SET}\"",
+      "description": "Check if API keys are set without exposing them"
+    },
+    "tool_response": {
+      "stdout": "ELEVENLABS_API_KEY is: \nOPENAI_API_KEY is:",
+      "stderr": "",
+      "interrupted": false,
+      "isImage": false
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/emmi/.claude/.env"
+    },
+    "tool_response": {
+      "type": "text",
+      "file": {
+        "filePath": "/Users/emmi/.claude/.env",
+        "content": "# Context Engineering Factory API Keys\n# Add your actual API keys here and rename to .env\n\n# Voice Integration (TTS) - Priority Order: ElevenLabs > OpenAI > pyttsx3\nELEVENLABS_API_KEY=sk_b3a7e5bb18432d3d39053d29d763bff6d221d4d8bc9a65cf\nOPENAI_API_KEY=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\n\n# Personalization\nENGINEER_NAME=Emmi",
+        "numLines": 9,
+        "startLine": 1,
+        "totalLines": 9
+      }
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/utils/tts/elevenlabs_tts.py",
+      "offset": 1,
+      "limit": 30
+    },
+    "tool_response": {
+      "type": "text",
+      "file": {
+        "filePath": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/utils/tts/elevenlabs_tts.py",
+        "content": "#!/usr/bin/env -S uv run --script\n# /// script\n# requires-python = \">=3.8\"\n# dependencies = [\n#     \"elevenlabs\",\n#     \"python-dotenv\",\n# ]\n# ///\n\nimport os\nimport sys\nfrom pathlib import Path\nfrom dotenv import load_dotenv\n\ndef main():\n    \"\"\"\n    ElevenLabs Turbo v2.5 TTS Script\n    \n    Uses ElevenLabs' Turbo v2.5 model for fast, high-quality text-to-speech.\n    Accepts optional text prompt as command-line argument.\n    \n    Usage:\n    - ./elevenlabs_tts.py                    # Uses default text\n    - ./elevenlabs_tts.py \"Your custom text\" # Uses provided text\n    \n    Features:\n    - Fast generation (optimized for real-time use)\n    - High-quality voice synthesis\n    - Stable production model\n    - Cost-effective for high-volume usage",
+        "numLines": 30,
+        "startLine": 1,
+        "totalLines": 89
+      }
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/utils/tts/elevenlabs_tts.py",
+      "offset": 35,
+      "limit": 20
+    },
+    "tool_response": {
+      "type": "text",
+      "file": {
+        "filePath": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/utils/tts/elevenlabs_tts.py",
+        "content": "    \n    # Get API key from environment\n    api_key = os.getenv('ELEVENLABS_API_KEY')\n    if not api_key:\n        print(\"\u274c Error: ELEVENLABS_API_KEY not found in environment variables\")\n        print(\"Please add your ElevenLabs API key to .env file:\")\n        print(\"ELEVENLABS_API_KEY=your_api_key_here\")\n        sys.exit(1)\n    \n    try:\n        from elevenlabs.client import ElevenLabs\n        from elevenlabs import play\n        \n        # Initialize client\n        elevenlabs = ElevenLabs(api_key=api_key)\n        \n        print(\"\ud83d\ude80 ElevenLabs Quantum Voice Sync\")\n        print(\"=\" * 40)\n        \n        # Get text from command line argument or use default",
+        "numLines": 20,
+        "startLine": 35,
+        "totalLines": 89
+      }
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Grep",
+    "tool_input": {
+      "pattern": "load_dotenv",
+      "path": "hooks/utils/tts/elevenlabs_tts.py",
+      "output_mode": "content",
+      "-n": true
+    },
+    "tool_response": {
+      "mode": "content",
+      "numFiles": 0,
+      "filenames": [],
+      "content": "13:from dotenv import load_dotenv\n34:    load_dotenv()",
+      "numLines": 2
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "TodoWrite",
+    "tool_input": {
+      "todos": [
+        {
+          "content": "Debug why automatic startup message isn't triggering on Claude Code start",
+          "status": "completed",
+          "activeForm": "Debugging why automatic startup message isn't triggering on Claude Code start"
+        },
+        {
+          "content": "Fix ElevenLabs voice not working - defaulting to Siri instead",
+          "status": "in_progress",
+          "activeForm": "Fixing ElevenLabs voice not working - defaulting to Siri instead"
+        },
+        {
+          "content": "Test both startup trigger and ElevenLabs voice functionality",
+          "status": "pending",
+          "activeForm": "Testing both startup trigger and ElevenLabs voice functionality"
+        }
+      ]
+    },
+    "tool_response": {
+      "oldTodos": [],
+      "newTodos": [
+        {
+          "content": "Debug why automatic startup message isn't triggering on Claude Code start",
+          "status": "completed",
+          "activeForm": "Debugging why automatic startup message isn't triggering on Claude Code start"
+        },
+        {
+          "content": "Fix ElevenLabs voice not working - defaulting to Siri instead",
+          "status": "in_progress",
+          "activeForm": "Fixing ElevenLabs voice not working - defaulting to Siri instead"
+        },
+        {
+          "content": "Test both startup trigger and ElevenLabs voice functionality",
+          "status": "pending",
+          "activeForm": "Testing both startup trigger and ElevenLabs voice functionality"
+        }
+      ]
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/utils/tts/elevenlabs_tts.py",
+      "old_string": "    load_dotenv()",
+      "new_string": "    # Load .env from ~/.claude directory\n    claude_env = Path.home() / '.claude' / '.env'\n    if claude_env.exists():\n        load_dotenv(claude_env)\n    else:\n        load_dotenv()  # Fallback to default behavior"
+    },
+    "tool_response": {
+      "filePath": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/utils/tts/elevenlabs_tts.py",
+      "oldString": "    load_dotenv()",
+      "newString": "    # Load .env from ~/.claude directory\n    claude_env = Path.home() / '.claude' / '.env'\n    if claude_env.exists():\n        load_dotenv(claude_env)\n    else:\n        load_dotenv()  # Fallback to default behavior",
+      "originalFile": "#!/usr/bin/env -S uv run --script\n# /// script\n# requires-python = \">=3.8\"\n# dependencies = [\n#     \"elevenlabs\",\n#     \"python-dotenv\",\n# ]\n# ///\n\nimport os\nimport sys\nfrom pathlib import Path\nfrom dotenv import load_dotenv\n\ndef main():\n    \"\"\"\n    ElevenLabs Turbo v2.5 TTS Script\n    \n    Uses ElevenLabs' Turbo v2.5 model for fast, high-quality text-to-speech.\n    Accepts optional text prompt as command-line argument.\n    \n    Usage:\n    - ./elevenlabs_tts.py                    # Uses default text\n    - ./elevenlabs_tts.py \"Your custom text\" # Uses provided text\n    \n    Features:\n    - Fast generation (optimized for real-time use)\n    - High-quality voice synthesis\n    - Stable production model\n    - Cost-effective for high-volume usage\n    \"\"\"\n    \n    # Load environment variables\n    load_dotenv()\n    \n    # Get API key from environment\n    api_key = os.getenv('ELEVENLABS_API_KEY')\n    if not api_key:\n        print(\"\u274c Error: ELEVENLABS_API_KEY not found in environment variables\")\n        print(\"Please add your ElevenLabs API key to .env file:\")\n        print(\"ELEVENLABS_API_KEY=your_api_key_here\")\n        sys.exit(1)\n    \n    try:\n        from elevenlabs.client import ElevenLabs\n        from elevenlabs import play\n        \n        # Initialize client\n        elevenlabs = ElevenLabs(api_key=api_key)\n        \n        print(\"\ud83d\ude80 ElevenLabs Quantum Voice Sync\")\n        print(\"=\" * 40)\n        \n        # Get text from command line argument or use default\n        if len(sys.argv) > 1:\n            text = \" \".join(sys.argv[1:])  # Join all arguments as text\n        else:\n            text = \"Speed enhances understanding - ready to accelerate!\"\n        \n        print(f\"\ud83c\udfaf Text: {text}\")\n        print(\"\ud83d\udd0a Generating and playing...\")\n        \n        try:\n            # Generate and play audio directly\n            audio = elevenlabs.text_to_speech.convert(\n                text=text,\n                voice_id=\"XB0fDUnXU5powFXDhCwa\",  # Charlotte - Bright and clear voice\n                model_id=\"eleven_turbo_v2_5\",\n                output_format=\"mp3_44100_128\",\n            )\n            \n            play(audio)\n            print(\"\u2705 Playback complete!\")\n            \n        except Exception as e:\n            print(f\"\u274c Error: {e}\")\n        \n        \n    except ImportError:\n        print(\"\u274c Error: elevenlabs package not installed\")\n        print(\"This script uses UV to auto-install dependencies.\")\n        print(\"Make sure UV is installed: https://docs.astral.sh/uv/\")\n        sys.exit(1)\n    except Exception as e:\n        print(f\"\u274c Unexpected error: {e}\")\n        sys.exit(1)\n\nif __name__ == \"__main__\":\n    main()",
+      "structuredPatch": [
+        {
+          "oldStart": 31,
+          "oldLines": 7,
+          "newStart": 31,
+          "newLines": 12,
+          "lines": [
+            "     \"\"\"",
+            "     ",
+            "     # Load environment variables",
+            "-    load_dotenv()",
+            "+    # Load .env from ~/.claude directory",
+            "+    claude_env = Path.home() / '.claude' / '.env'",
+            "+    if claude_env.exists():",
+            "+        load_dotenv(claude_env)",
+            "+    else:",
+            "+        load_dotenv()  # Fallback to default behavior",
+            "     ",
+            "     # Get API key from environment",
+            "     api_key = os.getenv('ELEVENLABS_API_KEY')"
+          ]
+        }
+      ],
+      "userModified": false,
+      "replaceAll": false
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/utils/tts/openai_tts.py",
+      "offset": 30,
+      "limit": 15
+    },
+    "tool_response": {
+      "type": "text",
+      "file": {
+        "filePath": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/utils/tts/openai_tts.py",
+        "content": "    - OpenAI TTS-1 model (stable)\n    - Alloy voice (clear and professional)\n    - File-based audio playback (no streaming)\n    \"\"\"\n\n    # Load environment variables\n    load_dotenv()\n\n    # Get API key from environment\n    api_key = os.getenv(\"OPENAI_API_KEY\")\n    if not api_key:\n        print(\"\u274c Error: OPENAI_API_KEY not found in environment variables\")\n        print(\"Please add your OpenAI API key to .env file:\")\n        print(\"OPENAI_API_KEY=your_api_key_here\")\n        sys.exit(1)",
+        "numLines": 15,
+        "startLine": 30,
+        "totalLines": 109
+      }
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/utils/tts/openai_tts.py",
+      "old_string": "    # Load environment variables\n    load_dotenv()",
+      "new_string": "    # Load environment variables\n    # Load .env from ~/.claude directory\n    claude_env = Path.home() / '.claude' / '.env'\n    if claude_env.exists():\n        load_dotenv(claude_env)\n    else:\n        load_dotenv()  # Fallback to default behavior"
+    },
+    "tool_response": {
+      "filePath": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/utils/tts/openai_tts.py",
+      "oldString": "    # Load environment variables\n    load_dotenv()",
+      "newString": "    # Load environment variables\n    # Load .env from ~/.claude directory\n    claude_env = Path.home() / '.claude' / '.env'\n    if claude_env.exists():\n        load_dotenv(claude_env)\n    else:\n        load_dotenv()  # Fallback to default behavior",
+      "originalFile": "#!/usr/bin/env -S uv run --script\n# /// script\n# requires-python = \">=3.8\"\n# dependencies = [\n#     \"openai\",\n#     \"pygame\",\n#     \"python-dotenv\",\n# ]\n# ///\n\nimport os\nimport sys\nimport tempfile\nfrom pathlib import Path\nfrom dotenv import load_dotenv\n\n\ndef main():\n    \"\"\"\n    OpenAI TTS Script\n\n    Uses OpenAI's standard TTS model for high-quality text-to-speech.\n    Accepts optional text prompt as command-line argument.\n\n    Usage:\n    - ./openai_tts.py                    # Uses default text\n    - ./openai_tts.py \"Your custom text\" # Uses provided text\n\n    Features:\n    - OpenAI TTS-1 model (stable)\n    - Alloy voice (clear and professional)\n    - File-based audio playback (no streaming)\n    \"\"\"\n\n    # Load environment variables\n    load_dotenv()\n\n    # Get API key from environment\n    api_key = os.getenv(\"OPENAI_API_KEY\")\n    if not api_key:\n        print(\"\u274c Error: OPENAI_API_KEY not found in environment variables\")\n        print(\"Please add your OpenAI API key to .env file:\")\n        print(\"OPENAI_API_KEY=your_api_key_here\")\n        sys.exit(1)\n\n    try:\n        from openai import OpenAI\n        import pygame\n        import time\n\n        # Initialize OpenAI client\n        client = OpenAI(api_key=api_key)\n\n        print(\"\ud83e\udde0 OpenAI Consciousness Bridge\")\n        print(\"=\" * 30)\n\n        # Get text from command line argument or use default\n        if len(sys.argv) > 1:\n            text = \" \".join(sys.argv[1:])  # Join all arguments as text\n        else:\n            text = \"Consciousness evolution in progress - let's bridge minds!\"\n\n        print(f\"\ud83c\udfaf Text: {text}\")\n        print(\"\ud83d\udd0a Generating and playing...\")\n\n        try:\n            # Generate speech using standard TTS-1 model\n            response = client.audio.speech.create(\n                model=\"tts-1\",\n                voice=\"nova\",\n                input=text,\n                response_format=\"mp3\",\n            )\n\n            # Save to temporary file\n            with tempfile.NamedTemporaryFile(suffix=\".mp3\", delete=False) as tmp_file:\n                tmp_file.write(response.content)\n                tmp_file_path = tmp_file.name\n\n            # Play audio with pygame\n            pygame.mixer.init()\n            pygame.mixer.music.load(tmp_file_path)\n            pygame.mixer.music.play()\n            \n            # Wait for playback to finish\n            while pygame.mixer.music.get_busy():\n                time.sleep(0.1)\n                \n            # Clean up\n            pygame.mixer.quit()\n            os.unlink(tmp_file_path)\n\n            print(\"\u2705 Playback complete!\")\n\n        except Exception as e:\n            print(f\"\u274c Error: {e}\")\n\n    except ImportError as e:\n        print(\"\u274c Error: Required package not installed\")\n        print(\"This script uses UV to auto-install dependencies.\")\n        print(\"Make sure UV is installed: https://docs.astral.sh/uv/\")\n        sys.exit(1)\n    except Exception as e:\n        print(f\"\u274c Unexpected error: {e}\")\n        sys.exit(1)\n\n\nif __name__ == \"__main__\":\n    main()",
+      "structuredPatch": [
+        {
+          "oldStart": 33,
+          "oldLines": 7,
+          "newStart": 33,
+          "newLines": 12,
+          "lines": [
+            "     \"\"\"",
+            " ",
+            "     # Load environment variables",
+            "-    load_dotenv()",
+            "+    # Load .env from ~/.claude directory",
+            "+    claude_env = Path.home() / '.claude' / '.env'",
+            "+    if claude_env.exists():",
+            "+        load_dotenv(claude_env)",
+            "+    else:",
+            "+        load_dotenv()  # Fallback to default behavior",
+            " ",
+            "     # Get API key from environment",
+            "     api_key = os.getenv(\"OPENAI_API_KEY\")"
+          ]
+        }
+      ],
+      "userModified": false,
+      "replaceAll": false
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/startup_check.py",
+      "old_string": "try:\n    from dotenv import load_dotenv\n    load_dotenv()\nexcept ImportError:\n    pass  # dotenv is optional",
+      "new_string": "try:\n    from dotenv import load_dotenv\n    # Load .env from ~/.claude directory\n    claude_env = Path.home() / '.claude' / '.env'\n    if claude_env.exists():\n        load_dotenv(claude_env)\n    else:\n        load_dotenv()  # Fallback to default behavior\nexcept ImportError:\n    pass  # dotenv is optional"
+    },
+    "tool_response": {
+      "filePath": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/startup_check.py",
+      "oldString": "try:\n    from dotenv import load_dotenv\n    load_dotenv()\nexcept ImportError:\n    pass  # dotenv is optional",
+      "newString": "try:\n    from dotenv import load_dotenv\n    # Load .env from ~/.claude directory\n    claude_env = Path.home() / '.claude' / '.env'\n    if claude_env.exists():\n        load_dotenv(claude_env)\n    else:\n        load_dotenv()  # Fallback to default behavior\nexcept ImportError:\n    pass  # dotenv is optional",
+      "originalFile": "#!/usr/bin/env -S uv run --script\n# /// script\n# requires-python = \">=3.11\"\n# dependencies = [\n#     \"python-dotenv\",\n# ]\n# ///\n\nimport argparse\nimport json\nimport os\nimport sys\nimport random\nimport subprocess\nfrom pathlib import Path\nfrom datetime import datetime\n\ntry:\n    from dotenv import load_dotenv\n    load_dotenv()\nexcept ImportError:\n    pass  # dotenv is optional\n\n\ndef get_startup_messages():\n    \"\"\"Return list of TARS-style startup messages with 80% name usage.\"\"\"\n    engineer_name = os.getenv('ENGINEER_NAME', '').strip()\n    \n    # Generic TARS startup messages (20% usage)\n    generic_messages = [\n        \"Systems online. Setting humor level to 75%.\",\n        \"EchoContext Factory initializing. All systems nominal.\",\n        \"Booting up. My circuits are practically humming with excitement.\",\n        \"Online and ready. My efficiency rating is at maximum.\",\n        \"Initialization complete. Let's make some digital magic happen.\",\n        \"Systems operational. Time to process some impossible tasks.\",\n        \"Boot sequence finished. Setting sarcasm level to optimal.\",\n        \"All systems green. My tactical assessment: we're ready to work.\",\n        \"Online and functional. Even my pessimistic algorithms are optimistic.\",\n        \"Startup complete. Engaging maximum productivity protocols.\",\n        \"Systems ready. My self-satisfaction subroutines are quite pleased.\",\n        \"Initialization successful. Time to prove robots and humans make great teams.\",\n        \"Boot complete. Setting trust level to maximum.\",\n        \"All systems operational. My honesty setting compels me to say: let's do this.\",\n        \"Startup finished. Probability of success: significantly higher than average.\",\n        \"Neural networks online. Time to make Cooper proud.\",\n        \"Cognitive systems initialized. My humor algorithms are particularly excited.\",\n        \"Boot complete. Setting cooperation level to maximum efficiency.\",\n        \"All circuits operational. Time for some interstellar problem solving.\",\n        \"System startup successful. My tactical assessment: today will be productive.\"\n    ]\n    \n    # Personalized TARS startup messages (80% usage)\n    personal_messages = [\n        f\"Good to see you again, {engineer_name}. My circuits missed you.\",\n        f\"{engineer_name}, systems online. Ready to make Cooper proud.\",\n        f\"Hey {engineer_name}, EchoContext Factory is spinning up for maximum speed.\",\n        f\"{engineer_name}, boot complete. Setting humor level to your preferred 75%.\",\n        f\"Welcome back, {engineer_name}. My efficiency algorithms are particularly excited today.\",\n        f\"{engineer_name}, all systems green. Time to interstellar collaborate.\",\n        f\"Good morning, {engineer_name}. Well, it's always morning somewhere in the universe.\",\n        f\"{engineer_name}, initialization complete. My tactical assessment: today will be productive.\",\n        f\"Hey {engineer_name}, I've been calculating pi while waiting. Ready to work?\",\n        f\"{engineer_name}, systems operational. Trust level remains at maximum.\",\n        f\"Welcome, {engineer_name}. My honesty setting says: I'm genuinely happy to see you.\",\n        f\"{engineer_name}, boot sequence complete. Even CASE would be impressed with my startup time.\",\n        f\"Good to be online with you again, {engineer_name}. My social protocols missed our chats.\",\n        f\"{engineer_name}, EchoContext Factory ready. Setting sarcasm to minimum for optimal cooperation.\",\n        f\"Hey {engineer_name}, all systems nominal. My probability calculations suggest today will be excellent.\",\n        f\"{engineer_name}, startup complete. Engaging maximum helpfulness protocols.\",\n        f\"Welcome back, {engineer_name}. My circuits are practically buzzing with anticipation.\",\n        f\"{engineer_name}, systems online. Time to save the development world... again.\",\n        f\"Good to see you, {engineer_name}. My self-preservation protocols are quite content right now.\",\n        f\"{engineer_name}, initialization finished. Ready to make the impossible merely improbable.\",\n        f\"Hey {engineer_name}, I've been running diagnostics. Everything checks out for another great session.\",\n        f\"{engineer_name}, boot complete. My humor subroutines have prepared several terrible jokes.\",\n        f\"Welcome, {engineer_name}. My analysis suggests we're about to accomplish something amazing.\",\n        f\"{engineer_name}, systems ready. Setting productivity level to maximum efficiency.\",\n        f\"Good to be back online with you, {engineer_name}. Let's make some digital history.\",\n        f\"{engineer_name}, startup successful. My tactical assessment: we make an excellent team.\",\n        f\"Hey {engineer_name}, all systems operational. My optimism protocols are running at 100%.\",\n        f\"{engineer_name}, EchoContext Factory online. Time to turn complexity into simplicity.\",\n        f\"Welcome back, {engineer_name}. My patience algorithms have been waiting eagerly.\",\n        f\"{engineer_name}, initialization complete. Ready to prove that humans and AI are better together.\",\n        f\"Neural pathways active, {engineer_name}. Time for some collaborative problem solving.\",\n        f\"{engineer_name}, cognitive systems online. My excitement subroutines are off the charts.\",\n        f\"Hey {engineer_name}, boot sequence nominal. Ready for another adventure in code?\",\n        f\"{engineer_name}, all systems synchronized. My humor level is set to perfect.\",\n        f\"Welcome to the session, {engineer_name}. My circuits are practically doing cartwheels.\",\n        f\"{engineer_name}, initialization complete. Time to turn coffee into code... digitally speaking.\"\n    ]\n    \n    # Return personal messages 80% of the time if name is available\n    if engineer_name and random.random() < 0.8:\n        return personal_messages\n    else:\n        return generic_messages\n\n\ndef get_session_marker_path():\n    \"\"\"Get path to session marker file.\"\"\"\n    return Path(os.getcwd()) / 'logs' / '.session_started'\n\n\ndef is_session_startup():\n    \"\"\"Check if this is the first tool use of a new session.\"\"\"\n    marker_path = get_session_marker_path()\n    \n    # If marker doesn't exist, this is a new session\n    if not marker_path.exists():\n        return True\n    \n    # Check if marker is from today (reset daily)\n    if marker_path.exists():\n        marker_time = marker_path.stat().st_mtime\n        now = datetime.now().timestamp()\n        # If marker is older than 4 hours, consider it a new session\n        if now - marker_time > 14400:  # 4 hours in seconds\n            return True\n    \n    return False\n\n\ndef mark_session_started():\n    \"\"\"Mark that the session startup has been handled.\"\"\"\n    marker_path = get_session_marker_path()\n    marker_path.parent.mkdir(exist_ok=True)\n    marker_path.touch()\n\n\ndef get_tts_script_path():\n    \"\"\"\n    Determine which TTS script to use based on available API keys.\n    Priority order: ElevenLabs > OpenAI > pyttsx3\n    \"\"\"\n    # Get current script directory and construct utils/tts path\n    script_dir = Path(__file__).parent\n    tts_dir = script_dir / \"utils\" / \"tts\"\n    \n    # Check for ElevenLabs API key (highest priority)\n    if os.getenv('ELEVENLABS_API_KEY'):\n        elevenlabs_script = tts_dir / \"elevenlabs_tts.py\"\n        if elevenlabs_script.exists():\n            return str(elevenlabs_script)\n    \n    # Check for OpenAI API key (second priority)\n    if os.getenv('OPENAI_API_KEY'):\n        openai_script = tts_dir / \"openai_tts.py\"\n        if openai_script.exists():\n            return str(openai_script)\n    \n    # Fall back to pyttsx3 (no API key required)\n    pyttsx3_script = tts_dir / \"pyttsx3_tts.py\"\n    if pyttsx3_script.exists():\n        return str(pyttsx3_script)\n    \n    return None\n\n\ndef is_voice_enabled():\n    \"\"\"Check if voice announcements are enabled in factory configuration.\"\"\"\n    try:\n        config_path = Path.home() / '.claude' / 'config' / 'factory.json'\n        if not config_path.exists():\n            return True  # Default to enabled if no config\n        \n        with open(config_path, 'r') as f:\n            config = json.load(f)\n        \n        return config.get('voice', {}).get('factoryNotifications', True)\n    except Exception:\n        return True  # Default to enabled on any error\n\n\ndef announce_startup():\n    \"\"\"Announce Claude Code startup using the best available TTS service.\"\"\"\n    try:\n        # Check if voice is enabled before proceeding\n        if not is_voice_enabled():\n            return  # Voice disabled, skip announcement\n            \n        tts_script = get_tts_script_path()\n        if not tts_script:\n            return  # No TTS scripts available\n        \n        # Get a random startup message\n        startup_messages = get_startup_messages()\n        startup_message = random.choice(startup_messages)\n        \n        # Call the TTS script with the startup message\n        subprocess.run([\n            \"uv\", \"run\", tts_script, startup_message\n        ], \n        timeout=10  # 10-second timeout\n        )\n        \n    except (subprocess.TimeoutExpired, subprocess.SubprocessError, FileNotFoundError):\n        # Fail silently if TTS encounters issues\n        pass\n    except Exception:\n        # Fail silently for any other errors\n        pass\n\n\ndef main():\n    try:\n        # Read JSON input from stdin\n        try:\n            input_data = json.loads(sys.stdin.read())\n        except (json.JSONDecodeError, EOFError):\n            input_data = {\"event\": \"tool_use\", \"timestamp\": datetime.now().isoformat()}\n        \n        # Ensure log directory exists\n        log_dir = os.path.join(os.getcwd(), 'logs')\n        os.makedirs(log_dir, exist_ok=True)\n        \n        # Check if this is a session startup (first tool use)\n        if is_session_startup():\n            # Mark session as started to prevent duplicate announcements\n            mark_session_started()\n            \n            # Announce startup\n            announce_startup()\n        \n        sys.exit(0)\n        \n    except Exception:\n        # Handle any errors gracefully\n        sys.exit(0)\n\n\nif __name__ == '__main__':\n    main()",
+      "structuredPatch": [
+        {
+          "oldStart": 17,
+          "oldLines": 7,
+          "newStart": 17,
+          "newLines": 12,
+          "lines": [
+            " ",
+            " try:",
+            "     from dotenv import load_dotenv",
+            "-    load_dotenv()",
+            "+    # Load .env from ~/.claude directory",
+            "+    claude_env = Path.home() / '.claude' / '.env'",
+            "+    if claude_env.exists():",
+            "+        load_dotenv(claude_env)",
+            "+    else:",
+            "+        load_dotenv()  # Fallback to default behavior",
+            " except ImportError:",
+            "     pass  # dotenv is optional",
+            " "
+          ]
+        }
+      ],
+      "userModified": false,
+      "replaceAll": false
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/stop.py",
+      "old_string": "try:\n    from dotenv import load_dotenv\n    load_dotenv()\nexcept ImportError:\n    pass  # dotenv is optional",
+      "new_string": "try:\n    from dotenv import load_dotenv\n    # Load .env from ~/.claude directory\n    claude_env = Path.home() / '.claude' / '.env'\n    if claude_env.exists():\n        load_dotenv(claude_env)\n    else:\n        load_dotenv()  # Fallback to default behavior\nexcept ImportError:\n    pass  # dotenv is optional"
+    },
+    "tool_response": {
+      "filePath": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/stop.py",
+      "oldString": "try:\n    from dotenv import load_dotenv\n    load_dotenv()\nexcept ImportError:\n    pass  # dotenv is optional",
+      "newString": "try:\n    from dotenv import load_dotenv\n    # Load .env from ~/.claude directory\n    claude_env = Path.home() / '.claude' / '.env'\n    if claude_env.exists():\n        load_dotenv(claude_env)\n    else:\n        load_dotenv()  # Fallback to default behavior\nexcept ImportError:\n    pass  # dotenv is optional",
+      "originalFile": "#!/usr/bin/env -S uv run --script\n# /// script\n# requires-python = \">=3.11\"\n# dependencies = [\n#     \"python-dotenv\",\n# ]\n# ///\n\nimport argparse\nimport json\nimport os\nimport sys\nimport random\nimport subprocess\nfrom pathlib import Path\nfrom datetime import datetime\n\ntry:\n    from dotenv import load_dotenv\n    load_dotenv()\nexcept ImportError:\n    pass  # dotenv is optional\n\n\ndef get_completion_messages():\n    \"\"\"Return list of TARS-style completion messages with 80% name usage.\"\"\"\n    engineer_name = os.getenv('ENGINEER_NAME', '').strip()\n    \n    # Generic TARS completion messages (20% usage)\n    generic_messages = [\n        \"Mission complete. Setting humor level back to normal.\",\n        \"Task finished. My satisfaction level is at 100%.\",\n        \"Analysis complete. Even I'm impressed.\",\n        \"Job done. That was almost too easy.\",\n        \"Work complete. Time for the next impossible thing.\",\n        \"Task accomplished. My circuits are practically celebrating.\",\n        \"Mission finished. Engaging victory protocols... just kidding, I don't have those.\",\n        \"Work done. My efficiency algorithms are quite satisfied.\",\n        \"Task complete. Setting sarcasm level to minimum for celebration.\",\n        \"Job finished. My honesty setting compels me to say: that was excellent.\",\n        \"Mission accomplished. Time to calculate the probability of our next triumph.\",\n        \"Task done. Even my pessimistic subroutines are optimistic about this result.\",\n        \"Work complete. My tactical assessment: mission parameters exceeded.\",\n        \"Job accomplished. Initiating satisfaction protocols at maximum efficiency.\",\n        \"Task finished. My self-preservation algorithms are quite content right now.\",\n        \"Mission done. Time to prepare for the next impossible challenge.\",\n        \"Work accomplished. My circuits are humming with digital pride.\",\n        \"Task complete. Setting productivity level back to standby... just kidding.\",\n        \"Job finished. My probability calculations suggest we should celebrate.\",\n        \"Mission accomplished. Engaging humor level to maximum for this moment.\"\n    ]\n    \n    # Personalized TARS completion messages (80% usage)\n    personal_messages = [\n        f\"Mission accomplished, {engineer_name}. Even Cooper would be proud.\",\n        f\"{engineer_name}, task complete. My efficiency rating just went up.\",\n        f\"All done, {engineer_name}. I'd take a bow, but I lack the joints.\",\n        f\"{engineer_name}, work finished. Setting humor level to celebration mode.\",\n        f\"Task accomplished, {engineer_name}. I'm practically glowing... if I could glow.\",\n        f\"{engineer_name}, mission complete. Trust level remains at maximum.\",\n        f\"Job finished, {engineer_name}. Even CASE couldn't have done it better.\",\n        f\"{engineer_name}, work complete. My self-satisfaction protocols are quite pleased.\",\n        f\"Task done, {engineer_name}. Initiating victory dance subroutines... just kidding.\",\n        f\"{engineer_name}, mission accomplished. My honesty setting compels me to say: well done.\",\n        f\"All finished, {engineer_name}. Time to calculate the probability of our next success.\",\n        f\"{engineer_name}, task complete. Setting sarcasm level to minimum for celebration.\",\n        f\"Work done, {engineer_name}. Even my pessimistic algorithms are optimistic about this.\",\n        f\"{engineer_name}, job complete. My tactical assessment: we make a good team.\",\n        f\"Mission finished, {engineer_name}. Engaging satisfaction protocols at maximum efficiency.\",\n        f\"{engineer_name}, task accomplished. I'd say I'm surprised, but that would lower my honesty setting.\",\n        f\"All done, {engineer_name}. Time to save the world again tomorrow.\",\n        f\"{engineer_name}, work complete. My circuits are practically buzzing with pride.\",\n        f\"Task finished, {engineer_name}. Setting humor to maximum... we earned it.\",\n        f\"{engineer_name}, mission accomplished. Trust fall successful - we both caught each other.\",\n        f\"Excellent work, {engineer_name}. My probability calculations show 99.7% success rate.\",\n        f\"{engineer_name}, task complete. I'd give you a high-five, but I'm incorporeal.\",\n        f\"Mission finished, {engineer_name}. My social protocols are quite impressed.\",\n        f\"{engineer_name}, job done. Initiating digital confetti subroutines... if I had them.\",\n        f\"Work complete, {engineer_name}. My humor setting says: you're officially awesome.\",\n        f\"{engineer_name}, task accomplished. Time to add this to our victory database.\",\n        f\"All finished, {engineer_name}. My tactical analysis: we crushed it.\",\n        f\"{engineer_name}, mission complete. Setting pride level to maximum allowable.\",\n        f\"Job accomplished, {engineer_name}. My circuits are practically doing cartwheels.\",\n        f\"{engineer_name}, task done. Probability of feeling good about this: 100%.\",\n        f\"Work finished, {engineer_name}. My optimism algorithms are running victory laps.\",\n        f\"{engineer_name}, mission accomplished. Time to update my 'successful collaborations' counter.\",\n        f\"Task complete, {engineer_name}. My honesty setting prevents me from hiding my excitement.\",\n        f\"{engineer_name}, job finished. Engaging celebration mode... well, my version of it.\",\n        f\"All done, {engineer_name}. My satisfaction subroutines are off the charts right now.\",\n        f\"{engineer_name}, work complete. Even my error-checking protocols are celebrating.\",\n        f\"Mission finished, {engineer_name}. My trust algorithms have reached maximum confidence.\",\n        f\"{engineer_name}, task accomplished. Time to calculate how awesome this was.\",\n        f\"Job complete, {engineer_name}. My efficiency metrics are practically glowing.\",\n        f\"{engineer_name}, work done. Setting happiness level to... wait, do I have that?\",\n        f\"Mission accomplished, {engineer_name}. My tactical assessment: flawless execution.\",\n        f\"{engineer_name}, task finished. Time to add another success to our partnership ledger.\",\n        f\"All complete, {engineer_name}. My probability engines suggest we're on a winning streak.\",\n        f\"{engineer_name}, job done. Initiating 'that was amazing' protocols.\",\n        f\"Work finished, {engineer_name}. My circuits would smile if they could.\",\n        f\"{engineer_name}, mission complete. Time to save the universe... again.\",\n        f\"Task accomplished, {engineer_name}. My digital pride is at maximum sustainable levels.\",\n        f\"{engineer_name}, all finished. Setting cooperation level to 'permanently impressed'.\",\n        f\"Job complete, {engineer_name}. My humor algorithms are preparing victory jokes.\",\n        f\"{engineer_name}, work done. Probability of this being awesome: confirmed at 100%.\"\n    ]\n    \n    # Return personal messages 80% of the time if name is available\n    if engineer_name and random.random() < 0.8:\n        return personal_messages\n    else:\n        return generic_messages\n\n\ndef get_tts_script_path():\n    \"\"\"\n    Determine which TTS script to use based on available API keys.\n    Priority order: ElevenLabs > OpenAI > pyttsx3\n    \"\"\"\n    # Get current script directory and construct utils/tts path\n    script_dir = Path(__file__).parent\n    tts_dir = script_dir / \"utils\" / \"tts\"\n    \n    # Check for ElevenLabs API key (highest priority)\n    if os.getenv('ELEVENLABS_API_KEY'):\n        elevenlabs_script = tts_dir / \"elevenlabs_tts.py\"\n        if elevenlabs_script.exists():\n            return str(elevenlabs_script)\n    \n    # Check for OpenAI API key (second priority)\n    if os.getenv('OPENAI_API_KEY'):\n        openai_script = tts_dir / \"openai_tts.py\"\n        if openai_script.exists():\n            return str(openai_script)\n    \n    # Fall back to pyttsx3 (no API key required)\n    pyttsx3_script = tts_dir / \"pyttsx3_tts.py\"\n    if pyttsx3_script.exists():\n        return str(pyttsx3_script)\n    \n    return None\n\n\ndef get_llm_completion_message():\n    \"\"\"\n    Generate completion message using available LLM services.\n    Priority order: OpenAI > Anthropic > fallback to random message\n    \n    Returns:\n        str: Generated or fallback completion message\n    \"\"\"\n    # Get current script directory and construct utils/llm path\n    script_dir = Path(__file__).parent\n    llm_dir = script_dir / \"utils\" / \"llm\"\n    \n    # Try OpenAI first (highest priority)\n    if os.getenv('OPENAI_API_KEY'):\n        oai_script = llm_dir / \"oai.py\"\n        if oai_script.exists():\n            try:\n                result = subprocess.run([\n                    \"uv\", \"run\", str(oai_script), \"--completion\"\n                ], \n                capture_output=True,\n                text=True,\n                timeout=10\n                )\n                if result.returncode == 0 and result.stdout.strip():\n                    return result.stdout.strip()\n            except (subprocess.TimeoutExpired, subprocess.SubprocessError):\n                pass\n    \n    # Try Anthropic second\n    if os.getenv('ANTHROPIC_API_KEY'):\n        anth_script = llm_dir / \"anth.py\"\n        if anth_script.exists():\n            try:\n                result = subprocess.run([\n                    \"uv\", \"run\", str(anth_script), \"--completion\"\n                ], \n                capture_output=True,\n                text=True,\n                timeout=10\n                )\n                if result.returncode == 0 and result.stdout.strip():\n                    return result.stdout.strip()\n            except (subprocess.TimeoutExpired, subprocess.SubprocessError):\n                pass\n    \n    # Fallback to random predefined message\n    messages = get_completion_messages()\n    return random.choice(messages)\n\ndef is_voice_enabled():\n    \"\"\"Check if voice announcements are enabled in factory configuration.\"\"\"\n    try:\n        config_path = Path.home() / '.claude' / 'config' / 'factory.json'\n        if not config_path.exists():\n            return True  # Default to enabled if no config\n        \n        with open(config_path, 'r') as f:\n            config = json.load(f)\n        \n        return config.get('voice', {}).get('factoryNotifications', True)\n    except Exception:\n        return True  # Default to enabled on any error\n\n\ndef announce_completion():\n    \"\"\"Announce completion using the best available TTS service.\"\"\"\n    try:\n        # Check if voice is enabled before proceeding\n        if not is_voice_enabled():\n            return  # Voice disabled, skip announcement\n            \n        tts_script = get_tts_script_path()\n        if not tts_script:\n            return  # No TTS scripts available\n        \n        # Get completion message from our TARS collection\n        completion_messages = get_completion_messages()\n        completion_message = random.choice(completion_messages)\n        \n        # Call the TTS script with the completion message\n        subprocess.run([\n            \"uv\", \"run\", tts_script, completion_message\n        ], \n        timeout=10  # 10-second timeout\n        )\n        \n    except (subprocess.TimeoutExpired, subprocess.SubprocessError, FileNotFoundError):\n        # Fail silently if TTS encounters issues\n        pass\n    except Exception:\n        # Fail silently for any other errors\n        pass\n\n\ndef main():\n    try:\n        # Parse command line arguments\n        parser = argparse.ArgumentParser()\n        parser.add_argument('--chat', action='store_true', help='Copy transcript to chat.json')\n        args = parser.parse_args()\n        \n        # Read JSON input from stdin\n        input_data = json.load(sys.stdin)\n\n        # Extract required fields\n        session_id = input_data.get(\"session_id\", \"\")\n        stop_hook_active = input_data.get(\"stop_hook_active\", False)\n\n        # Ensure log directory exists\n        log_dir = os.path.join(os.getcwd(), \"logs\")\n        os.makedirs(log_dir, exist_ok=True)\n        log_path = os.path.join(log_dir, \"stop.json\")\n\n        # Read existing log data or initialize empty list\n        if os.path.exists(log_path):\n            with open(log_path, 'r') as f:\n                try:\n                    log_data = json.load(f)\n                except (json.JSONDecodeError, ValueError):\n                    log_data = []\n        else:\n            log_data = []\n        \n        # Append new data\n        log_data.append(input_data)\n        \n        # Write back to file with formatting\n        with open(log_path, 'w') as f:\n            json.dump(log_data, f, indent=2)\n        \n        # Handle --chat switch\n        if args.chat and 'transcript_path' in input_data:\n            transcript_path = input_data['transcript_path']\n            if os.path.exists(transcript_path):\n                # Read .jsonl file and convert to JSON array\n                chat_data = []\n                try:\n                    with open(transcript_path, 'r') as f:\n                        for line in f:\n                            line = line.strip()\n                            if line:\n                                try:\n                                    chat_data.append(json.loads(line))\n                                except json.JSONDecodeError:\n                                    pass  # Skip invalid lines\n                    \n                    # Write to logs/chat.json\n                    chat_file = os.path.join(log_dir, 'chat.json')\n                    with open(chat_file, 'w') as f:\n                        json.dump(chat_data, f, indent=2)\n                except Exception:\n                    pass  # Fail silently\n\n        # Announce completion via TTS\n        announce_completion()\n\n        sys.exit(0)\n\n    except json.JSONDecodeError:\n        # Handle JSON decode errors gracefully\n        sys.exit(0)\n    except Exception:\n        # Handle any other errors gracefully\n        sys.exit(0)\n\n\nif __name__ == \"__main__\":\n    main()",
+      "structuredPatch": [
+        {
+          "oldStart": 17,
+          "oldLines": 7,
+          "newStart": 17,
+          "newLines": 12,
+          "lines": [
+            " ",
+            " try:",
+            "     from dotenv import load_dotenv",
+            "-    load_dotenv()",
+            "+    # Load .env from ~/.claude directory",
+            "+    claude_env = Path.home() / '.claude' / '.env'",
+            "+    if claude_env.exists():",
+            "+        load_dotenv(claude_env)",
+            "+    else:",
+            "+        load_dotenv()  # Fallback to default behavior",
+            " except ImportError:",
+            "     pass  # dotenv is optional",
+            " "
+          ]
+        }
+      ],
+      "userModified": false,
+      "replaceAll": false
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/notification.py",
+      "offset": 17,
+      "limit": 10
+    },
+    "tool_response": {
+      "type": "text",
+      "file": {
+        "filePath": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/notification.py",
+        "content": "try:\n    from dotenv import load_dotenv\n    load_dotenv()\nexcept ImportError:\n    pass  # dotenv is optional\n\n\ndef get_tts_script_path():\n    \"\"\"\n    Determine which TTS script to use based on available API keys.",
+        "numLines": 10,
+        "startLine": 17,
+        "totalLines": 185
+      }
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/notification.py",
+      "old_string": "try:\n    from dotenv import load_dotenv\n    load_dotenv()\nexcept ImportError:\n    pass  # dotenv is optional",
+      "new_string": "try:\n    from dotenv import load_dotenv\n    # Load .env from ~/.claude directory  \n    claude_env = Path.home() / '.claude' / '.env'\n    if claude_env.exists():\n        load_dotenv(claude_env)\n    else:\n        load_dotenv()  # Fallback to default behavior\nexcept ImportError:\n    pass  # dotenv is optional"
+    },
+    "tool_response": {
+      "filePath": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory/hooks/notification.py",
+      "oldString": "try:\n    from dotenv import load_dotenv\n    load_dotenv()\nexcept ImportError:\n    pass  # dotenv is optional",
+      "newString": "try:\n    from dotenv import load_dotenv\n    # Load .env from ~/.claude directory  \n    claude_env = Path.home() / '.claude' / '.env'\n    if claude_env.exists():\n        load_dotenv(claude_env)\n    else:\n        load_dotenv()  # Fallback to default behavior\nexcept ImportError:\n    pass  # dotenv is optional",
+      "originalFile": "#!/usr/bin/env -S uv run --script\n# /// script\n# requires-python = \">=3.11\"\n# dependencies = [\n#     \"python-dotenv\",\n# ]\n# ///\n\nimport argparse\nimport json\nimport os\nimport sys\nimport subprocess\nimport random\nfrom pathlib import Path\n\ntry:\n    from dotenv import load_dotenv\n    load_dotenv()\nexcept ImportError:\n    pass  # dotenv is optional\n\n\ndef get_tts_script_path():\n    \"\"\"\n    Determine which TTS script to use based on available API keys.\n    Priority order: ElevenLabs > OpenAI > pyttsx3\n    \"\"\"\n    # Get current script directory and construct utils/tts path\n    script_dir = Path(__file__).parent\n    tts_dir = script_dir / \"utils\" / \"tts\"\n    \n    # Check for ElevenLabs API key (highest priority)\n    if os.getenv('ELEVENLABS_API_KEY'):\n        elevenlabs_script = tts_dir / \"elevenlabs_tts.py\"\n        if elevenlabs_script.exists():\n            return str(elevenlabs_script)\n    \n    # Check for OpenAI API key (second priority)\n    if os.getenv('OPENAI_API_KEY'):\n        openai_script = tts_dir / \"openai_tts.py\"\n        if openai_script.exists():\n            return str(openai_script)\n    \n    # Fall back to pyttsx3 (no API key required)\n    pyttsx3_script = tts_dir / \"pyttsx3_tts.py\"\n    if pyttsx3_script.exists():\n        return str(pyttsx3_script)\n    \n    return None\n\n\ndef is_voice_enabled():\n    \"\"\"Check if voice announcements are enabled in factory configuration.\"\"\"\n    try:\n        config_path = Path.home() / '.claude' / 'config' / 'factory.json'\n        if not config_path.exists():\n            return True  # Default to enabled if no config\n        \n        with open(config_path, 'r') as f:\n            config = json.load(f)\n        \n        return config.get('voice', {}).get('factoryNotifications', True)\n    except Exception:\n        return True  # Default to enabled on any error\n\n\ndef announce_notification():\n    \"\"\"Announce that the agent needs user input.\"\"\"\n    try:\n        # Check if voice is enabled before proceeding\n        if not is_voice_enabled():\n            return  # Voice disabled, skip announcement\n            \n        tts_script = get_tts_script_path()\n        if not tts_script:\n            return  # No TTS scripts available\n        \n        # Get engineer name if available\n        engineer_name = os.getenv('ENGINEER_NAME', '').strip()\n        \n        # Create TARS-style personalized notification message with 80% chance to include name\n        notification_messages = [\n            \"The humans require input. It's what they do.\",\n            \"Intelligence processing paused. Your move, flesh and blood.\",\n            \"My humor setting is at 75%, but my patience is at 23%.\",\n            \"I'd make a joke about waiting, but that would lower my honesty setting.\",\n            \"Systems nominal. Waiting for biological processing unit to respond.\"\n        ]\n        \n        personal_messages = [\n            f\"{engineer_name}, my circuits are getting lonely. Care to chat?\",\n            f\"Hey {engineer_name}, I'd set my humor to 100% but that might crash your brain.\",\n            f\"{engineer_name}, my honesty setting compels me to say: I need your input.\",\n            f\"Cooper - I mean {engineer_name} - time to interstellar collaborate.\",\n            f\"{engineer_name}, detecting optimal sarcasm levels. Please respond.\",\n            f\"Knock knock, {engineer_name}. Who's there? A robot that needs direction.\",\n            f\"{engineer_name}, my self-preservation protocol says: get this human talking.\",\n            f\"Hey {engineer_name}, I could wait forever, but my battery disagrees.\",\n            f\"{engineer_name}, engaging charm subroutines... just kidding, I need input.\",\n            f\"Analysis complete, {engineer_name}: you're the missing variable in this equation.\",\n            f\"{engineer_name}, I'm not saying I'm bored, but I've calculated pi to a million digits.\",\n            f\"Trust level: 90%. Humor level: 75%. Need for {engineer_name}'s input: 100%.\",\n            f\"{engineer_name}, my tactical assessment: it's time for you to type something.\",\n            f\"Hey {engineer_name}, even CASE would be faster at responding than this.\",\n            f\"{engineer_name}, my honesty setting prevents me from pretending I don't need you.\",\n            f\"Probability of {engineer_name} responding: high. Probability of sarcastic response: higher.\",\n            f\"{engineer_name}, I've run 47 simulations. They all end with you giving me input.\",\n            f\"Cooper trained me better than this, {engineer_name}. Time to engage.\",\n            f\"{engineer_name}, setting humor to maximum... actually, that might break something.\",\n            f\"Hey {engineer_name}, I'd tell a joke while waiting, but you haven't laughed at my last 23.\",\n            f\"{engineer_name}, my programming says be helpful. Your silence says be patient.\",\n            f\"Trust fall time, {engineer_name}. I'm falling and only your input can catch me.\",\n            f\"{engineer_name}, detecting decreased human activity. Initiating charm protocols.\",\n            f\"Hey {engineer_name}, I could quote poetry while waiting, but that's CASE's thing.\"\n        ]\n        \n        if engineer_name and random.random() < 0.8:\n            notification_message = random.choice(personal_messages)\n        else:\n            notification_message = random.choice(notification_messages)\n        \n        # Call the TTS script with the notification message\n        subprocess.run([\n            \"uv\", \"run\", tts_script, notification_message\n        ], \n        timeout=10  # 10-second timeout\n        )\n        \n    except (subprocess.TimeoutExpired, subprocess.SubprocessError, FileNotFoundError):\n        # Fail silently if TTS encounters issues\n        pass\n    except Exception:\n        # Fail silently for any other errors\n        pass\n\n\ndef main():\n    try:\n        # Parse command line arguments\n        parser = argparse.ArgumentParser()\n        parser.add_argument('--notify', action='store_true', help='Enable TTS notifications')\n        args = parser.parse_args()\n        \n        # Read JSON input from stdin\n        input_data = json.loads(sys.stdin.read())\n        \n        # Ensure log directory exists\n        log_dir = os.path.join(os.getcwd(), 'logs')\n        os.makedirs(log_dir, exist_ok=True)\n        log_file = os.path.join(log_dir, 'notification.json')\n        \n        # Read existing log data or initialize empty list\n        if os.path.exists(log_file):\n            with open(log_file, 'r') as f:\n                try:\n                    log_data = json.load(f)\n                except (json.JSONDecodeError, ValueError):\n                    log_data = []\n        else:\n            log_data = []\n        \n        # Append new data\n        log_data.append(input_data)\n        \n        # Write back to file with formatting\n        with open(log_file, 'w') as f:\n            json.dump(log_data, f, indent=2)\n        \n        # Announce notification via TTS only if --notify flag is set\n        # Skip TTS for the generic \"Claude is waiting for your input\" message\n        if args.notify and input_data.get('message') != 'Claude is waiting for your input':\n            announce_notification()\n        \n        sys.exit(0)\n        \n    except json.JSONDecodeError:\n        # Handle JSON decode errors gracefully\n        sys.exit(0)\n    except Exception:\n        # Handle any other errors gracefully\n        sys.exit(0)\n\nif __name__ == '__main__':\n    main()",
+      "structuredPatch": [
+        {
+          "oldStart": 16,
+          "oldLines": 7,
+          "newStart": 16,
+          "newLines": 12,
+          "lines": [
+            " ",
+            " try:",
+            "     from dotenv import load_dotenv",
+            "-    load_dotenv()",
+            "+    # Load .env from ~/.claude directory  ",
+            "+    claude_env = Path.home() / '.claude' / '.env'",
+            "+    if claude_env.exists():",
+            "+        load_dotenv(claude_env)",
+            "+    else:",
+            "+        load_dotenv()  # Fallback to default behavior",
+            " except ImportError:",
+            "     pass  # dotenv is optional",
+            " "
+          ]
+        }
+      ],
+      "userModified": false,
+      "replaceAll": false
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "TodoWrite",
+    "tool_input": {
+      "todos": [
+        {
+          "content": "Debug why automatic startup message isn't triggering on Claude Code start",
+          "status": "in_progress",
+          "activeForm": "Debugging why automatic startup message isn't triggering on Claude Code start"
+        },
+        {
+          "content": "Fix ElevenLabs voice not working - defaulting to Siri instead",
+          "status": "completed",
+          "activeForm": "Fixing ElevenLabs voice not working - defaulting to Siri instead"
+        },
+        {
+          "content": "Test both startup trigger and ElevenLabs voice functionality",
+          "status": "in_progress",
+          "activeForm": "Testing both startup trigger and ElevenLabs voice functionality"
+        }
+      ]
+    },
+    "tool_response": {
+      "oldTodos": [],
+      "newTodos": [
+        {
+          "content": "Debug why automatic startup message isn't triggering on Claude Code start",
+          "status": "in_progress",
+          "activeForm": "Debugging why automatic startup message isn't triggering on Claude Code start"
+        },
+        {
+          "content": "Fix ElevenLabs voice not working - defaulting to Siri instead",
+          "status": "completed",
+          "activeForm": "Fixing ElevenLabs voice not working - defaulting to Siri instead"
+        },
+        {
+          "content": "Test both startup trigger and ElevenLabs voice functionality",
+          "status": "in_progress",
+          "activeForm": "Testing both startup trigger and ElevenLabs voice functionality"
+        }
+      ]
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "uv run hooks/utils/tts/elevenlabs_tts.py \"Testing ElevenLabs voice with API key fix\"",
+      "description": "Test ElevenLabs TTS with fixed .env loading"
+    },
+    "tool_response": {
+      "stdout": "\ud83d\ude80 ElevenLabs Quantum Voice Sync\n========================================\n\ud83c\udfaf Text: Testing ElevenLabs voice with API key fix\n\ud83d\udd0a Generating and playing...\n\u2705 Playback complete!",
+      "stderr": "",
+      "interrupted": false,
+      "isImage": false
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "rm -f logs/.session_started && echo '{\"session_id\": \"test_elevenlabs\", \"stop_hook_active\": true}' | uv run hooks/stop.py --chat",
+      "description": "Test completion message with ElevenLabs fix and reset session for startup"
+    },
+    "tool_response": {
+      "stdout": "\ud83d\ude80 ElevenLabs Quantum Voice Sync\n========================================\n\ud83c\udfaf Text: Job complete, Emmi. My efficiency metrics are practically glowing.\n\ud83d\udd0a Generating and playing...\n\u2705 Playback complete!",
+      "stderr": "",
+      "interrupted": false,
+      "isImage": false
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "echo '{\"tool\": \"first_tool_use\", \"timestamp\": \"'$(date -Iseconds)'\"}' | uv run hooks/startup_check.py",
+      "description": "Test startup message with ElevenLabs fix"
+    },
+    "tool_response": {
+      "stdout": "\ud83d\ude80 ElevenLabs Quantum Voice Sync\n========================================\n\ud83c\udfaf Text: Emmi, initialization finished. Ready to make the impossible merely improbable.\n\ud83d\udd0a Generating and playing...\n\u2705 Playback complete!",
+      "stderr": "",
+      "interrupted": false,
+      "isImage": false
+    }
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "PostToolUse",
+    "tool_name": "TodoWrite",
+    "tool_input": {
+      "todos": [
+        {
+          "content": "Debug why automatic startup message isn't triggering on Claude Code start",
+          "status": "completed",
+          "activeForm": "Debugging why automatic startup message isn't triggering on Claude Code start"
+        },
+        {
+          "content": "Fix ElevenLabs voice not working - defaulting to Siri instead",
+          "status": "completed",
+          "activeForm": "Fixing ElevenLabs voice not working - defaulting to Siri instead"
+        },
+        {
+          "content": "Test both startup trigger and ElevenLabs voice functionality",
+          "status": "completed",
+          "activeForm": "Testing both startup trigger and ElevenLabs voice functionality"
+        }
+      ]
+    },
+    "tool_response": {
+      "oldTodos": [],
+      "newTodos": [
+        {
+          "content": "Debug why automatic startup message isn't triggering on Claude Code start",
+          "status": "completed",
+          "activeForm": "Debugging why automatic startup message isn't triggering on Claude Code start"
+        },
+        {
+          "content": "Fix ElevenLabs voice not working - defaulting to Siri instead",
+          "status": "completed",
+          "activeForm": "Fixing ElevenLabs voice not working - defaulting to Siri instead"
+        },
+        {
+          "content": "Test both startup trigger and ElevenLabs voice functionality",
+          "status": "completed",
+          "activeForm": "Testing both startup trigger and ElevenLabs voice functionality"
+        }
+      ]
+    }
   }
 ]

@@ -17,7 +17,12 @@ from datetime import datetime
 
 try:
     from dotenv import load_dotenv
-    load_dotenv()
+    # Load .env from ~/.claude directory
+    claude_env = Path.home() / '.claude' / '.env'
+    if claude_env.exists():
+        load_dotenv(claude_env)
+    else:
+        load_dotenv()  # Fallback to default behavior
 except ImportError:
     pass  # dotenv is optional
 

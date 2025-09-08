@@ -33,7 +33,12 @@ def main():
     """
 
     # Load environment variables
-    load_dotenv()
+    # Load .env from ~/.claude directory
+    claude_env = Path.home() / '.claude' / '.env'
+    if claude_env.exists():
+        load_dotenv(claude_env)
+    else:
+        load_dotenv()  # Fallback to default behavior
 
     # Get API key from environment
     api_key = os.getenv("OPENAI_API_KEY")
