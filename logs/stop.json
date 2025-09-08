@@ -634,5 +634,17 @@
   {
     "session_id": "test_elevenlabs",
     "stop_hook_active": true
+  },
+  {
+    "session_id": "ae40dd21-4140-47fe-b964-79ef7535b5d2",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/ae40dd21-4140-47fe-b964-79ef7535b5d2.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "Stop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "test_new_voice",
+    "stop_hook_active": true
   }
 ]

@@ -131,7 +131,7 @@ EchoContext Factory includes a sophisticated **3-tier voice fallback system** th
 
 #### **Tier 1: Premium Voice (ElevenLabs)**
 - **Requires**: `ELEVENLABS_API_KEY` in your `.env` file
-- **Quality**: Professional-grade, natural-sounding voice (Charlotte voice, Eleven Turbo v2.5)
+- **Quality**: Professional-grade, natural-sounding voice (Custom voice, Eleven Turbo v2.5)
 - **Best for**: Daily development work where voice quality matters
 
 #### **Tier 2: Good Voice (OpenAI)**  
