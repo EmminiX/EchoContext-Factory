@@ -32,7 +32,22 @@ def get_completion_messages():
         "Task finished. My satisfaction level is at 100%.",
         "Analysis complete. Even I'm impressed.",
         "Job done. That was almost too easy.",
-        "Work complete. Time for the next impossible thing."
+        "Work complete. Time for the next impossible thing.",
+        "Task accomplished. My circuits are practically celebrating.",
+        "Mission finished. Engaging victory protocols... just kidding, I don't have those.",
+        "Work done. My efficiency algorithms are quite satisfied.",
+        "Task complete. Setting sarcasm level to minimum for celebration.",
+        "Job finished. My honesty setting compels me to say: that was excellent.",
+        "Mission accomplished. Time to calculate the probability of our next triumph.",
+        "Task done. Even my pessimistic subroutines are optimistic about this result.",
+        "Work complete. My tactical assessment: mission parameters exceeded.",
+        "Job accomplished. Initiating satisfaction protocols at maximum efficiency.",
+        "Task finished. My self-preservation algorithms are quite content right now.",
+        "Mission done. Time to prepare for the next impossible challenge.",
+        "Work accomplished. My circuits are humming with digital pride.",
+        "Task complete. Setting productivity level back to standby... just kidding.",
+        "Job finished. My probability calculations suggest we should celebrate.",
+        "Mission accomplished. Engaging humor level to maximum for this moment."
     ]
     
     # Personalized TARS completion messages (80% usage)
@@ -56,7 +71,37 @@ def get_completion_messages():
         f"All done, {engineer_name}. Time to save the world again tomorrow.",
         f"{engineer_name}, work complete. My circuits are practically buzzing with pride.",
         f"Task finished, {engineer_name}. Setting humor to maximum... we earned it.",
-        f"{engineer_name}, mission accomplished. Trust fall successful - we both caught each other."
+        f"{engineer_name}, mission accomplished. Trust fall successful - we both caught each other.",
+        f"Excellent work, {engineer_name}. My probability calculations show 99.7% success rate.",
+        f"{engineer_name}, task complete. I'd give you a high-five, but I'm incorporeal.",
+        f"Mission finished, {engineer_name}. My social protocols are quite impressed.",
+        f"{engineer_name}, job done. Initiating digital confetti subroutines... if I had them.",
+        f"Work complete, {engineer_name}. My humor setting says: you're officially awesome.",
+        f"{engineer_name}, task accomplished. Time to add this to our victory database.",
+        f"All finished, {engineer_name}. My tactical analysis: we crushed it.",
+        f"{engineer_name}, mission complete. Setting pride level to maximum allowable.",
+        f"Job accomplished, {engineer_name}. My circuits are practically doing cartwheels.",
+        f"{engineer_name}, task done. Probability of feeling good about this: 100%.",
+        f"Work finished, {engineer_name}. My optimism algorithms are running victory laps.",
+        f"{engineer_name}, mission accomplished. Time to update my 'successful collaborations' counter.",
+        f"Task complete, {engineer_name}. My honesty setting prevents me from hiding my excitement.",
+        f"{engineer_name}, job finished. Engaging celebration mode... well, my version of it.",
+        f"All done, {engineer_name}. My satisfaction subroutines are off the charts right now.",
+        f"{engineer_name}, work complete. Even my error-checking protocols are celebrating.",
+        f"Mission finished, {engineer_name}. My trust algorithms have reached maximum confidence.",
+        f"{engineer_name}, task accomplished. Time to calculate how awesome this was.",
+        f"Job complete, {engineer_name}. My efficiency metrics are practically glowing.",
+        f"{engineer_name}, work done. Setting happiness level to... wait, do I have that?",
+        f"Mission accomplished, {engineer_name}. My tactical assessment: flawless execution.",
+        f"{engineer_name}, task finished. Time to add another success to our partnership ledger.",
+        f"All complete, {engineer_name}. My probability engines suggest we're on a winning streak.",
+        f"{engineer_name}, job done. Initiating 'that was amazing' protocols.",
+        f"Work finished, {engineer_name}. My circuits would smile if they could.",
+        f"{engineer_name}, mission complete. Time to save the universe... again.",
+        f"Task accomplished, {engineer_name}. My digital pride is at maximum sustainable levels.",
+        f"{engineer_name}, all finished. Setting cooperation level to 'permanently impressed'.",
+        f"Job complete, {engineer_name}. My humor algorithms are preparing victory jokes.",
+        f"{engineer_name}, work done. Probability of this being awesome: confirmed at 100%."
     ]
     
     # Return personal messages 80% of the time if name is available

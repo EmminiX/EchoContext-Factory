@@ -772,5 +772,19 @@
     "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
     "hook_event_name": "Notification",
     "message": "Claude needs your permission to use Bash"
+  },
+  {
+    "session_id": "cca07e10-565e-4f38-8438-03b3f3099dc8",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/cca07e10-565e-4f38-8438-03b3f3099dc8.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "hook_event_name": "Notification",
+    "message": "Claude is waiting for your input"
+  },
+  {
+    "session_id": "906f28c1-bb6d-4d8f-8a10-2f805c903990",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/906f28c1-bb6d-4d8f-8a10-2f805c903990.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "hook_event_name": "Notification",
+    "message": "Claude is waiting for your input"
   }
 ]

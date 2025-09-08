@@ -573,5 +573,26 @@
     "permission_mode": "bypassPermissions",
     "hook_event_name": "Stop",
     "stop_hook_active": false
+  },
+  {
+    "session_id": "cca07e10-565e-4f38-8438-03b3f3099dc8",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/cca07e10-565e-4f38-8438-03b3f3099dc8.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "default",
+    "hook_event_name": "Stop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "906f28c1-bb6d-4d8f-8a10-2f805c903990",
+    "transcript_path": "/Users/emmi/.claude/projects/-Users-emmi-Projects-Context-engineer-EchoContext-Factory/906f28c1-bb6d-4d8f-8a10-2f805c903990.jsonl",
+    "cwd": "/Users/emmi/Projects/Context_engineer/EchoContext-Factory",
+    "permission_mode": "bypassPermissions",
+    "hook_event_name": "Stop",
+    "stop_hook_active": false
+  },
+  {
+    "session_id": "test",
+    "stop_hook_active": true,
+    "timestamp": "2025-09-08T15:45:39+01:00"
   }
 ]
