@@ -51,16 +51,31 @@ def get_tts_script_path():
     return None
 
 
+def get_factory_config_path():
+    """Get path to factory configuration file.
+    Searches in order: project .claude/ -> ~/.claude/
+    """
+    # Check if running in a project with .claude directory
+    cwd = Path.cwd()
+    project_config = cwd / '.claude' / 'config' / 'factory.json'
+
+    if project_config.exists():
+        return project_config
+
+    # Fallback to global config
+    return Path.home() / '.claude' / 'config' / 'factory.json'
+
+
 def is_voice_enabled():
     """Check if voice announcements are enabled in factory configuration."""
     try:
-        config_path = Path.home() / '.claude' / 'config' / 'factory.json'
+        config_path = get_factory_config_path()
         if not config_path.exists():
             return True  # Default to enabled if no config
-        
+
         with open(config_path, 'r') as f:
             config = json.load(f)
-        
+
         return config.get('voice', {}).get('factoryNotifications', True)
     except Exception:
         return True  # Default to enabled on any error
@@ -110,27 +125,68 @@ def get_subagent_completion_messages():
         return random.choice(generic_messages)
 
 
+def is_within_startup_grace_period():
+    """Check if we're within 10 seconds of session start to avoid startup noise."""
+    try:
+        # Check for session start marker
+        marker_path = Path(os.getcwd()) / 'logs' / 'start.json'
+        if not marker_path.exists():
+            return False  # No start marker, allow announcement
+
+        # Read the start log to get the most recent session start time
+        with open(marker_path, 'r') as f:
+            start_data = json.load(f)
+
+        if not start_data:
+            return False
+
+        # Get the most recent start event
+        last_start = start_data[-1]
+        start_timestamp = last_start.get('timestamp')
+
+        if not start_timestamp:
+            return False
+
+        # Parse timestamp and compare with now
+        from datetime import datetime
+        start_time = datetime.fromisoformat(start_timestamp)
+        now = datetime.now()
+        elapsed_seconds = (now - start_time).total_seconds()
+
+        # Within 10 seconds of startup? Suppress subagent announcements
+        return elapsed_seconds < 10
+
+    except Exception:
+        # On any error, allow announcement (fail open)
+        return False
+
+
 def announce_subagent_completion():
     """Announce subagent completion using the best available TTS service."""
     try:
+        # Suppress announcements during startup grace period (first 10 seconds)
+        # This prevents cleanup noise when session starts
+        if is_within_startup_grace_period():
+            return  # Skip announcement during startup
+
         # Check if voice is enabled before proceeding
         if not is_voice_enabled():
             return  # Voice disabled, skip announcement
-            
+
         tts_script = get_tts_script_path()
         if not tts_script:
             return  # No TTS scripts available
-        
+
         # Get TARS-style completion message
         completion_message = get_subagent_completion_messages()
-        
+
         # Call the TTS script with the completion message
         subprocess.run([
             "uv", "run", tts_script, completion_message
-        ], 
+        ],
         timeout=10  # 10-second timeout
         )
-        
+
     except (subprocess.TimeoutExpired, subprocess.SubprocessError, FileNotFoundError):
         # Fail silently if TTS encounters issues
         pass
