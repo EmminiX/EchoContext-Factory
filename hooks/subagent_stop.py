@@ -128,21 +128,20 @@ def get_subagent_completion_messages():
 def is_within_startup_grace_period():
     """Check if we're within 10 seconds of session start to avoid startup noise."""
     try:
-        # Check for session start marker
-        marker_path = Path(os.getcwd()) / 'logs' / 'start.json'
+        # Check for startup marker file created by start.py
+        marker_path = Path(os.getcwd()) / 'logs' / '.startup_active'
+
         if not marker_path.exists():
-            return False  # No start marker, allow announcement
+            # DEBUG: Log why we're allowing announcement
+            debug_log = Path(os.getcwd()) / 'logs' / '.subagent_debug.log'
+            with open(debug_log, 'a') as f:
+                from datetime import datetime
+                f.write(f"[{datetime.now().isoformat()}] Marker not found, allowing announcement\n")
+            return False  # No startup in progress, allow announcement
 
-        # Read the start log to get the most recent session start time
+        # Read the startup timestamp from marker
         with open(marker_path, 'r') as f:
-            start_data = json.load(f)
-
-        if not start_data:
-            return False
-
-        # Get the most recent start event
-        last_start = start_data[-1]
-        start_timestamp = last_start.get('timestamp')
+            start_timestamp = f.read().strip()
 
         if not start_timestamp:
             return False
@@ -153,10 +152,32 @@ def is_within_startup_grace_period():
         now = datetime.now()
         elapsed_seconds = (now - start_time).total_seconds()
 
-        # Within 10 seconds of startup? Suppress subagent announcements
-        return elapsed_seconds < 10
+        # DEBUG: Log timing
+        debug_log = Path(os.getcwd()) / 'logs' / '.subagent_debug.log'
+        with open(debug_log, 'a') as f:
+            f.write(f"[{now.isoformat()}] Elapsed: {elapsed_seconds:.2f}s | Start: {start_timestamp}\n")
 
-    except Exception:
+        # Within 10 seconds of startup? Suppress subagent announcements
+        if elapsed_seconds < 10:
+            with open(debug_log, 'a') as f:
+                f.write(f"[{now.isoformat()}] SUPPRESSING (within grace period)\n")
+            return True
+        else:
+            # Grace period expired, delete marker and allow announcements
+            with open(debug_log, 'a') as f:
+                f.write(f"[{now.isoformat()}] ALLOWING (grace period expired)\n")
+            marker_path.unlink(missing_ok=True)
+            return False
+
+    except Exception as e:
+        # DEBUG: Log errors
+        debug_log = Path(os.getcwd()) / 'logs' / '.subagent_debug.log'
+        try:
+            with open(debug_log, 'a') as f:
+                from datetime import datetime
+                f.write(f"[{datetime.now().isoformat()}] ERROR: {str(e)}\n")
+        except:
+            pass
         # On any error, allow announcement (fail open)
         return False
 

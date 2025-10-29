@@ -195,43 +195,97 @@ def get_llm_completion_message():
     messages = get_completion_messages()
     return random.choice(messages)
 
+def get_factory_config_path():
+    """Get path to factory configuration file.
+    Searches in order: project .claude/ -> ~/.claude/
+    """
+    # Check if running in a project with .claude directory
+    cwd = Path.cwd()
+    project_config = cwd / '.claude' / 'config' / 'factory.json'
+
+    if project_config.exists():
+        return project_config
+
+    # Fallback to global config
+    return Path.home() / '.claude' / 'config' / 'factory.json'
+
+
 def is_voice_enabled():
     """Check if voice announcements are enabled in factory configuration."""
     try:
-        config_path = Path.home() / '.claude' / 'config' / 'factory.json'
+        config_path = get_factory_config_path()
         if not config_path.exists():
             return True  # Default to enabled if no config
-        
+
         with open(config_path, 'r') as f:
             config = json.load(f)
-        
+
         return config.get('voice', {}).get('factoryNotifications', True)
     except Exception:
         return True  # Default to enabled on any error
 
 
+def is_within_startup_grace_period():
+    """Check if we're within 10 seconds of session start to avoid startup noise."""
+    try:
+        # Check for startup marker file created by start.py
+        marker_path = Path(os.getcwd()) / 'logs' / '.startup_active'
+
+        if not marker_path.exists():
+            return False  # No startup in progress, allow announcement
+
+        # Read the startup timestamp from marker
+        with open(marker_path, 'r') as f:
+            start_timestamp = f.read().strip()
+
+        if not start_timestamp:
+            return False
+
+        # Parse timestamp and compare with now
+        start_time = datetime.fromisoformat(start_timestamp)
+        now = datetime.now()
+        elapsed_seconds = (now - start_time).total_seconds()
+
+        # Within 10 seconds of startup? Suppress announcements
+        if elapsed_seconds < 10:
+            return True
+        else:
+            # Grace period expired, delete marker and allow announcements
+            marker_path.unlink(missing_ok=True)
+            return False
+
+    except Exception:
+        # On any error, allow announcement (fail open)
+        return False
+
+
 def announce_completion():
     """Announce completion using the best available TTS service."""
     try:
+        # Suppress announcements during startup grace period (first 10 seconds)
+        # This prevents cleanup noise when session starts
+        if is_within_startup_grace_period():
+            return  # Skip announcement during startup
+
         # Check if voice is enabled before proceeding
         if not is_voice_enabled():
             return  # Voice disabled, skip announcement
-            
+
         tts_script = get_tts_script_path()
         if not tts_script:
             return  # No TTS scripts available
-        
+
         # Get completion message from our TARS collection
         completion_messages = get_completion_messages()
         completion_message = random.choice(completion_messages)
-        
+
         # Call the TTS script with the completion message
         subprocess.run([
             "uv", "run", tts_script, completion_message
-        ], 
+        ],
         timeout=10  # 10-second timeout
         )
-        
+
     except (subprocess.TimeoutExpired, subprocess.SubprocessError, FileNotFoundError):
         # Fail silently if TTS encounters issues
         pass

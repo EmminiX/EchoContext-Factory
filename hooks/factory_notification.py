@@ -233,16 +233,31 @@ def should_announce_factory_progress(input_data):
     return False, None, None
 
 
+def get_factory_config_path():
+    """Get path to factory configuration file.
+    Searches in order: project .claude/ -> ~/.claude/
+    """
+    # Check if running in a project with .claude directory
+    cwd = Path.cwd()
+    project_config = cwd / '.claude' / 'config' / 'factory.json'
+
+    if project_config.exists():
+        return project_config
+
+    # Fallback to global config
+    return Path.home() / '.claude' / 'config' / 'factory.json'
+
+
 def is_voice_enabled():
     """Check if voice announcements are enabled in factory configuration."""
     try:
-        config_path = os.path.join(os.path.expanduser('~'), '.claude', 'config', 'factory.json')
+        config_path = get_factory_config_path()
         if not os.path.exists(config_path):
             return True  # Default to enabled if no config
-        
+
         with open(config_path, 'r') as f:
             config = json.load(f)
-        
+
         return config.get('voice', {}).get('factoryNotifications', True)
     except Exception:
         return True  # Default to enabled on any error

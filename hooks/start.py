@@ -17,7 +17,12 @@ from datetime import datetime
 
 try:
     from dotenv import load_dotenv
-    load_dotenv()
+    # Load .env from ~/.claude directory
+    claude_env = Path.home() / '.claude' / '.env'
+    if claude_env.exists():
+        load_dotenv(claude_env)
+    else:
+        load_dotenv()  # Fallback to default behavior
 except ImportError:
     pass  # dotenv is optional
 
@@ -115,16 +120,31 @@ def get_tts_script_path():
     return None
 
 
+def get_factory_config_path():
+    """Get path to factory configuration file.
+    Searches in order: project .claude/ -> ~/.claude/
+    """
+    # Check if running in a project with .claude directory
+    cwd = Path.cwd()
+    project_config = cwd / '.claude' / 'config' / 'factory.json'
+
+    if project_config.exists():
+        return project_config
+
+    # Fallback to global config
+    return Path.home() / '.claude' / 'config' / 'factory.json'
+
+
 def is_voice_enabled():
     """Check if voice announcements are enabled in factory configuration."""
     try:
-        config_path = Path.home() / '.claude' / 'config' / 'factory.json'
+        config_path = get_factory_config_path()
         if not config_path.exists():
             return True  # Default to enabled if no config
-        
+
         with open(config_path, 'r') as f:
             config = json.load(f)
-        
+
         return config.get('voice', {}).get('factoryNotifications', True)
     except Exception:
         return True  # Default to enabled on any error
@@ -162,22 +182,17 @@ def announce_startup():
 
 def main():
     try:
-        # Parse command line arguments
-        parser = argparse.ArgumentParser()
-        parser.add_argument('--startup', action='store_true', help='Announce Claude Code startup')
-        args = parser.parse_args()
-        
         # Read JSON input from stdin if available
         try:
             input_data = json.loads(sys.stdin.read())
         except (json.JSONDecodeError, EOFError):
             input_data = {"event": "startup", "timestamp": datetime.now().isoformat()}
-        
+
         # Ensure log directory exists
         log_dir = os.path.join(os.getcwd(), 'logs')
         os.makedirs(log_dir, exist_ok=True)
         log_file = os.path.join(log_dir, 'start.json')
-        
+
         # Read existing log data or initialize empty list
         if os.path.exists(log_file):
             with open(log_file, 'r') as f:
@@ -187,20 +202,24 @@ def main():
                     log_data = []
         else:
             log_data = []
-        
+
         # Append new data
         log_data.append(input_data)
-        
+
         # Write back to file with formatting
         with open(log_file, 'w') as f:
             json.dump(log_data, f, indent=2)
-        
-        # Announce startup via TTS if --startup flag is set
-        if args.startup:
-            announce_startup()
-        
+
+        # Create startup marker for subagent suppression
+        marker_file = os.path.join(log_dir, '.startup_active')
+        with open(marker_file, 'w') as f:
+            f.write(datetime.now().isoformat())
+
+        # Always announce startup via TTS when SessionStart hook fires
+        announce_startup()
+
         sys.exit(0)
-        
+
     except json.JSONDecodeError:
         # Handle JSON decode errors gracefully
         sys.exit(0)

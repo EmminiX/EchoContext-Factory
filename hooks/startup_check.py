@@ -162,16 +162,31 @@ def get_tts_script_path():
     return None
 
 
+def get_factory_config_path():
+    """Get path to factory configuration file.
+    Searches in order: project .claude/ -> ~/.claude/
+    """
+    # Check if running in a project with .claude directory
+    cwd = Path.cwd()
+    project_config = cwd / '.claude' / 'config' / 'factory.json'
+
+    if project_config.exists():
+        return project_config
+
+    # Fallback to global config
+    return Path.home() / '.claude' / 'config' / 'factory.json'
+
+
 def is_voice_enabled():
     """Check if voice announcements are enabled in factory configuration."""
     try:
-        config_path = Path.home() / '.claude' / 'config' / 'factory.json'
+        config_path = get_factory_config_path()
         if not config_path.exists():
             return True  # Default to enabled if no config
-        
+
         with open(config_path, 'r') as f:
             config = json.load(f)
-        
+
         return config.get('voice', {}).get('factoryNotifications', True)
     except Exception:
         return True  # Default to enabled on any error

@@ -12,7 +12,17 @@ from pathlib import Path
 
 
 def get_factory_config_path():
-    """Get path to factory configuration file."""
+    """Get path to factory configuration file.
+    Searches in order: project .claude/ -> ~/.claude/
+    """
+    # Check if running in a project with .claude directory
+    cwd = Path.cwd()
+    project_config = cwd / '.claude' / 'config' / 'factory.json'
+
+    if project_config.exists():
+        return project_config
+
+    # Fallback to global config
     return Path.home() / '.claude' / 'config' / 'factory.json'
 
 
